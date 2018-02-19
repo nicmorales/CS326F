@@ -8,20 +8,151 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+
+
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
     <!-- Material Design for Bootstrap CSS -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
-    <title>Character Page</title>
+    <!-- Our custom CSS Style Sheet -->
+    <link rel="stylesheet" href="css/custom.css">
+
+
+
+    <title>Simple</title>
   </head>
 
   <body>
 
-    <!--Main layout-->
-    <main>
+  <!-- nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark  bg-dark">
+      <a class="navbar-brand" href="#">D&amp;D Pal</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">simple  <span class="sr-only">(current)</span></a>
 
+
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wiki</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Classes</a>
+              <a class="dropdown-item" href="#">Equipment</a>
+              <a class="dropdown-item" href="#">Spells</a>
+              <a class="dropdown-item" href="#">Items</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <!-- DISABLED SEARCH
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        -->
+          <div class="nav-item dropdown">
+            <a style="color: white;" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign Up</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="#">Sign In</a>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <!--Main layout-->
+    <main role="main" class="container">
+      <div class="container">
+        <div class="row">
+
+          <!--stats column-->
+          <div class="col-4">
+            <div class="row"> Str </div>
+            <div class="row"> Dex </div>
+            <div class="row"> Const </div>
+            <div class="row"> Int </div>
+            <div class="row"> Wis </div>
+            <div class="row"> Char </div>
+
+
+
+          </div><!--end, column-->
+
+          <!--dropdowns-->
+          <div class="col-8">
+
+            <div id="accordion">
+              <!-- DEFENSE -->
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Defense
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <!-- DEFENSE INFO-->
+                    <p>You can't cant dodge :P</p>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attack -->
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Attack
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <!-- Attack Info -->
+                    <p>You dont hit hard!</p>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skils -->
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Skills
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+
+                    <p>You know nothing John Snow</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div><!--end, dropdowns-->
+
+
+
+        </div><!--row-->
+      </div><!--container-->
     </main>
 
 
