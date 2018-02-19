@@ -5,3 +5,12 @@
 
 
 */
+
+/*Amount of space between sections*/
+.sec-space{
+  margin-top: 2%;
+}
+
+.stat{
+  padding-top: 6%;
+}

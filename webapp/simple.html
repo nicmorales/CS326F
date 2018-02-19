@@ -70,23 +70,104 @@
 
     <!--Main layout-->
     <main role="main" class="container">
+
       <div class="container">
+
+        <!--Char name-->
+        <div class="row sec-space">
+          <h1 id = "char-name"><span class="badge badge-light">Name: </span>Manny</h1>
+        </div>
+
+        <!--Race Class Level-->
         <div class="row">
+            <div class="col-3">
+              <h3 id = "race"><span class="badge badge-light">Race: </span> Gnome</h3>
+            </div>
+            <div class="col-3">
+              <h3 id = "class"><span class="badge badge-light">Class: </span> Druid</h3>
+            </div>
+            <div class="col-3">
+              <h3 id = "level"><span class="badge badge-light">Level: </span> 0</h3>
+            </div>
+        </div>
 
-          <!--stats column-->
-          <div class="col-4">
-            <div class="row"> Str </div>
-            <div class="row"> Dex </div>
-            <div class="row"> Const </div>
-            <div class="row"> Int </div>
-            <div class="row"> Wis </div>
-            <div class="row"> Char </div>
+        <!-- STATS AND Additional Info -->
+        <div class="row sec-space">
+
+        <!--stats column-->
+          <div class="col-2 alert alert-secondary" >
+
+            <!--STR-->
+            <div class = "border-bottom border-primary stat">
+              <div class="row justify-content-center">
+
+                <button type="button" class="btn btn-secondary">STR</button>
+
+              </div>
+
+              <div class="row justify-content-center">
+                <p id = "char-stat-str"> 1 </p>
+              </div>
+            </div>
+            <!--DEX-->
+            <div class = "border-bottom border-primary stat">
+              <div class="row justify-content-center">
+                <button type="button" class="btn btn-secondary">DEX</button>
+              </div>
+
+              <div class="row justify-content-center">
+                <p id = "char-stat-dex"> 2 </p>
+              </div>
+            </div>
+            <!--CON-->
+            <div class = "border-bottom border-primary stat">
+              <div class="row justify-content-center">
+                <button type="button" class="btn btn-secondary">CON</button>
+              </div>
+
+              <div class="row justify-content-center">
+                <p id = "char-stat-con"> 3 </p>
+              </div>
+            </div>
+
+            <!--INT-->
+            <div class = "border-bottom border-primary stat">
+              <div class="row justify-content-center">
+                <button type="button" class="btn btn-secondary">INT</button>
+              </div>
+
+              <div class="row justify-content-center ">
+                <p id = "char-stat-int"> 4 </p>
+              </div>
+            </div>
+
+            <!--WIS-->
+            <div class = "border-bottom border-primary stat">
+              <div class="row justify-content-center">
+                <button type="button" class="btn btn-secondary">WIS</button>
+              </div>
+
+              <div class="row justify-content-center">
+                <p id = "char-stat-wis"> 5 </p>
+              </div>
+            </div>
+            <!--CHA-->
+            <div class = "stat">
+              <div class="row justify-content-center stat">
+                <button type="button" class="btn btn-secondary">CHA</button>
+              </div>
+
+              <div class="row justify-content-center">
+                <p id = "char-stat-cha"> 6 </p>
+              </div>
+
+            </div>
+
+          </div><!--end, stats column-->
 
 
 
-          </div><!--end, column-->
-
-          <!--dropdowns-->
+        <!--dropdowns-->
           <div class="col-8">
 
             <div id="accordion">
@@ -103,7 +184,7 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
                     <!-- DEFENSE INFO-->
-                    <p>You can't cant dodge :P</p>
+                    <p>LOL what defense? :P</p>
 
                   </div>
                 </div>
@@ -144,10 +225,75 @@
                   </div>
                 </div>
               </div>
-            </div>
+
+              <!-- Spells -->
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Spelles
+                    </button>
+                  </h5>
+                </div>
+                <!-- list of spells -->
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                    <!-- list of spells -->
+                    <ul class="list-group bmd-list-group-sm">
+                      <a class="list-group-item">
+                        <div class="bmd-list-group-col">
+                          <p class="list-group-item-heading">Druidcraft</p>
+                          <p class="list-group-item-text">Predict weather for next 24 hours.</p>
+                        </div>
+                      </a>
+                      <a class="list-group-item">
+                        <div class="bmd-list-group-col">
+                          <p class="list-group-item-heading">Mending</p>
+                          <p class="list-group-item-text">Repairs a single tear or break in object.</p>
+                        </div>
+                      </a>
+                      <a class="list-group-item">
+                        <div class="bmd-list-group-col">
+                          <p class="list-group-item-heading">Poison Spray</p>
+                          <p class="list-group-item-text">Poject a puff of noxiuos gas.</p>
+                        </div>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Passives -->
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Passives
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                  <div class="card-body">
+
+                    <!-- list of spells -->
+                    <ul class="list-group bmd-list-group-sm">
+                      <a class="list-group-item">
+                        <div class="bmd-list-group-col">
+                          <p class="list-group-item-heading">Druidness</p>
+                          <p class="list-group-item-text">Talk to trees</p>
+                        </div>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
 
-          </div><!--end, dropdowns-->
+            </div><!--end, accordion-->
+
+
+          </div> <!--end, dropdowns-->
 
 
 
