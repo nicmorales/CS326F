@@ -67,7 +67,7 @@
 
         <!--Char name-->
         <div class="row sec-space">
-          <h1 id = "char-name"><span class="badge badge-light">Name: </span>Cluoth</h1>
+          <h1 id = "char-name"><span class="badge badge-light">Name: </span>Shield Bro</h1>
         </div>
 
         <!--Race Class Level-->
@@ -293,7 +293,7 @@
           </div><!--end, stats column-->
 		  
 			<!-- inititive and skills -->
-			<div  class="container col-md-2" >
+			<div  class="container col-md-2" style="margin-left:5px; margin-right:5px;" >
 				<div class = "rounded" style="background-color: #DCDCDC; margin-bottom:5px ">
 					<div class="row justify-content-center stat">
 						<h6>Proficiency</h6>
@@ -407,9 +407,11 @@
 			</div>
 			<!-- weopons hit points and combate stuff -->
 			
-			<div class="container col-sm-3" style = "border: 2px solid black;">
+			<div class="container col-sm-3" style="margin-left:5px; margin-right:5px;" >
+			
+			<!--random Info-->
 			  <div class="row">
-					<div class = "rounded col" style="background-color: #DCDCDC; margin:5px ">
+					<div class = "rounded col" style="background-color: #DCDCDC;">
 						<div class="row justify-content-center stat">
 							<h6>AC</h6>
 						</div>
@@ -418,7 +420,7 @@
 							<p id = "char-stat-cha"> 16 </p>
 						</div>
 					</div>
-					<div class = "rounded col" style="background-color: #DCDCDC; margin:5px ">
+					<div class = "rounded col" style="background-color: #DCDCDC; margin-left:5px; margin-right:5px; ">
 						<div class="row justify-content-center stat">
 							<h6>Initiative</h6>
 						</div>
@@ -427,7 +429,7 @@
 							<p id = "char-stat-cha"> 11 </p>
 						</div>
 					</div>
-					<div class = "rounded col" style="background-color: #DCDCDC; margin:5px ">
+					<div class = "rounded col" style="background-color: #DCDCDC;">
 						<div class="row justify-content-center stat">
 							<h6>Speed</h6>
 						</div>
@@ -437,8 +439,10 @@
 						</div>
 					</div>
 			  </div>
-			  <div class="row">
-				<div class = "rounded col" style="background-color: #DCDCDC; margin:5px ">
+			  
+			  <!--LIfe and how much-->
+			  <div class="row" style="margin-top:5px">
+				<div class = "rounded col" style="background-color: #DCDCDC; margin-right:5px ">
 					<div class="row justify-content-center stat">
 						<h6>Hit Die</h6>
 					</div>
@@ -447,7 +451,7 @@
 						<p id = "char-stat-cha"> 34 </p>
 					</div>
 				</div>
-				<div class = "rounded col" style="background-color: #DCDCDC; margin:5px ">
+				<div class = "rounded col" style="background-color: #DCDCDC; margin-left:5px ">
 					<div class="row justify-content-center stat">
 						<h6>Temp Hit</h6>
 					</div>
@@ -457,13 +461,161 @@
 					</div>
 				</div>
 			  </div>
+			  
+			  <!--saving throws -->
+				<div class = "row" style="background-color: #DCDCDC; margin-top:5px;  ">
+				 <div class="container row justify-content-center stat">
+						<h6>Saving Throws</h6>
+					</div>
+				
+				 <div class="row container">
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>Str</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> +4 </p>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>Dex</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> +1 </p>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>Con</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> +4 </p>
+						</div>
+					</div>
+					
+				 </div>
+				 <div class="row container">
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>Int</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> 0 </p>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>Wis</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> -1 </p>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>Cha</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> +7 </p>
+						</div>
+					</div>
+					
+				 </div>
+				</div>
+				
+							<!--Weapon-->
+			<div class = "row" style="background-color: #DCDCDC; margin-top:5px;  ">
+				 <div class="container row justify-content-center stat">
+						<h6>Weapon</h6>
+					</div>
+				
+				 <div class="row container">
+					<div class="col-sm">
+						<div class="row justify-content-left stat" style="margin-left:5px;">
+							<h6>Type</h6>
+						</div>
+
+						<div class="row justify-content-left" style="margin-left:5px;">
+							<p id = "char-stat-cha"> Long Sword </p>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="row justify-content-center stat">
+							<h6>damage</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> 1d6 </p>
+						</div>
+					</div>
+					<div class="col-1">
+						<div class="row justify-content-center stat">
+							<h6>Crit</h6>
+						</div>
+
+						<div class="row justify-content-center">
+							<p id = "char-stat-cha"> X2 </p>
+						</div>
+					</div>
+					
+					
+				 </div>
+				
 			</div>
+			
+			<!--Gold-->
+			<div class = "row" style="background-color: #DCDCDC; margin-top:5px;  ">
+				 <div class="container row justify-content-center stat">
+					<h6>Money</h6>
+				</div>
+				<div class="row justify-content-center stat container" style="margin-left:5px">
+					<div class="col-sm">
+						<h6>Gold</h6>
+					</div>
+					<div class="col-sm">
+						<p id = "char-stat-cha"> 145 </p>
+					</div>
+				</div>
+				<div class="row justify-content-center stat container" style="margin-left:5px">
+					<div class="col-sm">
+						<h6>Silver</h6>
+					</div>
+					<div class="col-sm">
+						<p id = "char-stat-cha"> 67 </p>
+					</div>
+				</div>
+				<div class="row justify-content-center stat container" style="margin-left:5px; margin-bottom:15px">
+					<div class="col-sm">
+						<h6>Copper</h6>
+					</div>
+					<div class="col-sm">
+						<p id = "char-stat-cha"> 98 </p>
+					</div>
+				</div>
+				
+				
+
+				
+				 
+				
+			</div>
+				
+			  
+			</div><!--end of colomb-->
 			
 			<!--gold and current stuff-->
 			<div style = "border: 2px solid black; background-color:light-gray;" class="col-5" >
 				
 	  
 			</div>
+
 
 
       
