@@ -16,6 +16,7 @@
           href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
           integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/onlyForManuel.css">
     <title>Manual</title>
 </head>
 
@@ -102,25 +103,35 @@
             <div class="col-md-2">
 
                 <!--STR-->
-                <div class="row card text text-center" style="margin-top:5px ">
+                <div class="row card" style="margin-top:5px ">
 
-                    <div class="row container" style="margin-left:5px;margin-top:10px">
-                        <div class="col">
-                            <div class="row justify-content-left stat" style="margin-left:5px;">
+                    <div class="row container " style="margin-left:1px;margin-top:10px">
+                        <div class="col ">
+
+                            <div class="row justify-content-center stat ">
                                 <h6>Str</h6>
                             </div>
 
-                            <div class="row justify-content-left" style="margin-left:5px;">
-                                <p id="char-stat-cha"> 14 </p>
+                            <div class="row justify-content-center">
+                              <div class="justify-content-center">
+
+                                  <input id="str" type="text" class="form-control-plaintext mod" placeholder="10">
+
+                              </div>
                             </div>
+
                         </div>
-                        <div class="col-sm">
-                            <div class="row justify-content-center stat">
+                        <div class="col ">
+                            <div class="row justify-content-center stat ">
                                 <h6>Mod</h6>
                             </div>
 
-                            <div class="row justify-content-center">
-                                <p id="char-stat-cha"> +2 </p>
+                            <div class="row justify-content-center ">
+                              <div class="justify-content-center ">
+
+                                  <input id="strmd" type="text" class="form-control-plaintext mod" placeholder="+0" readonly>
+
+                              </div>
                             </div>
                         </div>
 
@@ -724,6 +735,8 @@
 </footer>
 <!--/.Footer-->
 <!-- Optional JavaScript -->
+<script src="js/stuff.js"></script>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
