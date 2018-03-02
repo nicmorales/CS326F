@@ -1,0 +1,12 @@
+/*to properly center input feilds */
+
+
+.mod {
+padding-left:30px;
+margin-bottom: 5px;
+}
+
+.visible{
+border: 1px solid blue;
+
+}
