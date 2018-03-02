@@ -2,11 +2,23 @@
 
 
 .mod {
-padding-left:30px;
 margin-bottom: 5px;
 }
 
 .visible{
 border: 1px solid blue;
 
+}
+
+.formlist{
+  margin-left: 10px;
+}
+
+.cheakbox-nudge{
+  margin-top: 5px;
+
+}
+
+input {
+  text-align: center;
 }
