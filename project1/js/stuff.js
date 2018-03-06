@@ -27,8 +27,12 @@ var Proficiency = document.getElementById('Proficiency');
       dexmod = dexmod-5;
       if(dexmod>-1){
         dexmd.value = '+'+ dexmod;
-      }else
+      }else{
         dexmd.value = dexmod;
+      }
+        updateAcro();
+        updateSlei();
+        updateStea();
     }
   /* changes everything related to con*/
   document.getElementById("con").onchange = function() {updatecon()};
@@ -42,8 +46,10 @@ var Proficiency = document.getElementById('Proficiency');
       conmod = conmod-5;
       if(conmod>-1){
         conmd.value = '+'+ conmod;
-      }else
+      }else{
         conmd.value = conmod;
+      }
+
     }
   /* changes everything related to int*/
   document.getElementById("int").onchange = function() {updateint()};
@@ -57,8 +63,15 @@ var Proficiency = document.getElementById('Proficiency');
       intmod = intmod-5;
       if(intmod>-1){
         intmd.value = '+'+ intmod;
-      }else
+      }else{
         intmd.value = intmod;
+      }
+      updateArca();
+      updateHist();
+      updateInve();
+      updateNatu();
+      updateReli();
+
      }
   /* changes everything related to wis*/
   document.getElementById("wis").onchange = function() {updatewis()};
@@ -72,8 +85,15 @@ var Proficiency = document.getElementById('Proficiency');
       wismod = wismod-5;
       if(wismod>-1){
         wismd.value = '+'+ wismod;
-      }else
+      }else{
         wismd.value = wismod;
+      }
+
+      updateInsi();
+      updateAnim();
+      updateMedi();
+      updatePerc();
+      updateSurv();
     }
   /* changes everything related to chr*/
   document.getElementById("chr").onchange = function() {updatechr()};
@@ -87,9 +107,16 @@ var Proficiency = document.getElementById('Proficiency');
       chrmod = chrmod-5;
       if(chrmod>-1){
         chrmd.value = '+'+ chrmod;
-      }else
+      }else{
         chrmd.value = chrmod;
+      }
+      updateDece();
+      updateInti();
+      updatePerf();
+      updatePers();
     }
+
+
 
 /*Skills*/
   /*cahnges the Acrobatics skill on click*/
@@ -151,16 +178,16 @@ var Proficiency = document.getElementById('Proficiency');
         Deception.value = chrmd.value;
       }
     }
-    
+
   /*cahnges the History skill on click*/
   document.getElementById("HistP").onclick = function() {updateHist()};
     var Histor = document.getElementById('Hist');
     var Historyp = document.getElementById('HistP');
     function updateHist(){
       if(Historyp.checked){
-      Histor.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Histor.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
       }else{
-        Histor.value = xxxmd.value;
+        Histor.value = intmd.value;
       }
     }
 
@@ -170,9 +197,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Insightp = document.getElementById('InsiP');
     function updateInsi(){
       if(Insightp.checked){
-      Insight.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Insight.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
       }else{
-        Insight.value = xxxmd.value;
+        Insight.value = wismd.value;
       }
     }
 
@@ -182,9 +209,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Intimidationp = document.getElementById('IntiP');
     function updateInti(){
       if(Intimidationp.checked){
-      Intimidation.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Intimidation.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
       }else{
-        Intimidation.value = xxxmd.value;
+        Intimidation.value = chrmd.value;
       }
     }
 
@@ -194,9 +221,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Investigationp = document.getElementById('InveP');
     function updateInve(){
       if(Investigationp.checked){
-      Investigation.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Investigation.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
       }else{
-        Investigation.value = xxxmd.value;
+        Investigation.value = intmd.value;
       }
     }
 
@@ -206,9 +233,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Medicinep = document.getElementById('MediP');
     function updateMedi(){
       if(Medicinep.checked){
-      Medicine.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Medicine.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
       }else{
-        Medicine.value = xxxmd.value;
+        Medicine.value = wismd.value;
       }
     }
 
@@ -218,9 +245,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Naturep = document.getElementById('NatuP');
     function updateNatu(){
       if(Naturep.checked){
-      Nature.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Nature.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
       }else{
-        Nature.value = xxxmd.value;
+        Nature.value = intmd.value;
       }
     }
 
@@ -230,9 +257,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Perseptionp = document.getElementById('PercP');
     function updatePerc(){
       if(Perseptionp.checked){
-      Perseption.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Perseption.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
       }else{
-        Perseption.value = xxxmd.value;
+        Perseption.value = wismd.value;
       }
     }
 
@@ -242,9 +269,9 @@ var Proficiency = document.getElementById('Proficiency');
     var Performancep = document.getElementById('PerfP');
     function updatePerf(){
       if(Performancep.checked){
-      Performanc.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Performanc.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
       }else{
-        Performanc.value = xxxmd.value;
+        Performanc.value = chrmd.value;
       }
     }
 
@@ -254,9 +281,9 @@ var Proficiency = document.getElementById('Proficiency');
       var Persuationp = document.getElementById('PersP');
       function updatePers(){
         if(Persuationp.checked){
-        Persuation.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+        Persuation.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
         }else{
-          Persuation.value = xxxmd.value;
+          Persuation.value = chrmd.value;
         }
       }
 
@@ -266,9 +293,9 @@ var Proficiency = document.getElementById('Proficiency');
       var Religionp = document.getElementById('ReliP');
       function updateReli(){
         if(Religionp.checked){
-        Religion.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+        Religion.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
         }else{
-          Religion.value = xxxmd.value;
+          Religion.value = intmd.value;
         }
       }
 
@@ -278,9 +305,9 @@ var Proficiency = document.getElementById('Proficiency');
       var Sleight_of_Handp = document.getElementById('SleiP');
       function updateSlei(){
         if(Sleight_of_Handp.checked){
-        Sleight_of_Hand.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+        Sleight_of_Hand.value = '+'+(parseInt(Proficiency.innerHTML) + dexmod);
         }else{
-          Sleight_of_Hand.value = xxxmd.value;
+          Sleight_of_Hand.value = dexmd.value;
         }
       }
 
@@ -290,9 +317,9 @@ var Proficiency = document.getElementById('Proficiency');
       var Stealthp = document.getElementById('SteaP');
       function updateStea(){
         if(Stealthp.checked){
-        Stealth.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+        Stealth.value = '+'+(parseInt(Proficiency.innerHTML) + dexmod);
         }else{
-          Stealth.value = xxxmd.value;
+          Stealth.value = dexmd.value;
         }
       }
 
@@ -302,8 +329,8 @@ var Proficiency = document.getElementById('Proficiency');
     var Survivalp = document.getElementById('SurvP');
     function updateSurv(){
       if(Survivalp.checked){
-      Survival.value = '+'+(parseInt(Proficiency.innerHTML) + xxxmod);
+      Survival.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
       }else{
-        Survival.value = xxxmd.value;
+        Survival.value = wismd.value;
       }
     }
