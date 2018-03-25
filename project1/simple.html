@@ -19,7 +19,7 @@
 
     <!-- Our custom CSS Style Sheet -->
     <link rel="stylesheet" href="css/custom.css">
-
+    <link rel="stylesheet" href="css/onlyForManuel.css">
 
 
     <title>Simple</title>
@@ -93,82 +93,254 @@
 
         <!-- STATS AND Additional Info -->
         <div class="row sec-space">
+          <!--stats column-->
+          <div class="col-md-2">
 
-        <!--stats column-->
-          <div class="col-2 alert alert-secondary" >
+            <!--proficency-->
+            <div class="row card text text-center" style="margin-top:5px ">
 
-            <!--STR-->
-            <div class = "border-bottom border-primary stat">
-              <div class="row justify-content-center">
-
-                <button type="button" class="btn btn-secondary">STR</button>
-
-              </div>
-
-              <div class="row justify-content-center">
-                <p id = "char-stat-str"> 1 </p>
-              </div>
-            </div>
-            <!--DEX-->
-            <div class = "border-bottom border-primary stat">
-              <div class="row justify-content-center">
-                <button type="button" class="btn btn-secondary">DEX</button>
-              </div>
-
-              <div class="row justify-content-center">
-                <p id = "char-stat-dex"> 2 </p>
-              </div>
-            </div>
-            <!--CON-->
-            <div class = "border-bottom border-primary stat">
-              <div class="row justify-content-center">
-                <button type="button" class="btn btn-secondary">CON</button>
-              </div>
-
-              <div class="row justify-content-center">
-                <p id = "char-stat-con"> 3 </p>
-              </div>
-            </div>
-
-            <!--INT-->
-            <div class = "border-bottom border-primary stat">
-              <div class="row justify-content-center">
-                <button type="button" class="btn btn-secondary">INT</button>
-              </div>
-
-              <div class="row justify-content-center ">
-                <p id = "char-stat-int"> 4 </p>
-              </div>
-            </div>
-
-            <!--WIS-->
-            <div class = "border-bottom border-primary stat">
-              <div class="row justify-content-center">
-                <button type="button" class="btn btn-secondary">WIS</button>
-              </div>
-
-              <div class="row justify-content-center">
-                <p id = "char-stat-wis"> 5 </p>
-              </div>
-            </div>
-            <!--CHA-->
-            <div class = "stat">
               <div class="row justify-content-center stat">
-                <button type="button" class="btn btn-secondary">CHA</button>
+                <h6>Proficiency</h6>
               </div>
 
               <div class="row justify-content-center">
-                <p id = "char-stat-cha"> 6 </p>
+                <p id="Proficiency">2</p>
               </div>
 
             </div>
+            <!--STR-->
+            <div class="row card" style="margin-top:5px ">
+
+              <div class="row container " style="margin-left:1px;margin-top:10px">
+                <div class="col ">
+
+                  <div class="row justify-content-center stat ">
+                    <h6>Str</h6>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="justify-content-center">
+
+                      <input id="str" type="text" class="form-control-plaintext" placeholder="10">
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col ">
+                  <div class="row justify-content-center stat ">
+                    <h6>Mod</h6>
+                  </div>
+
+                  <div class="row justify-content-center ">
+                    <div class="justify-content-center ">
+
+                      <input id="strmd" type="text" class="form-control-plaintext mod" placeholder="+0"
+                             readonly>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+            <!--Dex-->
+            <div class="row card" style="margin-top:5px ">
+
+              <div class="row container " style="margin-left:1px;margin-top:10px">
+                <div class="col ">
+
+                  <div class="row justify-content-center stat ">
+                    <h6>Dex</h6>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="justify-content-center">
+
+                      <input id="dex" type="text" class="form-control-plaintext" placeholder="10">
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col ">
+                  <div class="row justify-content-center stat ">
+                    <h6>Mod</h6>
+                  </div>
+
+                  <div class="row justify-content-center ">
+                    <div class="justify-content-center ">
+
+                      <input id="dexmd" type="text" class="form-control-plaintext mod" placeholder="+0"
+                             readonly>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+            <!--Con-->
+            <div class="row card" style="margin-top:5px ">
+
+              <div class="row container " style="margin-left:1px;margin-top:10px">
+                <div class="col ">
+
+                  <div class="row justify-content-center stat ">
+                    <h6>Con</h6>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="justify-content-center">
+
+                      <input id="con" type="text" class="form-control-plaintext" placeholder="10">
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col ">
+                  <div class="row justify-content-center stat ">
+                    <h6>Mod</h6>
+                  </div>
+
+                  <div class="row justify-content-center ">
+                    <div class="justify-content-center ">
+
+                      <input id="conmd" type="text" class="form-control-plaintext mod" placeholder="+0"
+                             readonly>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+            <!--Int-->
+            <div class="row card" style="margin-top:5px ">
+
+              <div class="row container " style="margin-left:1px;margin-top:10px">
+                <div class="col ">
+
+                  <div class="row justify-content-center stat ">
+                    <h6>Int</h6>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="justify-content-center">
+
+                      <input id="int" type="text" class="form-control-plaintext" placeholder="10">
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col ">
+                  <div class="row justify-content-center stat ">
+                    <h6>Mod</h6>
+                  </div>
+
+                  <div class="row justify-content-center ">
+                    <div class="justify-content-center ">
+
+                      <input id="intmd" type="text" class="form-control-plaintext mod" placeholder="+0"
+                             readonly>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!--Wis-->
+            <div class="row card" style="margin-top:5px ">
+
+              <div class="row container " style="margin-left:1px;margin-top:10px">
+                <div class="col ">
+
+                  <div class="row justify-content-center stat ">
+                    <h6>Wis</h6>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="justify-content-center">
+
+                      <input id="wis" type="text" class="form-control-plaintext" placeholder="10">
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col ">
+                  <div class="row justify-content-center stat ">
+                    <h6>Mod</h6>
+                  </div>
+
+                  <div class="row justify-content-center ">
+                    <div class="justify-content-center ">
+
+                      <input id="wismd" type="text" class="form-control-plaintext mod" placeholder="+0"
+                             readonly>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+            <!--Chr-->
+            <div class="row card" style="margin-top:5px ">
+
+              <div class="row container " style="margin-left:1px;margin-top:10px">
+                <div class="col ">
+
+                  <div class="row justify-content-center stat ">
+                    <h6>Chr</h6>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="justify-content-center">
+
+                      <input id="chr" type="text" class="form-control-plaintext" placeholder="10">
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col ">
+                  <div class="row justify-content-center stat ">
+                    <h6>Mod</h6>
+                  </div>
+
+                  <div class="row justify-content-center ">
+                    <div class="justify-content-center ">
+
+                      <input id="chrmd" type="text" class="form-control-plaintext mod" placeholder="+0"
+                             readonly>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
 
           </div><!--end, stats column-->
 
 
-
         <!--dropdowns-->
-          <div class="col-8">
+          <div class="col-9">
 
             <div id="accordion">
               <!-- DEFENSE -->
@@ -182,10 +354,109 @@
                 </div>
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <!-- DEFENSE INFO-->
-                    <p>LOL what defense? :P</p>
+                  <div class="row m-4">
+                    <div class="rounded col card" style=" margin-left:5px; margin-right:5px; ">
+                      <div class="row justify-content-center stat">
+                        <h6>Max Hit Points</h6>
+                      </div>
 
+                      <div class="row justify-content-center">
+                        <p id="Init"> 34 </p>
+                      </div>
+                    </div>
+                    <div class="rounded col card" style=" margin-right:5px ">
+                      <div class="row justify-content-center stat">
+                        <h6>Current Hit Points</h6>
+                      </div>
+
+                      <div class="row justify-content-center">
+                        <p id="char-stat-cha"> 34 </p>
+                      </div>
+                    </div>
+                    <div class="rounded col card" style=" margin-left:5px ">
+                      <div class="row justify-content-center stat">
+                        <h6>Temp Hit</h6>
+                      </div>
+
+                      <div class="row justify-content-center">
+                        <p id="char-stat-cha"> 5 </p>
+                      </div>
+                    </div>
+                    <div class="rounded col card">
+                      <div class="row justify-content-center stat">
+                        <h6>AC</h6>
+                      </div>
+
+                      <div class="row justify-content-center">
+                        <p id="AC"> 16 </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row m-4 card text-center" style=" margin-top:5px;  ">
+
+                    <h6 class="card-header">Saving Throws</h6>
+
+
+                    <div class="row container">
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Str</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> +4 </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Dex</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> +1 </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Con</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> +4 </p>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row container">
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Int</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> 0 </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Wis</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> -1 </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Cha</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> +7 </p>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -200,9 +471,51 @@
                   </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="card-body">
-                    <!-- Attack Info -->
-                    <p>You dont hit hard!</p>
+                  <div class="row m-4 card text text-center" style=" margin-top:5px;  ">
+
+                    <h6 class="card-header">Weapon</h6>
+
+
+                    <div class="row container">
+                      <div class="col-6">
+                        <div class="row justify-content-left stat" style="margin-left:5px;">
+                          <h6>Type</h6>
+                        </div>
+
+                        <div class="row justify-content-left" style="margin-left:5px;">
+                          <p id="char-stat-cha"> Long Sword </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Attack Bonus</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> +5 </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Damage</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> 1d6 </p>
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <div class="row justify-content-center stat">
+                          <h6>Crit</h6>
+                        </div>
+
+                        <div class="row justify-content-center">
+                          <p id="char-stat-cha"> X2 </p>
+                        </div>
+                      </div>
+
+
+                    </div>
 
                   </div>
                 </div>
@@ -218,10 +531,289 @@
                   </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card-body">
+                  <div class=" rounded card " style=" margin-bottom:5px ">
+                    <div class="row justify-content-center stat">
+                      <h6>Skills</h6>
+                    </div>
+                    <!--list of skills-->
+                    <form class="formlist justify-content-center">
+                      <div class="row m-4">
+                      <div class="rounded col-5 card" style=" margin-left:5px; margin-right:5px; ">
+                      <!--Acrobatics-->
+                      <div class="form-row ">
+                        <div class="col-8">
 
-                    <p>You know nothing John Snow</p>
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="AcroP" type="checkbox"> Acrobatics
+                            </label>
+                          </div>
 
+                        </div>
+                        <div class="col-2">
+                          <input id="Acro" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Animal Handling-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="AnimP" type="checkbox"> Animal Handling
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Anim" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Arcana-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="ArcaP" type="checkbox"> Arcana
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Arca" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Athletics-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="AthlP" type="checkbox"> Athletics
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Athl" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Deception-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="DeceP" type="checkbox"> Deception
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Dece" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--History-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="HistP" type="checkbox"> History
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Hist" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Insight-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="InsiP" type="checkbox"> Insight
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Insi" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Intimidation-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="IntiP" type="checkbox"> Intimidation
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Inti" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Investigation-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="InveP" type="checkbox"> Investigation
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Inve" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                        </div>
+                      <div class="rounded col-5 card" style=" margin-left:5px; margin-right:5px; ">
+                      <!--Medicine-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="MediP" type="checkbox"> Medicine
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Medi" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Nature-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="NatuP" type="checkbox"> Nature
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Natu" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Perception-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="PercP" type="checkbox"> Perception
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Perc" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Performance-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="PerfP" type="checkbox"> Performance
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Perf" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Persuation-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="PersP" type="checkbox"> Persuation
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Pers" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Religion-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="ReliP" type="checkbox"> Religion
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Reli" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Sleight of hand-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="SleiP" type="checkbox"> Sleight of Hand
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Slei" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Stealth-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="SteaP" type="checkbox"> Stealth
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Stea" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                      <!--Survival-->
+                      <div class="form-row ">
+                        <div class="col-8">
+
+                          <div class="checkbox cheakbox-nudge">
+                            <label style="color:black;">
+                              <input id="SurvP" type="checkbox"> Survival
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-2">
+                          <input id="Surv" type="text" class="form-control-plaintext" placeholder="0" readonly>
+                        </div>
+                      </div>
+                        </div>
+                        </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -231,7 +823,7 @@
                 <div class="card-header" id="headingFour">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Spelles
+                      Abilities
                     </button>
                   </h5>
                 </div>
@@ -239,26 +831,170 @@
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                   <div class="card-body">
                     <!-- list of spells -->
-                    <ul class="list-group bmd-list-group-sm">
-                      <a class="list-group-item">
-                        <div class="bmd-list-group-col">
-                          <p class="list-group-item-heading">Druidcraft</p>
-                          <p class="list-group-item-text">Predict weather for next 24 hours.</p>
+                    <div class="row m-4">
+                    <div class="container col-sm-5" style="margin-left:5px; margin-right:5px;">
+                      <p class="lead text-muted">Active Ability list</p>
+                      <div id="accordionm2">
+                        <div class="card">
+                          <div class="card-header" id="headingOne2">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse"
+                                      data-target="#collapseOne2"
+                                      aria-expanded="false" aria-controls="collapseOne2">
+                                Lay on Hands
+                              </button>
+                            </h5>
+                          </div>
+
+                          <div id="collapseOne2" class="collapse" aria-labelledby="headingOne2"
+                               data-parent="#accordionm2">
+                            <div class="card-body">
+                              <p>Sit on your hands and let god heal something.</p>
+                              <p>Uses left: 3</p>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2">Cast</a>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
+                            </div>
+                            <a href="#" class="btn btn-secondary my-2">Details...</a>
+                          </div>
                         </div>
-                      </a>
-                      <a class="list-group-item">
-                        <div class="bmd-list-group-col">
-                          <p class="list-group-item-heading">Mending</p>
-                          <p class="list-group-item-text">Repairs a single tear or break in object.</p>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo2">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse"
+                                      data-target="#collapseTwo2" aria-expanded="false"
+                                      aria-controls="collapseTwo2">
+                                Smite
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2"
+                               data-parent="#accordionm2">
+                            <div class="card-body">
+                              <p>Teach them evildoers how we do things around here.</p>
+                              <p>Uses left: 3</p>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2">Cast</a>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
+                            </div>
+                            <a href="#" class="btn btn-secondary my-2">Details...</a>
+                          </div>
                         </div>
-                      </a>
-                      <a class="list-group-item">
-                        <div class="bmd-list-group-col">
-                          <p class="list-group-item-heading">Poison Spray</p>
-                          <p class="list-group-item-text">Poject a puff of noxiuos gas.</p>
+                      </div>
+                    </div>
+                    <div class="container col-sm-5" style="margin-left:5px; margin-right:5px;">
+                      <p class="lead text-muted">Spell list</p>
+                      <div id="accordionm1">
+                        <div class="card">
+                          <div class="card-header" id="headingOne1">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse"
+                                      data-target="#collapseOne1"
+                                      aria-expanded="false" aria-controls="collapseOne1">
+                                Cure light wounds
+                              </button>
+                            </h5>
+                          </div>
+
+                          <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1"
+                               data-parent="#accordionm1">
+                            <div class="card-body">
+                              <p>Heal with a touch. Heals for 8 hit points. Deals damage instead when used on undead.</p>
+                              <p>Uses left: 3</p>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2">Cast</a>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
+                            </div>
+                            <a href="#" class="btn btn-secondary my-2">Details...</a>
+                          </div>
                         </div>
-                      </a>
-                    </ul>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo1">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse"
+                                      data-target="#collapseTwo1" aria-expanded="false"
+                                      aria-controls="collapseTwo1">
+                                Ward against tentacles
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo1"
+                               data-parent="#accordionm1">
+                            <div class="card-body">
+                              Shoos the baddies away, this is a kid friendly campaign
+                              <p>Uses left: 3</p>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2">Cast</a>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
+                            </div>
+                            <a href="#" class="btn btn-secondary my-2">Details...</a>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingThree1">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse"
+                                      data-target="#collapseThree1" aria-expanded="false"
+                                      aria-controls="collapseThree1">
+                                Holy Cow
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseThree1" class="collapse" aria-labelledby="headingThree1"
+                               data-parent="#accordionm1">
+                            <div class="card-body">
+                              Summons a holy cow.
+                              <p>Uses left: 3</p>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2">Cast</a>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
+                            </div>
+                            <a href="#" class="btn btn-secondary my-2">Details...</a>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingFour1">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse"
+                                      data-target="#collapseFour1" aria-expanded="false"
+                                      aria-controls="collapseFour1">
+                                Amen
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseFour1" class="collapse" aria-labelledby="headingFour1"
+                               data-parent="#accordionm1">
+                            <div class="card-body">
+                              Changes the way food tastes.
+                              <p>Uses left: 3</p>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2">Cast</a>
+                            </div>
+                            <div class="col-4">
+                              <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
+                            </div>
+                            <a href="#" class="btn btn-secondary my-2">Details...</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      </div>
                   </div>
                 </div>
 
@@ -277,14 +1013,16 @@
                   <div class="card-body">
 
                     <!-- list of spells -->
-                    <ul class="list-group bmd-list-group-sm">
-                      <a class="list-group-item">
+                    <div class="card">
+                      <a class="card-body">
                         <div class="bmd-list-group-col">
                           <p class="list-group-item-heading">Druidness</p>
                           <p class="list-group-item-text">Talk to trees</p>
+                          <a href="#" class="btn btn-secondary my-2">Details...</a>
                         </div>
+
                       </a>
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </div>
