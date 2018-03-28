@@ -352,7 +352,7 @@
 
                 <div class=" rounded card " style=" margin-bottom:5px ">
                     <div class="row justify-content-center stat">
-                        <h6>Skills</h6>
+                      <button type="button" id="myBtn" class="btn"><h6>Skills</h6></button>
                     </div>
                     <!--list of skills-->
                     <form class="formlist justify-content-center">
@@ -631,6 +631,254 @@
 
 
                     </form>
+                    <!-- The skill double prof Modal -->
+                    <div id="myModal" class="modal">
+
+                      <!-- Modal content -->
+                      <div class="modal-content col-3">
+                        <span class="close">&times;</span>
+                        <div>
+                          <h6>Select Double Proficiency skills</h6>
+                        </div>
+                        <form class="formlist justify-content-center">
+                        <!--Acrobatics-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="AcroDP" type="checkbox"> Acrobatics
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Animal Handling-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="AnimDP" type="checkbox"> Animal Handling
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Arcana-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                                  <div class="checkbox cheakbox-nudge">
+                                      <label style="color:black;">
+                                          <input id="ArcaDP" type="checkbox"> Arcana
+                                      </label>
+                                  </div>
+
+                          </div>
+
+                        </div>
+                        <!--Athletics-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                                  <div class="checkbox cheakbox-nudge">
+                                      <label style="color:black;">
+                                          <input id="AthlDP" type="checkbox"> Athletics
+                                      </label>
+                                  </div>
+
+                          </div>
+
+                        </div>
+                        <!--Deception-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                                  <div class="checkbox cheakbox-nudge">
+                                      <label style="color:black;">
+                                          <input id="DeceDP" type="checkbox"> Deception
+                                      </label>
+                                  </div>
+
+                          </div>
+
+                        </div>
+                        <!--History-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="HistDP" type="checkbox"> History
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Insight-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                                  <div class="checkbox cheakbox-nudge">
+                                      <label style="color:black;">
+                                          <input id="InsiDP" type="checkbox"> Insight
+                                      </label>
+                                  </div>
+
+                          </div>
+
+                        </div>
+                        <!--Intimidation-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="IntiDP" type="checkbox"> Intimidation
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Investigation-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="InveDP" type="checkbox"> Investigation
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Medicine-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="MediDP" type="checkbox"> Medicine
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Nature-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="NatuDP" type="checkbox"> Nature
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Perception-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="PercDP" type="checkbox"> Perception
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Performance-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="PerfDP" type="checkbox"> Performance
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Persuation-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="PersDP" type="checkbox"> Persuation
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Religion-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="ReliDP" type="checkbox"> Religion
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Sleight of hand-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="SleiDP" type="checkbox"> Sleight of Hand
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Stealth-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="SteaDP" type="checkbox"> Stealth
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+                        <!--Survival-->
+                        <div class="form-row ">
+                          <div class="col-8">
+
+                            <div class="checkbox cheakbox-nudge">
+                                <label style="color:black;">
+                                    <input id="SurvDP" type="checkbox"> Survival
+                                </label>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </form>
+                      </div>
+                    </div>
                 </div>
 
             </div>
