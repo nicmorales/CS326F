@@ -1,4 +1,26 @@
 var Proficiency = document.getElementById('Proficiency');
+document.getElementById('Proficiency').onchange = function(){thing()};
+function thing(){
+  updateAcro();
+  updateAnim();
+  updateArca();
+  updateAthl();
+  updateDece();
+  updateHist();
+  updateInsi();
+  updateInti();
+  updateInve();
+  updateMedi();
+  updateNatu();
+  updatePerc();
+  updatePerf();
+  updatePers();
+  updateReli();
+  updateSlei();
+  updateStea();
+  updateSurv();
+
+}
 /*Ability Scores*/
   /* changes everything related to strength*/
   document.getElementById("str").onchange = function() {updateStr()};
@@ -125,14 +147,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Acro = document.getElementById('Acro');
       var Acrop = document.getElementById('AcroP');
       function updateAcro(){
-        var AcroPro = parseInt(Proficiency.innerHTML);
+        var AcroPro = Proficiency.value;
         if(AcroDP.checked){
           AcroPro = AcroPro *2;
         }
         if(Acrop.checked){
-          Acro.value = '+'+(AcroPro + dexmod);
+          Acro.value = '+'+(+AcroPro + +dexmod);
         }else{
-          Acro.value = dex.value;
+          Acro.value = dexmd.value;
         }
       }
 
@@ -141,14 +163,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Anim = document.getElementById('Anim');
       var Animp = document.getElementById('AnimP');
       function updateAnim(){
-        var AnimPro = parseInt(Proficiency.innerHTML);
+        var AnimPro = Proficiency.value;
         if(AnimDP.checked){
           AnimPro = AnimPro *2;
         }
         if(Animp.checked){
-          Anim.value = '+'+(AnimPro + wismod);
+          Anim.value = '+'+(+AnimPro + +wismod);
         }else{
-          Anim.value = wis.value;
+          Anim.value = wismd.value;
         }
     }
 
@@ -157,14 +179,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Arca = document.getElementById('Arca');
       var Arcap = document.getElementById('ArcaP');
       function updateArca(){
-        var ArcaPro = parseInt(Proficiency.innerHTML);
+        var ArcaPro = Proficiency.value;
         if(ArcaDP.checked){
           ArcaPro = ArcaPro *2;
         }
         if(Arcap.checked){
-          Arca.value = '+'+(ArcaPro + intmod);
+          Arca.value = '+'+(+ArcaPro + +intmod);
         }else{
-          Arca.value = int.value;
+          Arca.value = intmd.value;
         }
     }
 
@@ -173,14 +195,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Athl = document.getElementById('Athl');
       var Athlp = document.getElementById('AthlP');
       function updateAthl(){
-        var AthlPro = parseInt(Proficiency.innerHTML);
+        var AthlPro = Proficiency.value;
         if(AthlDP.checked){
           AthlPro = AthlPro *2;
         }
         if(Athlp.checked){
-          Athl.value = '+'+(AthlPro + strmod);
+          Athl.value = '+'+(+AthlPro + +strmod);
         }else{
-          Athl.value = str.value;
+          Athl.value = strmd.value;
         }
       }
 
@@ -189,14 +211,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Dece = document.getElementById('Dece');
       var Decep = document.getElementById('DeceP');
       function updateDece(){
-        var DecePro = parseInt(Proficiency.innerHTML);
+        var DecePro = Proficiency.value;
         if(DeceDP.checked){
           DecePro = DecePro *2;
         }
         if(Decep.checked){
-          Dece.value = '+'+(DecePro + chrmod);
+          Dece.value = '+'+(+DecePro + +chrmod);
         }else{
-          Dece.value = chr.value;
+          Dece.value = chrmd.value;
         }
       }
 
@@ -205,14 +227,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Hist = document.getElementById('Hist');
       var Histp = document.getElementById('HistP');
       function updateHist(){
-        var HistPro = parseInt(Proficiency.innerHTML);
+        var HistPro = Proficiency.value;
         if(HistDP.checked){
           HistPro = HistPro *2;
         }
         if(Histp.checked){
-          Hist.value = '+'+(HistPro + intmod);
+          Hist.value = '+'+(+HistPro + +intmod);
         }else{
-          Hist.value = int.value;
+          Hist.value = intmd.value;
         }
     }
 
@@ -221,14 +243,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Insi = document.getElementById('Insi');
       var Insip = document.getElementById('InsiP');
       function updateInsi(){
-        var InsiPro = parseInt(Proficiency.innerHTML);
+        var InsiPro = Proficiency.value;
         if(InsiDP.checked){
           InsiPro = InsiPro *2;
         }
         if(Insip.checked){
-          Insi.value = '+'+(InsiPro + wismod);
+          Insi.value = '+'+(+InsiPro + +wismod);
         }else{
-          Insi.value = wis.value;
+          Insi.value = wismd.value;
         }
       }
 
@@ -237,14 +259,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Inti = document.getElementById('Inti');
       var Intip = document.getElementById('IntiP');
       function updateInti(){
-        var IntiPro = parseInt(Proficiency.innerHTML);
+        var IntiPro = Proficiency.value;
         if(IntiDP.checked){
           IntiPro = IntiPro *2;
         }
         if(Intip.checked){
-          Inti.value = '+'+(IntiPro + chrmod);
+          Inti.value = '+'+(+IntiPro + +chrmod);
         }else{
-          Inti.value = chr.value;
+          Inti.value = chrmd.value;
         }
       }
 
@@ -253,14 +275,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Inve = document.getElementById('Inve');
       var Invep = document.getElementById('InveP');
       function updateInve(){
-        var InvePro = parseInt(Proficiency.innerHTML);
+        var InvePro = Proficiency.value;
         if(InveDP.checked){
           InvePro = InvePro *2;
         }
         if(Invep.checked){
-          Inve.value = '+'+(InvePro + intmod);
+          Inve.value = '+'+(+InvePro + +intmod);
         }else{
-          Inve.value = int.value;
+          Inve.value = intmd.value;
         }
     }
 
@@ -269,14 +291,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Medi = document.getElementById('Medi');
       var Medip = document.getElementById('MediP');
       function updateMedi(){
-        var MediPro = parseInt(Proficiency.innerHTML);
+        var MediPro = Proficiency.value;
         if(MediDP.checked){
           MediPro = MediPro *2;
         }
         if(Medip.checked){
-          Medi.value = '+'+(MediPro + wismod);
+          Medi.value = '+'+(+MediPro + +wismod);
         }else{
-          Medi.value = wis.value;
+          Medi.value = wismd.value;
         }
     }
 
@@ -285,14 +307,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Natu = document.getElementById('Natu');
       var Natup = document.getElementById('NatuP');
       function updateNatu(){
-        var NatuPro = parseInt(Proficiency.innerHTML);
+        var NatuPro = Proficiency.value;
         if(NatuDP.checked){
           NatuPro = NatuPro *2;
         }
         if(Natup.checked){
-          Natu.value = '+'+(NatuPro + intmod);
+          Natu.value = '+'+(+NatuPro + +intmod);
         }else{
-          Natu.value = int.value;
+          Natu.value = intmd.value;
         }
       }
 
@@ -301,14 +323,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Perc = document.getElementById('Perc');
       var Percp = document.getElementById('PercP');
       function updatePerc(){
-        var PercPro = parseInt(Proficiency.innerHTML);
+        var PercPro = Proficiency.value;
         if(PercDP.checked){
           PercPro = PercPro *2;
         }
         if(Percp.checked){
-          Perc.value = '+'+(PercPro + wismod);
+          Perc.value = '+'+(+PercPro + +wismod);
       }else{
-        Perc.value = wis.value;
+        Perc.value = wismd.value;
         }
       }
 
@@ -317,14 +339,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Perf = document.getElementById('Perf');
       var Perfp = document.getElementById('PerfP');
       function updatePerf(){
-        var PerfPro = parseInt(Proficiency.innerHTML);
+        var PerfPro = Proficiency.value;
         if(PerfDP.checked){
           PerfPro = PerfPro *2;
         }
         if(Perfp.checked){
-          Perf.value = '+'+(PerfPro + chrmod);
+          Perf.value = '+'+(+PerfPro + +chrmod);
         }else{
-          Perf.value = chr.value;
+          Perf.value = chrmd.value;
         }
       }
 
@@ -333,14 +355,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Pers = document.getElementById('Pers');
       var Persp = document.getElementById('PersP');
         function updatePers(){
-          var PersPro = parseInt(Proficiency.innerHTML);
+          var PersPro = Proficiency.value;
           if(PersDP.checked){
             PersPro = PersPro *2;
           }
           if(Persp.checked){
-            Pers.value = '+'+(PersPro + chrmod);
+            Pers.value = '+'+(+PersPro + +chrmod);
           }else{
-            Pers.value = chr.value;
+            Pers.value = chrmd.value;
           }
       }
 
@@ -349,14 +371,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Reli = document.getElementById('Reli');
       var Relip = document.getElementById('ReliP');
       function updateReli(){
-        var ReliPro = parseInt(Proficiency.innerHTML);
+        var ReliPro = Proficiency.value;
         if(ReliDP.checked){
           ReliPro = ReliPro *2;
         }
         if(Relip.checked){
-          Reli.value = '+'+(ReliPro + intmod);
+          Reli.value = '+'+(+ReliPro + +intmod);
         }else{
-          Reli.value = int.value;
+          Reli.value = intmd.value;
         }
       }
 
@@ -365,14 +387,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Slei = document.getElementById('Slei');
       var Sleip = document.getElementById('SleiP');
         function updateSlei(){
-          var SleiPro = parseInt(Proficiency.innerHTML);
+          var SleiPro = Proficiency.value;
           if(SleiDP.checked){
             SleiPro = SleiPro *2;
           }
           if(Sleip.checked){
-            Slei.value = '+'+(SleiPro + dexmod);
+            Slei.value = '+'+(+SleiPro + +dexmod);
           }else{
-            Slei.value = dex.value;
+            Slei.value = dexmd.value;
           }
       }
 
@@ -381,14 +403,14 @@ var Proficiency = document.getElementById('Proficiency');
       var Stea = document.getElementById('Stea');
       var Steap = document.getElementById('SteaP');
       function updateStea(){
-        var SteaPro = parseInt(Proficiency.innerHTML);
+        var SteaPro = Proficiency.value;
         if(SteaDP.checked){
           SteaPro = SteaPro *2;
         }
         if(Steap.checked){
-          Stea.value = '+'+(SteaPro + dexmod);
+          Stea.value = '+'+(+SteaPro + +dexmod);
         }else{
-          Stea.value = dex.value;
+          Stea.value = dexmd.value;
         }
       }
 
@@ -397,14 +419,14 @@ var Proficiency = document.getElementById('Proficiency');
         var Surv = document.getElementById('Surv');
         var Survp = document.getElementById('SurvP');
         function updateSurv(){
-          var SurvPro = parseInt(Proficiency.innerHTML);
+          var SurvPro = Proficiency.value;
           if(SurvDP.checked){
             SurvPro = SurvPro *2;
           }
           if(Survp.checked){
-          Surv.value = '+'+(SurvPro + wismod);
+          Surv.value = '+'+(+SurvPro + +wismod);
           }else{
-            Surv.value = wis.value;
+            Surv.value = wismd.value;
           }
         }
 
