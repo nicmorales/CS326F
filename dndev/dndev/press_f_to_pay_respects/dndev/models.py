@@ -185,7 +185,7 @@ class Equipment(models.Model):
     copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this equipment")
     #Units: Pounds (lbs)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
-    description = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this item.")
+    descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this item.")
     capacity = models.SmallIntegerField(default= 0, help_text = "Enter the amount of this item you have before any uses.")
 
     def get_absolute_url(self):
@@ -197,7 +197,7 @@ class Equipment(models.Model):
 
 class Armor(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the armor")
-    armor_class = models.SmallIntegerField(default= 0, help_text="Enter the Armor class this armor grants.")
+    armor_bonus = models.SmallIntegerField(default= 0, help_text="Enter the Armor class this armor grants.")
     max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the Max Dex bonus for the armor.")
     is_stealth = models.BooleanField(default = False, help_text="Check if wearing the armor doesn't impose a stealth Disadvantage")
     #Units: Pounds (lbs)
