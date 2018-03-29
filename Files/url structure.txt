@@ -1,0 +1,10 @@
+File Struct:
+
+ddpall/				—index aka home page
+ddpall/	simple/ <character id>	—simple page
+ddpall/	manual/ <character id>	-manual page
+ddpall/	wiki/			-wiki home page
+ddpall/ wiki/ Classes		--Classes page
+ddpall/ wiki/ Races		--Races page
+ddpall/ wiki/ Basic Rules	--Basic Rules page
+ddpall/ wiki/ <data id>		--Generic item/stat/spell page
