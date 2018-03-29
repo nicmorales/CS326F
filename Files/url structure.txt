@@ -1,6 +1,9 @@
 File Struct:
 
-ddpall/				—index aka home page
+Dir				Info					Link/Url
+
+ddpall/				—index aka home page 			href="{% url 'index' %}"
+ddpall/ characters/ <user id>	-character page		
 ddpall/	simple/ <character id>	—simple page
 ddpall/	manual/ <character id>	-manual page
 ddpall/	wiki/			-wiki home page
