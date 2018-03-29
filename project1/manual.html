@@ -103,15 +103,17 @@
             <div class="col-md-3">
 
                 <!--proficency-->
-                <div class="row card text text-center" style="margin-top:5px ">
+                <div class="row card text text-center justify-content-center" style="margin-top:5px ">
 
                     <div class="row justify-content-center stat">
                         <h6>Proficiency</h6>
                     </div>
 
-                <div class="row justify-content-center">
-                    <p id="Proficiency">2</p>
-                </div>
+                    <div class="row justify-content-center">
+                      <div class="col6">
+                        <input id="Proficiency"  type="text" class="form-control-plaintext" value="2">
+                      </div>
+                    </div>
 
                 </div>
                 <!--STR-->
@@ -894,7 +896,9 @@
                         </div>
 
                         <div class="row justify-content-center">
-                            <p id="AC"> 16 </p>
+                          <div>
+                            <input id="AC"  type="text" class="form-control-plaintext" value="15">
+                          </div>
                         </div>
                     </div>
                     <div class="rounded col card" style=" margin-left:5px; margin-right:5px; ">
@@ -903,7 +907,9 @@
                         </div>
 
                         <div class="row justify-content-center">
-                            <p id="Init"> 11 </p>
+                          <div>
+                            <input id="Init"  type="text" class="form-control-plaintext" value="12">
+                          </div>
                         </div>
                     </div>
                     <div class="rounded col card">
@@ -912,7 +918,9 @@
                         </div>
 
                         <div class="row justify-content-center">
-                            <p id="speed"> 35 </p>
+                          <div>
+                            <input id="Speed"  type="text" class="form-control-plaintext" value="35">
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -921,11 +929,13 @@
                 <div class="row" style="margin-top:5px">
                     <div class="rounded col card" style=" margin-right:5px ">
                         <div class="row justify-content-center stat">
-                            <h6>Hit Die</h6>
+                            <h6>Max Heath</h6>
                         </div>
 
                         <div class="row justify-content-center">
-                            <p id="char-stat-cha"> 34 </p>
+                          <div>
+                            <input id="HitPoints"  type="text" class="form-control-plaintext" value="45">
+                          </div>
                         </div>
                     </div>
                     <div class="rounded col card" style=" margin-left:5px ">
@@ -934,7 +944,9 @@
                         </div>
 
                         <div class="row justify-content-center">
-                            <p id="char-stat-cha"> 5 </p>
+                          <div>
+                            <input id="TempHit"  type="text" class="form-control-plaintext" value="10">
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -1019,8 +1031,10 @@
                                 <h6>Type</h6>
                             </div>
 
-                            <div class="row justify-content-left" style="margin-left:5px;">
-                                <p id="char-stat-cha"> Long Sword </p>
+                            <div class="row justify-content-left">
+                              <div class="col-12">
+                                <input id="type"  type="text" class="form-control-plaintext text-left" value="longsword">
+                              </div>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -1029,7 +1043,9 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p id="char-stat-cha"> 1d6 </p>
+                              <div>
+                                <input id="Damage"  type="text" class="form-control-plaintext" value="1d8">
+                              </div>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -1038,7 +1054,9 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p id="char-stat-cha"> X2 </p>
+                              <div>
+                                <input id="Crit"  type="text" class="form-control-plaintext" value="x2">
+                              </div>
                             </div>
                         </div>
 
@@ -1056,24 +1074,30 @@
                         <div class="col-sm">
                             <h6>Gold</h6>
                         </div>
-                        <div class="col-sm">
-                            <p id="char-stat-cha"> 145 </p>
+                        <div class="row justify-content-center">
+                          <div>
+                            <input id="Gold"  type="text" class="form-control-plaintext" value="127">
+                          </div>
                         </div>
                     </div>
                     <div class="row justify-content-center stat container" style="margin-left:5px">
                         <div class="col-sm">
                             <h6>Silver</h6>
                         </div>
-                        <div class="col-sm">
-                            <p id="char-stat-cha"> 67 </p>
+                        <div class="row justify-content-center">
+                          <div>
+                            <input id="Silver"  type="text" class="form-control-plaintext" value="56">
+                          </div>
                         </div>
                     </div>
                     <div class="row justify-content-center stat container" style="margin-left:5px; margin-bottom:15px">
                         <div class="col-sm">
                             <h6>Copper</h6>
                         </div>
-                        <div class="col-sm">
-                            <p id="char-stat-cha"> 98 </p>
+                        <div class="row justify-content-center">
+                          <div>
+                            <input id="AC"  type="text" class="form-control-plaintext" value="15">
+                          </div>
                         </div>
                     </div>
 
@@ -1213,210 +1237,7 @@
                 </div>
             </div>
 
-            <!--Spell Slots column-->
-            <div class="container col-sm-5" style="margin-left:5px; margin-right:5px;">
-                <p class="lead text-muted">Spell Slots</p>
-                <div id="accordion2">
-                    <div class="card">
-                        <div class="card-header" id="heading21">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapse21"
-                                        aria-expanded="false" aria-controls="collapse21">
-                                    Level 1 Spell slots
-                                </button>
-                            </h5>
-                        </div>
 
-                        <div id="collapse21" class="collapse" aria-labelledby="heading21"
-                             data-parent="#accordion0">
-                            <div class="rounded card m-3">
-                                <div class="card-body">
-                                    [Empty]
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Prepare slot
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Cure light Wounds</a>
-                                        <a class="dropdown-item" href="#">Ward Against Tentacles</a>
-                                        <a class="dropdown-item" href="#">Holy Cow</a>
-                                        <a class="dropdown-item" href="#">Amen</a>
-                                        <a class="dropdown-item" href="#">Leave Empty</a>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2">Cast</a>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
-                                </div>
-
-                            </div>
-                            <div class="rounded card m-3">
-                                <div class="card-body">
-                                    [Empty]
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Prepare slot
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Cure light Wounds</a>
-                                        <a class="dropdown-item" href="#">Ward Against Tentacles</a>
-                                        <a class="dropdown-item" href="#">Holy Cow</a>
-                                        <a class="dropdown-item" href="#">Amen</a>
-                                        <a class="dropdown-item" href="#">Leave Empty</a>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2">Cast</a>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
-                                </div>
-                            </div>
-                            <div class="rounded card m-3">
-                                <div class="card-body">
-                                    [Empty]
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Prepare slot
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Cure light Wounds</a>
-                                        <a class="dropdown-item" href="#">Ward Against Tentacles</a>
-                                        <a class="dropdown-item" href="#">Holy Cow</a>
-                                        <a class="dropdown-item" href="#">Amen</a>
-                                        <a class="dropdown-item" href="#">Leave Empty</a>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2">Cast</a>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="heading22">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapse22" aria-expanded="false"
-                                        aria-controls="collapse22">
-                                    Level 2 Spell slots
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse22" class="collapse" aria-labelledby="heading22"
-                             data-parent="#accordion0">
-                            <div class="rounded card m-3">
-                                <div class="card-body">
-                                    [Empty]
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Prepare slot
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Cure light Wounds</a>
-                                        <a class="dropdown-item" href="#">Ward Against Tentacles</a>
-                                        <a class="dropdown-item" href="#">Holy Cow</a>
-                                        <a class="dropdown-item" href="#">Amen</a>
-                                        <a class="dropdown-item" href="#">Leave Empty</a>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2">Cast</a>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
-                                </div>
-                            </div>
-                            <div class="rounded card m-3">
-                                <div class="card-body">
-                                    [Empty]
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Prepare slot
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Cure light Wounds</a>
-                                        <a class="dropdown-item" href="#">Ward Against Tentacles</a>
-                                        <a class="dropdown-item" href="#">Holy Cow</a>
-                                        <a class="dropdown-item" href="#">Amen</a>
-                                        <a class="dropdown-item" href="#">Leave Empty</a>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2">Cast</a>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="heading23">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapse23" aria-expanded="false"
-                                        aria-controls="collapse23">
-                                    Level 3 Spell slots
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse23" class="collapse" aria-labelledby="heading23"
-                             data-parent="#accordion0">
-                            <div class="rounded card m-3">
-                                <div class="card-body">
-                                    [Empty]
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Prepare slot
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Cure light Wounds</a>
-                                        <a class="dropdown-item" href="#">Ward Against Tentacles</a>
-                                        <a class="dropdown-item" href="#">Holy Cow</a>
-                                        <a class="dropdown-item" href="#">Amen</a>
-                                        <a class="dropdown-item" href="#">Leave Empty</a>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2">Cast</a>
-                                </div>
-                                <div class="col-4">
-                                    <a href="#" class="btn btn-secondary my-2"> Undo Cast</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div><!--container-->
 
 </main>
 
