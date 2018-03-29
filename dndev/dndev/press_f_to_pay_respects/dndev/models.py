@@ -7,11 +7,9 @@ Things to ask Alan:
 
 from django.db import models
 
-from django.urls import reverse
-
 # Create your models here.
 
-    
+
 class Character(models.Model):
     name = models.CharField( default = '', max_length = 30, help_text = "Enter a name for your character")
     level = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the level your character")
@@ -39,7 +37,7 @@ class Character(models.Model):
     gold = models.IntegerField(default=0, help_text="Enter the gold of the character")
     silver = models.IntegerField(default=0, help_text="Enter the gold of the character")
     copper = models.IntegerField(default=0, help_text="Enter the gold of the character")
-    
+
     # In tuple: First field is the value that gets saved in the database, Second is the one the human sees
     ALIGNMENT_CHOICES = (
         ('LG', 'Lawful Good'),
@@ -65,7 +63,7 @@ class Race(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this race")
     description = models.CharField(default = '', max_length = 5000, help_text = "Enter a description of this race (backstory, beliefs, etc.)")
     speed = models.SmallIntegerField(default=0, help_text="Enter the speed for this race")
-    # Only applied once at character creation, will use a JS parser (or something) to parse the raw string (format of string is JSON) 
+    # Only applied once at character creation, will use a JS parser (or something) to parse the raw string (format of string is JSON)
     # object and apply the mods to the characters stats
     modifiers = models.CharField(default = '', max_length = 20, help_text = "Enter the stats modifiers in JSON format. Ex: {\"str\": 2, \"dex\": 8}")
 
@@ -97,7 +95,7 @@ class SubraceFeatures(models.Model):
 
 class CharacterClass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class")
-    description = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
+    descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
     hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hit points for this character")
     skill_proficiency_limit = models.PositiveSmallIntegerField(default = 5, help_text = "Enter the max amount of skills this class can be proficient in")
 
@@ -118,7 +116,7 @@ class CharacterClassFeatures(models.Model):
 
 class CharacterSubclass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this Subclass")
-    description = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this Subclass")
+    descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this Subclass")
     parent_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null=True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this Subclass")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this subclass relative to the other subclasses available for this class.")
@@ -143,7 +141,7 @@ class Spells(models.Model):
     required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
     component_1 = models.CharField(default = "", max_length = 10000, help_text = "Enter the first component to cast this spell in JSON format.")
     component_2 = models.CharField(default = "", max_length = 10000, help_text = "Enter the second component to cast this spell in JSON format.")
-   
+
     SCHOOL_CHOICES = (
         ('ab', 'Abjuration'),
         ('co', 'Conjuration'),
@@ -170,12 +168,12 @@ class Feat(models.Model):
     dexterity = models.SmallIntegerField(default= 0, help_text="Enter the modification to the dexterity stat.")
     constitution = models.SmallIntegerField(default= 0, help_text="Enter the modification to the constitution stat.")
     intelligence = models.SmallIntegerField(default= 0, help_text="Enter the modification to the intelligence stat.")
-    wisdom = models.SmallIntegerField(default= 0, help_text="Enter the modification to the wisdom stat.")
+    wisdowm = models.SmallIntegerField(default= 0, help_text="Enter the modification to the wisdom stat.")
     charisma = models.SmallIntegerField(default= 0, help_text="Enter the modification to the charisma stat.")
 
 class CharacterClassStartingEquipment(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null=True)
-    amount = models.SmallIntegerField(default= 2, null=True, help_text="Enter the number of starting items this class starts with") 
+    amount = models.SmallIntegerField(default= 2, null=True, help_text="Enter the number of starting items this class starts with")
     items = models.CharField(default = '', max_length = 1000, help_text = "Enter a list of the items in JSON format. Ex: {\"item_1\": \"Spatula\", \"item_2\": \"Dishsoap\"}")
 
 class Equipment(models.Model):
@@ -188,18 +186,11 @@ class Equipment(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this item.")
     capacity = models.SmallIntegerField(default= 0, help_text = "Enter the amount of this item you have before any uses.")
 
-    def get_absolute_url(self):
-        """
-        Returns the url to access a detail record for this equipment.
-        """
-        return reverse('equipment-detail', args=[str(self.name)])
-
-
 class Armor(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the armor")
-    armor_bonus = models.SmallIntegerField(default= 0, help_text="Enter the Armor class this armor grants.")
-    max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the Max Dex bonus for the armor.")
-    is_stealth = models.BooleanField(default = False, help_text="Check if wearing the armor doesn't impose a stealth Disadvantage")
+    armor_bonus = models.SmallIntegerField(default= 0, help_text="Enter the armor bonus for this item in pounds.")
+    max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
+    is_stealth = models.BooleanField(default = False, help_text="Alan put something here :^)")
     #Units: Pounds (lbs)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
     gold = models.IntegerField(default=0, help_text="Enter the gold-price component for this armor")
@@ -207,12 +198,6 @@ class Armor(models.Model):
     copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this armor")
     required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
     required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
-
-    def get_absolute_url(self):
-        """
-        Returns the url to access a detail record for this armor.
-        """
-        return reverse('armor-detail', args=[str(self.name)])
 
 class Weapon(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this weapon")
