@@ -1,3 +1,38 @@
 from django.shortcuts import render
 
 # Create your views here.
+from .models import *
+
+def home(request):
+    """
+    View function for home page of site.
+    """
+    # Generate counts of some of the main objects
+    num_armors=Armor.objects.all().count()
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(
+        request,
+        'home.html',
+        context={'num_armors':num_armors},
+    )
+
+from django.views import generic
+
+class ArmorListView(generic.ListView):
+    model = Armor
+
+class ArmorDetailView(generic.DetailView):
+    model = Armor
+
+class ClassListView(generic.ListView):
+    model = CharacterClass
+
+class ClassDetailView(generic.DetailView):
+    model = CharacterClass
+
+class EquipmentListView(generic.ListView):
+    model = Equipment
+
+class EquipmentDetailView(generic.DetailView):
+    model = Equipment
