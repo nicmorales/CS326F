@@ -9,10 +9,6 @@ from django.db import models
 
 # Create your models here.
 
-class Money(models.Model):
-    gold = models.BigIntegerField(default = 0, help_text=  "Enter the amount of gold for this character or item")
-    silver = models.BigIntegerField(default = 0, help_text=  "Enter the amount of silver for this character or item")
-    copper = models.BigIntegerField(default = 0, help_text=  "Enter the amount of copper for this character or item")
     
 class Character(models.Model):
     name = models.CharField( default = '', max_length = 30, help_text = "Enter a name for your character")
@@ -20,7 +16,27 @@ class Character(models.Model):
     race = models.ForeignKey('Race', on_delete=models.SET_NULL, null = True)
     subrace = models.ForeignKey('Subrace', on_delete=models.SET_NULL, null = True)
     character_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)
-    character_money = models.OneToOneField('Money', on_delete=models.SET_NULL, null = True)
+
+    armor_class = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the armor class for your character")
+    initiative = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the armor class for your character")
+    speed = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the speed for your character")
+    max_hit = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the max hitpoints for your character")
+    temp_hit = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the temporary hitpoints for your character")
+    profeciencies = models.CharField( default = '', max_length = 30, help_text = "Enter the list of proficiencies for this character in JSON format.")  
+
+
+    strength = models.SmallIntegerField(default= 0, help_text="Enter the strength state for your character.")
+    dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity state for your character.")
+    constitution = models.SmallIntegerField(default= 0, help_text="Enter the constitution state for your character.")
+    intelligence = models.SmallIntegerField(default= 0, help_text="Enter the intelligence state for your character.")
+    wisdowm = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
+    charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
+
+    weapon = models.ForeignKey('Weapon', on_delete=models.SET_NULL, null = True)
+
+    gold = models.IntegerField(default=0, help_text="Enter the gold of the character")
+    silver = models.IntegerField(default=0, help_text="Enter the gold of the character")
+    copper = models.IntegerField(default=0, help_text="Enter the gold of the character")
     
     # In tuple: First field is the value that gets saved in the database, Second is the one the human sees
     ALIGNMENT_CHOICES = (
@@ -51,6 +67,7 @@ class Race(models.Model):
     # object and apply the mods to the characters stats
     modifiers = models.CharField(default = '', max_length = 20, help_text = "Enter the stats modifiers in JSON format. Ex: {\"str\": 2, \"dex\": 8}")
 
+
     def __str__(self):
         return self.name
 
@@ -72,6 +89,9 @@ class Subrace(models.Model):
 class SubraceFeatures(models.Model):
     subrace = models.ForeignKey('Subrace', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
+    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this feature")
+    models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
+    description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description for these features")
 
 class CharacterClass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class")
@@ -90,7 +110,7 @@ class CharacterClassSpellList(models.Model):
 
 class CharacterClassFeatures(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class feature")
-    race = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
+    character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this feature; i.e. what this feature does")
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
 
@@ -158,7 +178,9 @@ class CharacterClassStartingEquipment(models.Model):
 
 class Equipment(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the equipment")
-    price = models.OneToOneField('Money', on_delete=models.SET_NULL, null = True)
+    gold = models.IntegerField(default=0, help_text="Enter the gold-price component for this equipment")
+    silver = models.IntegerField(default=0, help_text="Enter the silver-price component for this equipment")
+    copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this equipment")
     #Units: Pounds (lbs)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this item.")
@@ -166,17 +188,23 @@ class Equipment(models.Model):
 
 class Armor(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the armor")
-    armor_class = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
+    armor_bonus = models.SmallIntegerField(default= 0, help_text="Enter the armor bonus for this item in pounds.")
     max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
     is_stealth = models.BooleanField(default = False, help_text="Alan put something here :^)")
     #Units: Pounds (lbs)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
-    cost = models.OneToOneField('Money', on_delete=models.SET_NULL, null = True)
+    gold = models.IntegerField(default=0, help_text="Enter the gold-price component for this armor")
+    silver = models.IntegerField(default=0, help_text="Enter the silver-price component for this armor")
+    copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this armor")
+    required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
     required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
 
 class Weapon(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this weapon")
-    cost = models.OneToOneField('Money', on_delete=models.SET_NULL, null = True)
+    gold = models.IntegerField(default=0, help_text="Enter the gold-price component for this weapon")
+    silver = models.IntegerField(default=0, help_text="Enter the silver-price component for this weapon")
+    copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this weapon")
+
     damage = models.PositiveIntegerField(default=1, help_text="The base hit point damage of this weapon.")
 
     DAMAGE_TYPE_CHOICES = (
