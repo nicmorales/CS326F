@@ -119,229 +119,379 @@ var Proficiency = document.getElementById('Proficiency');
 
 
 /*Skills*/
-  /*cahnges the Acrobatics skill on click*/
-  document.getElementById("AcroP").onclick = function() {updateAcro()};
-    var Acrobatics = document.getElementById('Acro');
-    var Acrobaticsp = document.getElementById('AcroP');
-    function updateAcro(){
-      if(Acrobaticsp.checked){
-      Acrobatics.value = '+'+(parseInt(Proficiency.innerHTML) + dexmod);
-      }else{
-        Acrobatics.value = dexmd.value;
+
+    /*cahnges the Acrobatics skill on click*/
+    document.getElementById("AcroP").onclick = function() {updateAcro()};
+      var Acro = document.getElementById('Acro');
+      var Acrop = document.getElementById('AcroP');
+      function updateAcro(){
+        var AcroPro = parseInt(Proficiency.innerHTML);
+        if(AcroDP.checked){
+          AcroPro = AcroPro *2;
+        }
+        if(Acrop.checked){
+          Acro.value = '+'+(AcroPro + dexmod);
+        }else{
+          Acro.value = dex.value;
+        }
       }
+
+    /*cahnges the Animal Handling skill on click*/
+    document.getElementById("AnimP").onclick = function() {updateAnim()};
+      var Anim = document.getElementById('Anim');
+      var Animp = document.getElementById('AnimP');
+      function updateAnim(){
+        var AnimPro = parseInt(Proficiency.innerHTML);
+        if(AnimDP.checked){
+          AnimPro = AnimPro *2;
+        }
+        if(Animp.checked){
+          Anim.value = '+'+(AnimPro + wismod);
+        }else{
+          Anim.value = wis.value;
+        }
     }
 
-  /*cahnges the AnimalH skill on click*/
-  document.getElementById("AnimP").onclick = function() {updateAnim()};
-    var AnimalH = document.getElementById('Anim');
-    var AnimalHp = document.getElementById('AnimP');
-    function updateAnim(){
-      if(AnimalHp.checked){
-      AnimalH.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
-      }else{
-        AnimalH.value = wismd.value;
-      }
+    /*cahnges the Arcana skill on click*/
+    document.getElementById("ArcaP").onclick = function() {updateArca()};
+      var Arca = document.getElementById('Arca');
+      var Arcap = document.getElementById('ArcaP');
+      function updateArca(){
+        var ArcaPro = parseInt(Proficiency.innerHTML);
+        if(ArcaDP.checked){
+          ArcaPro = ArcaPro *2;
+        }
+        if(Arcap.checked){
+          Arca.value = '+'+(ArcaPro + intmod);
+        }else{
+          Arca.value = int.value;
+        }
     }
 
-  /*cahnges the Arcana skill on click*/
-  document.getElementById("ArcaP").onclick = function() {updateArca()};
-    var Arcana = document.getElementById('Arca');
-    var Arcanap = document.getElementById('ArcaP');
-    function updateArca(){
-      if(Arcanap.checked){
-      Arcana.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
-      }else{
-        Arcana.value = intmd.value;
+    /*cahnges the Athletics skill on click*/
+    document.getElementById("AthlP").onclick = function() {updateAthl()};
+      var Athl = document.getElementById('Athl');
+      var Athlp = document.getElementById('AthlP');
+      function updateAthl(){
+        var AthlPro = parseInt(Proficiency.innerHTML);
+        if(AthlDP.checked){
+          AthlPro = AthlPro *2;
+        }
+        if(Athlp.checked){
+          Athl.value = '+'+(AthlPro + strmod);
+        }else{
+          Athl.value = str.value;
+        }
       }
+
+    /*cahnges the Deception skill on click*/
+    document.getElementById("DeceP").onclick = function() {updateDece()};
+      var Dece = document.getElementById('Dece');
+      var Decep = document.getElementById('DeceP');
+      function updateDece(){
+        var DecePro = parseInt(Proficiency.innerHTML);
+        if(DeceDP.checked){
+          DecePro = DecePro *2;
+        }
+        if(Decep.checked){
+          Dece.value = '+'+(DecePro + chrmod);
+        }else{
+          Dece.value = chr.value;
+        }
+      }
+
+    /*cahnges the History skill on click*/
+    document.getElementById("HistP").onclick = function() {updateHist()};
+      var Hist = document.getElementById('Hist');
+      var Histp = document.getElementById('HistP');
+      function updateHist(){
+        var HistPro = parseInt(Proficiency.innerHTML);
+        if(HistDP.checked){
+          HistPro = HistPro *2;
+        }
+        if(Histp.checked){
+          Hist.value = '+'+(HistPro + intmod);
+        }else{
+          Hist.value = int.value;
+        }
     }
 
-  /*cahnges the athlectics skill on click*/
-  document.getElementById("AthlP").onclick = function() {updateAthl()};
-    var Athletics = document.getElementById('Athl');
-    var Athleticsp = document.getElementById('AthlP');
-    function updateAthl(){
-      if(Athleticsp.checked){
-      Athletics.value = '+'+(parseInt(Proficiency.innerHTML) + strmod);
-      }else{
-        Athletics.value = strmd.value;
+    /*cahnges the Insight skill on click*/
+    document.getElementById("InsiP").onclick = function() {updateInsi()};
+      var Insi = document.getElementById('Insi');
+      var Insip = document.getElementById('InsiP');
+      function updateInsi(){
+        var InsiPro = parseInt(Proficiency.innerHTML);
+        if(InsiDP.checked){
+          InsiPro = InsiPro *2;
+        }
+        if(Insip.checked){
+          Insi.value = '+'+(InsiPro + wismod);
+        }else{
+          Insi.value = wis.value;
+        }
       }
+
+    /*cahnges the Intimidation skill on click*/
+    document.getElementById("IntiP").onclick = function() {updateInti()};
+      var Inti = document.getElementById('Inti');
+      var Intip = document.getElementById('IntiP');
+      function updateInti(){
+        var IntiPro = parseInt(Proficiency.innerHTML);
+        if(IntiDP.checked){
+          IntiPro = IntiPro *2;
+        }
+        if(Intip.checked){
+          Inti.value = '+'+(IntiPro + chrmod);
+        }else{
+          Inti.value = chr.value;
+        }
+      }
+
+    /*cahnges the Investigation skill on click*/
+    document.getElementById("InveP").onclick = function() {updateInve()};
+      var Inve = document.getElementById('Inve');
+      var Invep = document.getElementById('InveP');
+      function updateInve(){
+        var InvePro = parseInt(Proficiency.innerHTML);
+        if(InveDP.checked){
+          InvePro = InvePro *2;
+        }
+        if(Invep.checked){
+          Inve.value = '+'+(InvePro + intmod);
+        }else{
+          Inve.value = int.value;
+        }
     }
 
-  /*cahnges the Deception skill on click*/
-  document.getElementById("DeceP").onclick = function() {updateDece()};
-    var Deception = document.getElementById('Dece');
-    var Deceptionp = document.getElementById('DeceP');
-    function updateDece(){
-      if(Deceptionp.checked){
-      Deception.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
-      }else{
-        Deception.value = chrmd.value;
-      }
+    /*cahnges the Medicine skill on click*/
+    document.getElementById("MediP").onclick = function() {updateMedi()};
+      var Medi = document.getElementById('Medi');
+      var Medip = document.getElementById('MediP');
+      function updateMedi(){
+        var MediPro = parseInt(Proficiency.innerHTML);
+        if(MediDP.checked){
+          MediPro = MediPro *2;
+        }
+        if(Medip.checked){
+          Medi.value = '+'+(MediPro + wismod);
+        }else{
+          Medi.value = wis.value;
+        }
     }
 
-  /*cahnges the History skill on click*/
-  document.getElementById("HistP").onclick = function() {updateHist()};
-    var Histor = document.getElementById('Hist');
-    var Historyp = document.getElementById('HistP');
-    function updateHist(){
-      if(Historyp.checked){
-      Histor.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
-      }else{
-        Histor.value = intmd.value;
+    /*cahnges the Nature skill on click*/
+    document.getElementById("NatuP").onclick = function() {updateNatu()};
+      var Natu = document.getElementById('Natu');
+      var Natup = document.getElementById('NatuP');
+      function updateNatu(){
+        var NatuPro = parseInt(Proficiency.innerHTML);
+        if(NatuDP.checked){
+          NatuPro = NatuPro *2;
+        }
+        if(Natup.checked){
+          Natu.value = '+'+(NatuPro + intmod);
+        }else{
+          Natu.value = int.value;
+        }
       }
-    }
 
-  /*cahnges the Insight skill on click*/
-  document.getElementById("InsiP").onclick = function() {updateInsi()};
-    var Insight = document.getElementById('Insi');
-    var Insightp = document.getElementById('InsiP');
-    function updateInsi(){
-      if(Insightp.checked){
-      Insight.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
+    /*cahnges the Perseption skill on click*/
+    document.getElementById("PercP").onclick = function() {updatePerc()};
+      var Perc = document.getElementById('Perc');
+      var Percp = document.getElementById('PercP');
+      function updatePerc(){
+        var PercPro = parseInt(Proficiency.innerHTML);
+        if(PercDP.checked){
+          PercPro = PercPro *2;
+        }
+        if(Percp.checked){
+          Perc.value = '+'+(PercPro + wismod);
       }else{
-        Insight.value = wismd.value;
+        Perc.value = wis.value;
+        }
       }
-    }
 
-  /*cahnges the Intimidation skill on click*/
-  document.getElementById("IntiP").onclick = function() {updateInti()};
-    var Intimidation = document.getElementById('Inti');
-    var Intimidationp = document.getElementById('IntiP');
-    function updateInti(){
-      if(Intimidationp.checked){
-      Intimidation.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
-      }else{
-        Intimidation.value = chrmd.value;
+    /*cahnges the performance skill on click*/
+    document.getElementById("PerfP").onclick = function() {updatePerf()};
+      var Perf = document.getElementById('Perf');
+      var Perfp = document.getElementById('PerfP');
+      function updatePerf(){
+        var PerfPro = parseInt(Proficiency.innerHTML);
+        if(PerfDP.checked){
+          PerfPro = PerfPro *2;
+        }
+        if(Perfp.checked){
+          Perf.value = '+'+(PerfPro + chrmod);
+        }else{
+          Perf.value = chr.value;
+        }
       }
-    }
-
-  /*cahnges the Investigation skill on click*/
-  document.getElementById("InveP").onclick = function() {updateInve()};
-    var Investigation = document.getElementById('Inve');
-    var Investigationp = document.getElementById('InveP');
-    function updateInve(){
-      if(Investigationp.checked){
-      Investigation.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
-      }else{
-        Investigation.value = intmd.value;
-      }
-    }
-
-  /*cahnges the Medicine skill on click*/
-  document.getElementById("MediP").onclick = function() {updateMedi()};
-    var Medicine = document.getElementById('Medi');
-    var Medicinep = document.getElementById('MediP');
-    function updateMedi(){
-      if(Medicinep.checked){
-      Medicine.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
-      }else{
-        Medicine.value = wismd.value;
-      }
-    }
-
-  /*cahnges the Nature skill on click*/
-  document.getElementById("NatuP").onclick = function() {updateNatu()};
-    var Nature = document.getElementById('Natu');
-    var Naturep = document.getElementById('NatuP');
-    function updateNatu(){
-      if(Naturep.checked){
-      Nature.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
-      }else{
-        Nature.value = intmd.value;
-      }
-    }
-
-  /*cahnges the Perseption skill on click*/
-  document.getElementById("PercP").onclick = function() {updatePerc()};
-    var Perseption = document.getElementById('Perc');
-    var Perseptionp = document.getElementById('PercP');
-    function updatePerc(){
-      if(Perseptionp.checked){
-      Perseption.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
-      }else{
-        Perseption.value = wismd.value;
-      }
-    }
-
-  /*cahnges the Performance skill on click*/
-  document.getElementById("PerfP").onclick = function() {updatePerf()};
-    var Performanc = document.getElementById('Perf');
-    var Performancep = document.getElementById('PerfP');
-    function updatePerf(){
-      if(Performancep.checked){
-      Performanc.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
-      }else{
-        Performanc.value = chrmd.value;
-      }
-    }
 
     /*cahnges the Persuation skill on click*/
     document.getElementById("PersP").onclick = function() {updatePers()};
-      var Persuation = document.getElementById('Pers');
-      var Persuationp = document.getElementById('PersP');
-      function updatePers(){
-        if(Persuationp.checked){
-        Persuation.value = '+'+(parseInt(Proficiency.innerHTML) + chrmod);
-        }else{
-          Persuation.value = chrmd.value;
-        }
+      var Pers = document.getElementById('Pers');
+      var Persp = document.getElementById('PersP');
+        function updatePers(){
+          var PersPro = parseInt(Proficiency.innerHTML);
+          if(PersDP.checked){
+            PersPro = PersPro *2;
+          }
+          if(Persp.checked){
+            Pers.value = '+'+(PersPro + chrmod);
+          }else{
+            Pers.value = chr.value;
+          }
       }
 
     /*cahnges the Religion skill on click*/
     document.getElementById("ReliP").onclick = function() {updateReli()};
-      var Religion = document.getElementById('Reli');
-      var Religionp = document.getElementById('ReliP');
+      var Reli = document.getElementById('Reli');
+      var Relip = document.getElementById('ReliP');
       function updateReli(){
-        if(Religionp.checked){
-        Religion.value = '+'+(parseInt(Proficiency.innerHTML) + intmod);
+        var ReliPro = parseInt(Proficiency.innerHTML);
+        if(ReliDP.checked){
+          ReliPro = ReliPro *2;
+        }
+        if(Relip.checked){
+          Reli.value = '+'+(ReliPro + intmod);
         }else{
-          Religion.value = intmd.value;
+          Reli.value = int.value;
         }
       }
 
-    /*cahnges the Sleight_of_Hand skill on click*/
+    /*cahnges the Sleight of Hands skill on click*/
     document.getElementById("SleiP").onclick = function() {updateSlei()};
-      var Sleight_of_Hand = document.getElementById('Slei');
-      var Sleight_of_Handp = document.getElementById('SleiP');
-      function updateSlei(){
-        if(Sleight_of_Handp.checked){
-        Sleight_of_Hand.value = '+'+(parseInt(Proficiency.innerHTML) + dexmod);
-        }else{
-          Sleight_of_Hand.value = dexmd.value;
-        }
+      var Slei = document.getElementById('Slei');
+      var Sleip = document.getElementById('SleiP');
+        function updateSlei(){
+          var SleiPro = parseInt(Proficiency.innerHTML);
+          if(SleiDP.checked){
+            SleiPro = SleiPro *2;
+          }
+          if(Sleip.checked){
+            Slei.value = '+'+(SleiPro + dexmod);
+          }else{
+            Slei.value = dex.value;
+          }
       }
 
     /*cahnges the Stealth skill on click*/
     document.getElementById("SteaP").onclick = function() {updateStea()};
-      var Stealth = document.getElementById('Stea');
-      var Stealthp = document.getElementById('SteaP');
+      var Stea = document.getElementById('Stea');
+      var Steap = document.getElementById('SteaP');
       function updateStea(){
-        if(Stealthp.checked){
-        Stealth.value = '+'+(parseInt(Proficiency.innerHTML) + dexmod);
+        var SteaPro = parseInt(Proficiency.innerHTML);
+        if(SteaDP.checked){
+          SteaPro = SteaPro *2;
+        }
+        if(Steap.checked){
+          Stea.value = '+'+(SteaPro + dexmod);
         }else{
-          Stealth.value = dexmd.value;
+          Stea.value = dex.value;
         }
       }
 
-  /*cahnges the Survival skill on click*/
-  document.getElementById("SurvP").onclick = function() {updateSurv()};
-    var Survival = document.getElementById('Surv');
-    var Survivalp = document.getElementById('SurvP');
-    function updateSurv(){
-      if(Survivalp.checked){
-      Survival.value = '+'+(parseInt(Proficiency.innerHTML) + wismod);
-      }else{
-        Survival.value = wismd.value;
-      }
-    }
-
-/*double Proficiency buttin and the like */
-
-document.getElementById("dp").onclick = function() {setDP()};
-
-function setDP()
+      /*cahnges the Survival skill on click*/
+      document.getElementById("SurvP").onclick = function() {updateSurv()};
+        var Surv = document.getElementById('Surv');
+        var Survp = document.getElementById('SurvP');
+        function updateSurv(){
+          var SurvPro = parseInt(Proficiency.innerHTML);
+          if(SurvDP.checked){
+            SurvPro = SurvPro *2;
+          }
+          if(Survp.checked){
+          Surv.value = '+'+(SurvPro + wismod);
+          }else{
+            Surv.value = wis.value;
+          }
+        }
 
 
+    /*double proficency modal things*/
 
+    // Get the modal
+var modal = document.getElementById('myModal');
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
 }
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+/*sets the skills to use double proficency*/
+
+document.getElementById("AcroDP").onclick = function() {updateAcro()};
+var AcroDP = document.getElementById('AcroDP');
+
+document.getElementById("AnimDP").onclick = function() {updateAnim()};
+var AnimDP = document.getElementById('AnimDP');
+
+document.getElementById("ArcaDP").onclick = function() {updateArca()};
+var ArcaDP = document.getElementById('ArcaDP');
+
+document.getElementById("AthlDP").onclick = function() {updateAthl()};
+var AthlDP = document.getElementById('AthlDP');
+
+document.getElementById("DeceDP").onclick = function() {updateDece()};
+var DeceDP = document.getElementById('DeceDP');
+
+document.getElementById("HistDP").onclick = function() {updateHist()};
+var HistDP = document.getElementById('HistDP');
+
+document.getElementById("InsiDP").onclick = function() {updateInsi()};
+var InsiDP = document.getElementById('InsiDP');
+
+document.getElementById("IntiDP").onclick = function() {updateInti()};
+var IntiDP = document.getElementById('IntiDP');
+
+document.getElementById("InveDP").onclick = function() {updateInve()};
+var InveDP = document.getElementById('InveDP');
+
+document.getElementById("MediDP").onclick = function() {updateMedi()};
+var MediDP = document.getElementById('MediDP');
+
+document.getElementById("NatuDP").onclick = function() {updateNatu()};
+var NatuDP = document.getElementById('NatuDP');
+
+document.getElementById("PercDP").onclick = function() {updatePerc()};
+var PercDP = document.getElementById('PercDP');
+
+document.getElementById("PerfDP").onclick = function() {updatePerf()};
+var PerfDP = document.getElementById('PerfDP');
+
+document.getElementById("PersDP").onclick = function() {updatePers()};
+var PersDP = document.getElementById('PersDP');
+
+document.getElementById("ReliDP").onclick = function() {updateReli()};
+var ReliDP = document.getElementById('ReliDP');
+
+document.getElementById("SleiDP").onclick = function() {updateSlei()};
+var SleiDP = document.getElementById('SleiDP');
+
+document.getElementById("SteaDP").onclick = function() {updateStea()};
+var SteaDP = document.getElementById('SteaDP');
+
+document.getElementById("SurvDP").onclick = function() {updateSurv()};
+var SurvDP = document.getElementById('SurvDP');
+
+
+/*other shit mabey*/
