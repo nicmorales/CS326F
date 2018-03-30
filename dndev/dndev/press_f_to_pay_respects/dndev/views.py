@@ -17,7 +17,23 @@ def home(request):
         context={'num_armors':num_armors},
     )
 
+
+def simple(request):
+    """
+    View function for simple page of site.
+    """
+    # Generate data needed for page
+
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(
+        request,
+        'simple.html',
+    )
+
 from django.views import generic
+
+
 
 class ArmorListView(generic.ListView):
     model = Armor
