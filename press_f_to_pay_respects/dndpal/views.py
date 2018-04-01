@@ -61,3 +61,9 @@ class RaceListView(generic.ListView):
 
 class RaceDetailView(generic.DetailView):
     model = Race
+
+    def get_context_data(self, **kwargs):
+        context = super(RaceDetailView, self).get_context_data(**kwargs)
+        context['raceFeatures'] = RaceFeatures.objects.all()
+        context['subrace'] = Subrace.objects.all()
+        return context
