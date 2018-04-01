@@ -7,6 +7,8 @@ Things to ask Alan:
 
 from django.db import models
 
+from django.urls import reverse #Used to generate URLs by reversing the URL patterns
+
 # Create your models here.
 
 
@@ -59,6 +61,12 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this Character.
+        """
+        return reverse('book-detail', args=[str(self.name)])
+
 class Race(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this race")
     description = models.CharField(default = '', max_length = 5000, help_text = "Enter a description of this race (backstory, beliefs, etc.)")
@@ -70,6 +78,12 @@ class Race(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this Race.
+        """
+        return reverse('race-detail', args=[str(self.name)])
 
 class RaceFeatures(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this race feature")
@@ -102,6 +116,12 @@ class CharacterClass(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this class.
+        """
+        return reverse('book-detail', args=[str(self.name)])
 
 class CharacterClassSpellList(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
@@ -156,6 +176,12 @@ class Spells(models.Model):
 
     school = models.CharField(max_length = 2, choices = SCHOOL_CHOICES, default = 'ab')
 
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this spell.
+        """
+        return reverse('book-detail', args=[str(self.name)])
+
 class FeatRanking(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the feat ranking")
     required_level = required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
@@ -170,6 +196,12 @@ class Feat(models.Model):
     intelligence = models.SmallIntegerField(default= 0, help_text="Enter the modification to the intelligence stat.")
     wisdowm = models.SmallIntegerField(default= 0, help_text="Enter the modification to the wisdom stat.")
     charisma = models.SmallIntegerField(default= 0, help_text="Enter the modification to the charisma stat.")
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this feat.
+        """
+        return reverse('book-detail', args=[str(self.name)])
 
 class CharacterClassStartingEquipment(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null=True)
@@ -186,6 +218,12 @@ class Equipment(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this item.")
     capacity = models.SmallIntegerField(default= 0, help_text = "Enter the amount of this item you have before any uses.")
 
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this equipment.
+        """
+        return reverse('equipment-detail', args=[str(self.name)])
+
 class Armor(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the armor")
     armor_bonus = models.SmallIntegerField(default= 0, help_text="Enter the armor bonus for this item in pounds.")
@@ -198,6 +236,12 @@ class Armor(models.Model):
     copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this armor")
     required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
     required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this armor.
+        """
+        return reverse('armor-detail', args=[str(self.name)])
 
 class Weapon(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this weapon")
@@ -227,6 +271,12 @@ class Weapon(models.Model):
     range = models.PositiveIntegerField(default = 10, help_text = "Enter the range of the weapon in feet.")
     #Unit: Pounds (lb)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a detail record for this weapon.
+        """
+        return reverse('book-detail', args=[str(self.name)])
 
     
 class Properties(models.Model):

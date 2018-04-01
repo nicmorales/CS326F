@@ -11,5 +11,7 @@ urlpatterns = [
     path('class/<str:pk>', views.ClassDetailView.as_view(), name='class-detail'),
     path('equipment/', views.EquipmentListView.as_view(), name='equipment'),
     path('equipment/<str:pk>', views.EquipmentDetailView.as_view(), name='equipment-detail'),
+    path('racees/', views.RaceListView.as_view(), name='races'),
+    path('race/<str:pk>', views.RaceDetailView.as_view(), name='race-detail'),
 
 ]

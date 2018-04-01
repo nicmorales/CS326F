@@ -52,3 +52,9 @@ class EquipmentListView(generic.ListView):
 
 class EquipmentDetailView(generic.DetailView):
     model = Equipment
+
+class RaceListView(generic.ListView):
+    model = Race
+
+class RaceDetailView(generic.DetailView):
+    model = Race
