@@ -1,0 +1,131 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<main role="main" class="container">
+    <div class="container card m-4" style="margin-top:10px;">
+
+        <!-- Name -->
+        <div class="row  m-4" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md">
+
+                <h1>{{spells.name}}</h1>
+                <hr>
+
+
+            </div>
+
+        </div>
+
+        <!-- Everything under Name -->
+        <div class="pb-2" style="margin-left: 55px;">
+
+            <div class="row mb-4" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-xl-8">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Spell level</th>
+                            <th scope="col">School</th>
+                            <th scope="col">Casting Time</th>
+                            <th scope="col">Range</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Components</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1st level</td>
+                            <td>{{spells.school}} Spell</td>
+                            <td>{{spells.cast_time}}</td>
+                            <td>{{spells.range}}</td>
+                            <td>Instantaneous</td>
+                            <td>Visual, Somatic</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="row my-4" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-xl-8">
+
+                    <h4>Description:</h4>
+                    <hr>
+                    <h6>A creature you touch regains a number of hit points equal to <u>[1d8 + your spellcasting ability modifier]</u>. <br>This spell has no effect on undead or constructs.
+                        <br><br>
+                        At Higher Levels: <br>When you cast this spell using a spell slot of 2nd level or higher, the healing increases by <u>[1d8]</u> for each slot level above 1st.
+                    </h6>
+
+
+                </div>
+
+            </div>
+
+            <div class="row my-4" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-xl-8">
+
+                    <h4>Spell rankings sorted by class:</h4>
+                    <hr>
+
+                    <div class="card col-xl-10 p-3 my-3">
+
+                        <h4>Bard:</h4>
+                        <hr>
+
+                        <h6 class="pl-3">
+                            [Insert rant from a handbook about how good/bad this is for the class]
+                        </h6>
+                    </div>
+                    <div class="card col-xl-10 p-3 my-3">
+
+                        <h4>Cleric:</h4>
+                        <hr>
+
+                        <h6 class="pl-3">
+                            [Insert rant from a handbook about how good/bad this is for the class]
+                        </h6>
+                    </div>
+                    <div class="card col-xl-10 p-3 my-3">
+
+                        <h4>Druid:</h4>
+                        <hr>
+
+                        <h6 class="pl-3">
+                            [Insert rant from a handbook about how good/bad this is for the class]
+                        </h6>
+                    </div>
+                    <div class="card col-xl-10 p-3 my-3">
+
+                        <h4>Paladin:</h4>
+                        <hr>
+
+                        <h6 class="pl-3">
+                            [Insert rant from a handbook about how good/bad this is for the class]
+                        </h6>
+                    </div>
+                    <div class="card col-xl-10 p-3 my-3">
+
+                        <h4>Ranger:</h4>
+                        <hr>
+
+                        <h6 class="pl-3">
+                            [Insert rant from a handbook about how good/bad this is for the class]
+                        </h6>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Main container-->
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<main role="main" class="container">
+    <div class="container card p-5" style="margin-top:10px;">
+        <h1>List of Spells</h1>
+
+        {% if spell_list %}
+        <ul>
+
+            {% for spell in spell_list %}
+            <li>
+                <a href="{{ spell.get_absolute_url }}">{{ spell.name }}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+        {% else %}
+        <p>There are no spells in the wiki.</p>
+        {% endif %}
+    </div>
+</main>
+
+{% endblock %}

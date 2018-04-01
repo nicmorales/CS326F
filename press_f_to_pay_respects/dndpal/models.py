@@ -121,7 +121,7 @@ class CharacterClass(models.Model):
         """
         Returns the url to access a detail record for this class.
         """
-        return reverse('book-detail', args=[str(self.name)])
+        return reverse('character-detail', args=[str(self.name)])
 
 class CharacterClassSpellList(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
@@ -180,7 +180,7 @@ class Spells(models.Model):
         """
         Returns the url to access a detail record for this spell.
         """
-        return reverse('book-detail', args=[str(self.name)])
+        return reverse('spell-detail', args=[str(self.name)])
 
 class FeatRanking(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the feat ranking")
@@ -276,7 +276,7 @@ class Weapon(models.Model):
         """
         Returns the url to access a detail record for this weapon.
         """
-        return reverse('book-detail', args=[str(self.name)])
+        return reverse('weapon-detail', args=[str(self.name)])
 
 
 class Properties(models.Model):

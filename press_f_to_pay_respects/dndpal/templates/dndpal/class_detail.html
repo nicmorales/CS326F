@@ -1,0 +1,155 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<main role="main" class="container">
+    <div class="container card m-4" style="margin-top:10px;">
+
+        <!-- Name -->
+        <div class="row  m-4" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md">
+
+                <h1>{{characterClass.name}}</h1>
+                <hr>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- Everything under Name -->
+        <div class="pb-2" style="margin-left: 55px;">
+            <div class="row mb-4" style="margin-top: 10px">
+
+                <!--Grid column-->
+
+                <div class="col-xl-5">
+
+                    <h4>Description:</h4>
+                    <hr>
+                    <h6>{{characterClass.descrtiption}}
+                    </h6>
+                </div>
+                <div class="mx-5 float-right">
+                    <img src="../img/fighter.jpg" class="border img-fluid rounded" alt="Responsive image" style="width: 350px;">
+                </div>
+            </div>
+
+            <div class="row my-4" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-xl-8">
+
+                    <h4>Class Features:</h4>
+                    <hr>
+                    <h6>
+                        <ul class="list-unstyled">
+                            <!-- Hit Points -->
+                            <li class="mb-3"><u>Hit Points</u>
+                                <ul>
+                                    <li class="mb-3">Hit Dice: 1d10 per fighter level</li>
+                                    <li class="mb-3">Hit Points at 1st Level: 10 + Constitution modifier</li>
+                                    <li>Hit Points at Higher Levels: 1d10 (or 6) + Constitution modifier per fighter level after 1st</li>
+                                </ul>
+                            </li>
+                            <!-- Proficiencies -->
+                            <li class="mb-3"><u>Proficiencies</u>
+                                <ul>
+                                    <li class="mb-3">Armor: All armor, shields</li>
+                                    <li class="mb-3">Weapons: Simple weapons, martial weapons</li>
+                                    <li class="mb-3">Tools: None</li>
+                                    <li class="mb-3">Saving Throws: Strength, Constitution</li>
+                                    <li>Skills: Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</li>
+                                </ul>
+                            </li>
+                            <!-- Equipment -->
+                            <li class="mb-3"><u>Equipment</u>
+                                <ul>You start with the following equipment, in addition to the equipment granted by your background:
+                                    <li class="mb-3">(a) chain mail or (b) leather armor, longbow, and 20 arrows</li>
+                                    <li class="mb-3">(a) a martial weapon and a shield or (b) two martial weapons</li>
+                                    <li class="mb-3">(a) a light crossbow and 20 bolts or (b) two handaxes</li>
+                                    <li>(a) a dungeoneer's pack or (b) an explorer's pack</li>
+                                </ul>
+                            </li>
+                            <!-- Fighting Styles -->
+                            <li class="mb-5"><u>Fighting Styles</u>
+                                <ul>You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.<br>
+                                    <li class="mb-3">Archery:<br>You gain a +2 bonus to attack rolls you make with ranged weapons.</li>
+                                    <li class="mb-3">Defense:<br>While you are wearing armor, you gain a +1 bonus to AC.</li>
+                                    <li class="mb-3">Dueling: <br>When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</li>
+                                    <li class="mb-3">Great Weapon Fighting: <br>When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.</li>
+                                    <li class="mb-3">Protection: <br>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.</li>
+                                    <li>Two-Weapon Fighting: <br>When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.</li>
+                                </ul>
+                            </li>
+                            <!-- Second Wind -->
+                            <li class="mb-5"><u>Second Wind:</u> <br>You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.
+                            </li>
+                            <!-- Action Surge -->
+                            <li class="mb-5"><u>Action Surge:</u><br>Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.<br><br>Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.
+                            </li>
+                            <!-- Martial Archetype -->
+                            <li class="mb-5"><u>Martial Archetype:</u> <br>At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.
+                            </li>
+                            <!-- Ability Score Increase -->
+                            <li class="mb-5"><u>Ability Score Increase:</u><br>When you reach 4th level, and again at 8th, 12th, 16th and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+                            </li>
+                            <!-- Extra Attack -->
+                            <li class="mb-5"><u>Extra Attack:</u> <br>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.<br><br>
+                                The number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class.
+                            </li>
+                            <!-- Indomitable -->
+                            <li class="mb-5"><u>Indomitable:</u> <br>Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.<br><br>You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.
+                            </li>
+                        </ul>
+                    </h6>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="row my-4" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-xl-8">
+
+                    <h4>Martial Archetypes</h4>
+                    <hr>
+
+                    <div class="card col-xl-10 p-3 my-3">
+
+                        <h4>Champion:</h4>
+                        <hr>
+
+                        <h6 class="pl-3">
+                            <ul class="list-unstyled">
+                                <!-- Improved Critical -->
+                                <li class="mb-3"><u>Improved Critical</u><br>Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20.
+                                </li>
+                                <!-- Remarkable Athlete -->
+                                <li class="mb-3"><u>Remarkable Athlete</u><br>Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus.<br><br>In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.
+                                </li>
+                                <!-- Additional Fighting Style -->
+                                <li class="mb-3"><u>Additional Fighting Style</u><br>At 10th level, you can choose a second option from the Fighting Style class feature.
+                                </li>
+                                <!-- Superior Critical -->
+                                <li class="mb-5"><u>Superior Critical</u><br>Starting at 15th level, your weapon attacks score a critical hit on a roll of 18–20.
+                                </li>
+                                <!-- Survivor -->
+                                <li class="mb-5"><u>Survivor</u><br>At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points.
+                                </li>
+                            </ul>
+                        </h6>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Main container-->
+    </div>
+</main>
+
+{% endblock %}

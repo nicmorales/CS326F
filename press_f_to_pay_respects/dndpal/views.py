@@ -35,7 +35,7 @@ def simple(request):
     )
 
 from django.views import generic
-
+from django.db.models import F
 
 
 class ArmorListView(generic.ListView):
@@ -65,5 +65,22 @@ class RaceDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(RaceDetailView, self).get_context_data(**kwargs)
         context['raceFeatures'] = RaceFeatures.objects.all()
-        context['subrace'] = Subrace.objects.all()
         return context
+
+class WeaponListView(generic.ListView):
+    model = Weapon
+
+class WeaponDetailView(generic.DetailView):
+    model = Weapon
+
+class SpellListView(generic.ListView):
+    model = Spells
+
+class SpellDetailView(generic.DetailView):
+    model = Spells
+
+class ClassListView(generic.ListView):
+    model = CharacterClass
+
+class ClassDetailView(generic.DetailView):
+    model = CharacterClass

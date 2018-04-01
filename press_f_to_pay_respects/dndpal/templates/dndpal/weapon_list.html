@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<main role="main" class="container">
+    <div class="container card p-5" style="margin-top:10px;">
+        <h1>List of Weapons</h1>
+
+        {% if weapon_list %}
+        <ul>
+
+            {% for weapon in weapon_list %}
+            <li>
+                <a href="{{ weapon.get_absolute_url }}">{{ weapon.name }}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+        {% else %}
+        <p>There are no weapons in the wiki.</p>
+        {% endif %}
+    </div>
+</main>
+
+{% endblock %}
