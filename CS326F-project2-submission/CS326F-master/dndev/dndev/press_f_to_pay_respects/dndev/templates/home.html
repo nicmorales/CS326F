@@ -1,0 +1,139 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!--Main layout-->
+<main  role="main">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                {% load static %}
+                <img class="first-slide" src="{% static 'img/banner-1.jpg' %}" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>D&D Made Easy</h1>
+                        <p>Tools to make it easier to get started in D&D.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Get Started</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                {% load static %}
+                <img class="second-slide" src="{% static 'img/banner-2.jpg' %}" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Save Your Characters</h1>
+                        <p>Want to play around but don't want to lose progress? Not a problem!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                {% load static %}
+                <img class="third-slide" src="{% static 'img/banner-3.jpg' %}" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption text-right">
+                        <h1>Data on the Basics</h1>
+                        <p>New to the game? Check out our easy to read database of races, spells, and more!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Wiki</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> <!-- /carousel -->
+
+
+
+
+    <div class="container marketing mt-2">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                {% load static %}
+                <img class="rounded-circle" src="{% static 'img/rouge.png' %}" alt="Generic placeholder image" width="140" height="140">
+                <h2>Build Your Character</h2>
+                <p>Pick your class, race and more using our easy-to-use tools!</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                {% load static %}
+                <img class="rounded-circle" src="{% static 'img/bar.png' %}" alt="Generic placeholder image" width="140" height="140">
+                <h2>Hand Holding</h2>
+                <p>We hold your hand every step of the way so that you can get started easily!</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                {% load static %}
+                <img class="rounded-circle" src="{% static 'img/Ranger.png' %}" alt="Generic placeholder image" width="140" height="140">
+                <h2>Just Play</h2>
+                <p>We break things down so that you can understand and just have fun with the game!</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                {% load static %}
+                <img class="featurette-image img-fluid mx-auto" src="{% static 'img/elf-img.jpg' %}" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                {% load static %}
+                <img class="featurette-image img-fluid mx-auto" src="{% static 'img/ranger-img.jpg' %}" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                {% load static %}
+                <img class="featurette-image img-fluid mx-auto" src="{% static 'img/rogue-img.jpg' %}" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+    </div>
+</main>
+
+<!-- /END THE FEATURETTES -->
+
+<!-- /.container -->
+
+{% endblock %}
