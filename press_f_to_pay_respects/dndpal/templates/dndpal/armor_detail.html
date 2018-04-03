@@ -1,0 +1,91 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<main role="main" class="container">
+    <div class="container card p-5" style="margin-top:10px;">
+
+        <div class="row" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md">
+
+                <h1>{{armor.name}}</h1>
+                <hr>
+
+
+            </div>
+
+        </div>
+        <div style="margin-left: 55px;">
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-6">
+
+                    <h4>AC</h4>
+                    <hr>
+                    <h6 class="m-3">{{armor.armor_bounus}}</h6>
+
+
+                </div>
+
+            </div>
+            <div class="row" style="margin-top: 10px">
+                <div class="col-md-6">
+
+                    <h4>Strength Requirement</h4>
+                    <hr>
+                    <div>
+                        <h6 class="m-3">{{armor.required_strength}}</h6>
+                    </div>
+                </div>
+
+            </div>
+            {% if armor.is_stealth %}
+            {% else %}
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-6">
+
+                    <h4>Stealth</h4>
+                    <hr>
+                    <div>
+
+                        <h6 class="m-3">Disadvantage</h6>
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-6">
+
+                    <h4>Cost</h4>
+                    <hr>
+                    <h6 class="m-3">{{armor.gold}} gold <br>
+                        {{armor.silver}} silver <br>
+                        {{armor.copper}} copper <br></h6>
+
+
+                </div>
+
+            </div>
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-6">
+
+                    <h4>Weight</h4>
+                    <hr>
+                    <div>
+                        <h6 class="m-3">{{armor.weight}} lbs</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Main container-->
+    </div>
+</main>
+
+{% endblock %}

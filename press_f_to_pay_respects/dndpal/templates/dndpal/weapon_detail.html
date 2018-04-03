@@ -1,0 +1,78 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<main role="main" class="container">
+    <div class="container card" style="margin-top:10px;">
+
+        <div class="row" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md">
+
+                <h1>{{weapon.name}}</h1>
+                <hr>
+
+
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md-3">
+
+                <h4>Damage</h4>
+                <hr>
+                <h6>{{weapon.damage}}</h6>
+
+
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md-3">
+
+                <h4>Properies</h4>
+                <hr>
+                <div>
+                    <h6>Heavy</h6>
+                    <p> small creatures have disadvantige</p>
+                </div>
+                <div>
+                    <h6>reach</h6>
+                    <p> +5 to range</p>
+                </div>
+                <div>
+                    <h6>two handed</h6>
+                    <p> reqiured to hands ya dumbass</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <!--Grid column-->
+            <div class="col-md-3">
+
+                <h4>Cost</h4>
+                <hr>
+                <h6>{{weapon.gold}} gold <br>
+                    {{weapon.silver}} silver <br>
+                    {{weapon.copper}} copper
+                </h6>
+
+
+
+            </div>
+
+        </div>
+
+
+        <!--Main container-->
+    </div>
+</main>
+
+{% endblock %}
