@@ -31,7 +31,7 @@ class Character(models.Model):
     dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity state for your character.")
     constitution = models.SmallIntegerField(default= 0, help_text="Enter the constitution state for your character.")
     intelligence = models.SmallIntegerField(default= 0, help_text="Enter the intelligence state for your character.")
-    wisdowm = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
+    wisdom = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
     charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
 
     weapon = models.ForeignKey('Weapon', on_delete=models.SET_NULL, null = True)
@@ -248,7 +248,7 @@ class Weapon(models.Model):
     silver = models.IntegerField(default=0, help_text="Enter the silver-price component for this weapon")
     copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this weapon")
 
-    damage = models.PositiveIntegerField(default=1, help_text="The base hit point damage of this weapon.")
+    damage = models.CharField(default = "", max_length = 10000, help_text = "Enter the damage die of this weapon")
 
     DAMAGE_TYPE_CHOICES = (
         ('ac', 'Acid'),
@@ -267,7 +267,7 @@ class Weapon(models.Model):
     )
     damage_type = models.CharField(max_length = 2, choices = DAMAGE_TYPE_CHOICES, default = 'ab')
     #Unit: Feet (ft)
-    range = models.PositiveIntegerField(default = 10, help_text = "Enter the range of the weapon in feet.")
+    range = models.CharField(default = "", max_length = 10000, help_text = "Enter the range of the weapon.")
     #Unit: Pounds (lb)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
 
