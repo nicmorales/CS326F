@@ -53,3 +53,6 @@ fabric.properties
 /.idea/
 /CS326F.iml
 /CS326 dndpal.iml
+
+
+*.pyc
