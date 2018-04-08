@@ -103,8 +103,8 @@ class Subrace(models.Model):
 class SubraceFeatures(models.Model):
     subrace = models.ForeignKey('Subrace', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
-    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this feature")
-    models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
+    sub_feature_name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this feature")
+    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description for these features")
 
 class CharacterClass(models.Model):
@@ -155,13 +155,12 @@ class Spells(models.Model):
     # Amount of hit point damage it does. If it is a healing spell, enter the amount of hit points it heals.
     damage = models.PositiveIntegerField(default=1, help_text="The base hit point damage of the spell. If this is a healing spell, enter in the amount of hit points it heals for")
     # Saved as an int, but should be interpreted as number of feet
-    range = models.PositiveIntegerField(default = 10, help_text = "Enter the range of the spell in feet. If the range is infinite, enter the value: TBD")
+    range = models.CharField(default = "", max_length = 10000, help_text = "Enter the range of the spell in feet. If the range is infinite, enter the value: TBD")
     #Units: feet
-    area_effected = models.PositiveIntegerField(default = 1, help_text = "Enter the area affected by the spell after it connects (in feet).")
+    area_effected = models.CharField(default = "", max_length = 10000, help_text = "Enter the area affected by the spell after it connects (in feet).")
     required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
-    component_1 = models.CharField(default = "", max_length = 10000, help_text = "Enter the first component to cast this spell in JSON format.")
-    component_2 = models.CharField(default = "", max_length = 10000, help_text = "Enter the second component to cast this spell in JSON format.")
-
+    components = models.CharField(default = "", max_length = 10000, help_text = "Enter the spell components to cast this spell")
+    
     SCHOOL_CHOICES = (
         ('ab', 'Abjuration'),
         ('co', 'Conjuration'),
@@ -183,13 +182,13 @@ class Spells(models.Model):
         return reverse('spell-detail', args=[str(self.name)])
 
 class FeatRanking(models.Model):
-    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the feat ranking")
+    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the feat this ranking describes")
     required_level = required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, help_text="Enter the ranking of this feature relative to the other features available for this class.")
 
 class Feat(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this feat.")
-
+    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the feat")
     strength = models.SmallIntegerField(default= 0, help_text="Enter the modification to the strength stat.")
     dexterity = models.SmallIntegerField(default= 0, help_text="Enter the modification to the dexterity stat.")
     constitution = models.SmallIntegerField(default= 0, help_text="Enter the modification to the constitution stat.")
