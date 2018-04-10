@@ -17,24 +17,43 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/global_styles.css' %}">
+    {% block css %}<link rel="stylesheet" href="{% static 'css/global_styles.css' %}">{% endblock %}
 
 </head>
 
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark  bg-dark">
-    <a class="navbar-brand" href="#">D&amp;D Pal</a>
+    <a class="navbar-brand" href="{% url 'home' %}">D&amp;D Pal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
+
+            {% if user.is_authenticated %}
+
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home  <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">Welcome {{ user.get_username }} <span class="sr-only">(current)</span></a>
             </li>
+
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'simple' %}">Simple  <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">Characters <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout  <span class="sr-only">(current)</span></a>
+            </li>
+
+            {% else %}
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login  <span class="sr-only">(current)</span></a>
+            </li>
+            {% endif %}
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'simple' %}">Simple Guides  <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown">
@@ -54,15 +73,7 @@
             <!-- DISABLED SEARCH
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           -->
-            <div class="nav-item dropdown">
-                <a style="color: white;" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sign Up</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">Sign In</a>
 
-                </div>
-            </div>
         </form>
     </div>
 </nav>
