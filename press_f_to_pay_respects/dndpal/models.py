@@ -63,7 +63,7 @@ class Character(models.Model):
     wisdom = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
     charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
 
-
+    character_view = models.CharField( default = '', max_length = 30, help_text = "Enter view for character (simple/guided/manual).")
 
 
 
