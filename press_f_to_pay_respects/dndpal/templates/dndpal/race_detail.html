@@ -53,7 +53,16 @@
                     <h4>Racial Traits:</h4>
                     <hr>
                     <h6>
+                        {% for RaceFeatures in raceFeature_list %}
+
+                            {% if raceFeature.name == race.name %}
+                                <li class="mb-3">Scooby</li>
+                            {% endif %}
+                        {% endfor %}
+
+
                         <ul>
+                            <li class="mb-3">{{raceFeature.description}}</li>
                             <li class="mb-3">Age: <br>Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.</li>
                             <li class="mb-3">Alignment: <br>Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.</li>
                             <li class="mb-3">Size: <br>Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.</li>
