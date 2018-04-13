@@ -9,36 +9,19 @@ from django.db import models
 
 from django.urls import reverse #Used to generate URLs by reversing the URL patterns
 
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 
 class Character(models.Model):
-    name = models.CharField( default = '', max_length = 30, help_text = "Enter a name for your character")
-    level = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the level your character")
+    char_id= models.PositiveIntegerField(default = 1, unique=True, primary_key = True, help_text = "Enter Character ID")
+    username = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
+    char_name = models.CharField( default = '', max_length = 30, help_text = "Enter a name for your character")
+    char_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)
     race = models.ForeignKey('Race', on_delete=models.SET_NULL, null = True)
     subrace = models.ForeignKey('Subrace', on_delete=models.SET_NULL, null = True)
-    character_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)
-
-    armor_class = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the armor class for your character")
-    initiative = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the armor class for your character")
-    speed = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the speed for your character")
-    max_hit = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the max hitpoints for your character")
-    temp_hit = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the temporary hitpoints for your character")
-    profeciencies = models.CharField( default = '', max_length = 30, help_text = "Enter the list of proficiencies for this character in JSON format.")
-
-
-    strength = models.SmallIntegerField(default= 0, help_text="Enter the strength state for your character.")
-    dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity state for your character.")
-    constitution = models.SmallIntegerField(default= 0, help_text="Enter the constitution state for your character.")
-    intelligence = models.SmallIntegerField(default= 0, help_text="Enter the intelligence state for your character.")
-    wisdom = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
-    charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
-
-    weapon = models.ForeignKey('Weapon', on_delete=models.SET_NULL, null = True)
-
-    gold = models.IntegerField(default=0, help_text="Enter the gold of the character")
-    silver = models.IntegerField(default=0, help_text="Enter the gold of the character")
-    copper = models.IntegerField(default=0, help_text="Enter the gold of the character")
+    level = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the level your character")
 
     # In tuple: First field is the value that gets saved in the database, Second is the one the human sees
     ALIGNMENT_CHOICES = (
@@ -55,8 +38,35 @@ class Character(models.Model):
         ('CE', 'Chaotic Evil')
     )
 
-
     alignment = models.CharField(max_length = 2, choices = ALIGNMENT_CHOICES, default = 'NN')
+    proficiency_list = models.CharField( default = '', max_length = 30, help_text = "Enter the list of proficiencies for this character in JSON format.")
+    ability_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of abilities for this character in JSON format.")
+    spell_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of spells for this character in JSON format.")
+    gold = models.IntegerField(default=0, help_text="Enter the gold of the character")
+    silver = models.IntegerField(default=0, help_text="Enter the gold of the character")
+    copper = models.IntegerField(default=0, help_text="Enter the gold of the character")
+
+    armor = models.ForeignKey('Armor', on_delete=models.SET_NULL, null = True)
+    weapon = models.ForeignKey('Weapon', on_delete=models.SET_NULL, null = True)
+    items = models.CharField(default = '', max_length = 5000, help_text = "Enter list of inventory items")
+    max_hp = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the max hitpoints for your character")
+    temp_hp = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the temporary hitpoints for your character")
+    cur_hp = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the current hitpoints for your character")
+    armor_class = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the armor class for your character")
+    init = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the initiative bonus for your character")
+    bonus_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of bonuses for this character in JSON format.")
+
+    strength = models.SmallIntegerField(default= 0, help_text="Enter the strength state for your character.")
+    dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity state for your character.")
+    constitution = models.SmallIntegerField(default= 0, help_text="Enter the constitution state for your character.")
+    intelligence = models.SmallIntegerField(default= 0, help_text="Enter the intelligence state for your character.")
+    wisdom = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
+    charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
+
+    character_view = models.CharField( default = '', max_length = 30, help_text = "Enter view for character (simple/guided/manual).")
+
+
+
 
     def __str__(self):
         return self.name
@@ -148,7 +158,7 @@ class CharacterSubclassSpellList(models.Model):
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this spell relative to the other spells available for this class.")
 
 
-class Spells(models.Model):
+class Spell(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the spell")
     # Saved as an int, but should be interpreted as number of seconds
     cast_time = models.PositiveIntegerField(default = 6, help_text = "Enter the amount of seconds it takes the spell to cast. If a spell takes 1 turn, enter in the value: TBD.")

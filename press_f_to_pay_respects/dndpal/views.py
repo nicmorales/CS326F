@@ -72,7 +72,7 @@ class EquipmentDetailView(generic.DetailView):
 class RaceListView(generic.ListView):
     model = Race
 
-class RaceDetailView(generic.DetailView):
+class RaceDetailView2(generic.DetailView):
     model = Race
 
     def get_context_data(self, **kwargs):
@@ -87,10 +87,10 @@ class WeaponDetailView(generic.DetailView):
     model = Weapon
 
 class SpellListView(generic.ListView):
-    model = Spells
+    model = Spell
 
 class SpellDetailView(generic.DetailView):
-    model = Spells
+    model = Spell
 
 class ClassListView(generic.ListView):
     model = CharacterClass
