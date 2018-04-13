@@ -56,3 +56,5 @@ fabric.properties
 
 
 *.pyc
+'CS326F.iml' 
+'.idea' 

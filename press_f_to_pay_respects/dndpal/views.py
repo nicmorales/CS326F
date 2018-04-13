@@ -31,14 +31,17 @@ def simple(request):
         'simple.html',
     )
 
-def RaceDetailView(request):
+def RaceDetailView2(request):
     raceFeatures = RaceFeatures.objects.all()
+
 
     return render(
             request,
             'race_detail.html',
             context={'raceFeatures':raceFeatures},
         )
+
+
 
 from django.views import generic
 from django.db.models import F
@@ -65,13 +68,13 @@ class EquipmentDetailView(generic.DetailView):
 class RaceListView(generic.ListView):
     model = Race
 
-class RaceDetailView2(generic.DetailView):
+class RaceDetailView(generic.DetailView):
     model = Race
 
     def get_context_data(self, **kwargs):
-        context = super(RaceDetailView, self).get_context_data(**kwargs)
-        context['raceFeatures'] = RaceFeatures.objects.all()
-        return context
+            context = super(RaceDetailView, self).get_context_data(**kwargs)
+            context['raceFeatures'] = RaceFeatures.objects.all()
+            return context
 
 class WeaponListView(generic.ListView):
     model = Weapon
