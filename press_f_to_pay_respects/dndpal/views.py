@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 from .models import *
@@ -29,6 +31,20 @@ def simple(request):
     return render(
         request,
         'simple.html',
+    )
+
+@login_required
+def profile(request):
+    """
+    View function for simple page of site.
+    """
+    # Generate data needed for page
+
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(
+        request,
+        'profile.html',
     )
 
 from django.views import generic
