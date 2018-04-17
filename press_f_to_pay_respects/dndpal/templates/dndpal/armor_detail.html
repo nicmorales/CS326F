@@ -22,8 +22,11 @@
 
                     <h4>AC</h4>
                     <hr>
-                    <h6 class="m-3">{{armor.armor_bounus}}</h6>
-
+                    {% if armor.max_dexterity == 0 %}
+                    <h6 class="m-3">{{armor.armor_bonus}}</h6>
+                    {% else %}
+                    <h6 class="m-3">{{armor.armor_bonus}} + Dex Modifier (max {{armor.max_dexterity}})</h6>
+					{% endif %}
 
                 </div>
 

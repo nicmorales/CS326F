@@ -22,4 +22,8 @@ urlpatterns = [
     path('classes/', views.ClassListView.as_view(), name='classes'),
     path('class/<str:pk>', views.ClassDetailView.as_view(), name='class-detail'),
 
+    #path('armor/custom_form/', views.custom_armor_form, name='custom-armor-form'), # if for already made shit, arnmor/<uuid:pk>/custom_form/ ?
+    path('armor/create/', views.ArmorCreate.as_view(), name='armor_create'),
+    path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
+    path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
 ]

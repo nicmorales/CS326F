@@ -236,8 +236,8 @@ class Equipment(models.Model):
 class Armor(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the armor")
     armor_bonus = models.SmallIntegerField(default= 0, help_text="Enter the armor bonus for this item in pounds.")
-    max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
-    is_stealth = models.BooleanField(default = False, help_text="Alan put something here :^)")
+    max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the maximum amount of bonus AC from dex modifier.")
+    is_stealth = models.BooleanField(default = False, help_text="Is the armor stealthy?")
     #Units: Pounds (lbs)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
     gold = models.IntegerField(default=0, help_text="Enter the gold-price component for this armor")
@@ -245,6 +245,7 @@ class Armor(models.Model):
     copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this armor")
     required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
     required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
+    # light, medium, or heavy armor?
 
     def get_absolute_url(self):
         """
