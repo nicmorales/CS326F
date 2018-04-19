@@ -105,7 +105,7 @@ class Subrace(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
     parent_race = models.ForeignKey('Race', on_delete=models.CASCADE, null = True)
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this sub-race (backstory, beliefs, etc.)")
-
+    modifiers = models.CharField(default = '', max_length = 20, help_text = "Enter the stats modifiers in JSON format. Ex: {\"str\": 2, \"dex\": 8}")
     def __str__(self):
         return self.name
 
@@ -114,14 +114,15 @@ class SubraceFeatures(models.Model):
     subrace = models.ForeignKey('Subrace', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
     sub_feature_name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this feature")
-    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
+    #name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description for these features")
 
 class CharacterClass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class")
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
-    hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hit points for this character")
+    hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hit points for this class")
     skill_proficiency_limit = models.PositiveSmallIntegerField(default = 5, help_text = "Enter the max amount of skills this class can be proficient in")
+    skill_options = models.CharField(default = '', max_length = 100, help_text = "Enter a comma separated spell list. Ex: {\"sneak\", \"toxic\"}")
 
 
     def __str__(self):
@@ -137,6 +138,7 @@ class CharacterClassSpellList(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this spell relative to the other spells available for this class.")
+    spell_list = models.CharField(default = '', max_length = 10000, help_text = "Enter a comma separated spell list. Ex: {\"pew\", \"explosiioonnn\"}")
 
 class CharacterClassFeatures(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class feature")
@@ -156,6 +158,8 @@ class CharacterSubclassSpellList(models.Model):
     subclass = models.ForeignKey('CharacterSubclass', on_delete=models.CASCADE, null = True)
     required_level = required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this spell relative to the other spells available for this class.")
+    spell_list = models.CharField(default = '', max_length = 10000, help_text = "Enter a comma separated spell list. Ex: {\"pew\", \"explosiioonnn\"}")
+
 
 
 class Spell(models.Model):
