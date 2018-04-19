@@ -20,6 +20,19 @@ def home(request):
     )
 
 
+def alan(request):
+    """
+    View function for home page of site.
+    """
+    # Generate counts of some of the main objects
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(
+        request,
+        'test_for_alan.html',
+    )
+
+
 def simple(request):
     """
     View function for simple page of site.

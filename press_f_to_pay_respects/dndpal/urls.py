@@ -21,9 +21,11 @@ urlpatterns = [
     path('spell/<str:pk>', views.SpellDetailView.as_view(), name='spell-detail'),
     path('classes/', views.ClassListView.as_view(), name='classes'),
     path('class/<str:pk>', views.ClassDetailView.as_view(), name='class-detail'),
+    path('alan', views.alan, name='alan'),
 
     #path('armor/custom_form/', views.custom_armor_form, name='custom-armor-form'), # if for already made shit, arnmor/<uuid:pk>/custom_form/ ?
     path('armor/create/', views.ArmorCreate.as_view(), name='armor_create'),
     path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
+
 ]
