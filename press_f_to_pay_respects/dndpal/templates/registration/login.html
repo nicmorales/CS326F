@@ -1,33 +1,38 @@
 {% extends "base_generic.html" %}
-
-
 {% block content %}
 
 <main  role="main">
   <div class="container">
 
-
-
-
-  {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
-
-  {% if next %}
-      {% if user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-      please login with an account that has access.</p>
-      {% else %}
-      <p>Please login to see this page.</p>
-      {% endif %}
-  {% endif %}
-
-
   <div class="container">
     <div class="row">
       <div class="Absolute-Center is-Responsive">
-        <div id="logo-container"></div>
+        <div id="logo-container">
+          {% if form.errors %}
+          <div class="alert alert-danger" role="alert">
+            <p>Your username and password didn't match. Please try again.</p>
+          </div>
+          {% endif %}
+
+          {% if next %}
+              {% if user.is_authenticated %}
+              <div class="alert alert-danger" role="alert">
+                <p>Your account doesn't have access to this page. To proceed,
+              </div>
+              please login with an account that has access.</p>
+              {% else %}
+
+              <div class="alert alert-success" role="alert">
+                <p>Please login to see this page.</p>
+              </div>
+              {% endif %}
+          {% endif %}
+
+        </div>
+
         <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+
           <form method="post" action="{% url 'login' %}" id="loginForm">
             {% csrf_token %}
             <div>
