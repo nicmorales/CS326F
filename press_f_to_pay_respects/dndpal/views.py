@@ -47,6 +47,17 @@ def profile(request):
         'profile.html',
     )
 
+def RaceDetailView2(request):
+    race = Race.objects.all()
+    raceFeatures = RaceFeatures.objects.all()
+
+    return render(
+            request,
+            'profile.html',
+            context={'race':race,'raceFeatures':raceFeatures}
+        )
+
+
 from django.views import generic
 from django.db.models import F
 
@@ -75,9 +86,17 @@ class RaceListView(generic.ListView):
 class RaceDetailView(generic.DetailView):
     model = Race
 
+
+
     def get_context_data(self, **kwargs):
         context = super(RaceDetailView, self).get_context_data(**kwargs)
         context['raceFeatures'] = RaceFeatures.objects.all()
+
+        
+        context['subraces'] = Subrace.objects.all()
+
+        print('lengthofrace: '+str(context['race'].name));
+        print('parent: '+str(context['raceFeatures'][0].race));
         return context
 
 class WeaponListView(generic.ListView):
