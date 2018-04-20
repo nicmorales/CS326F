@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <title>PressF To Pay Respect</title>
+    {% load static %}
+    <!-- Loads the MDL styles -->
+    <link rel="stylesheet" href="{% static 'css/mdl/material.min.css' %}">
+    <script src="{% static 'css/mdl/material.min.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Static custom CSS styles -->
+    <link rel="stylesheet" href="{% static 'css/guided_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+</head>
+
+<body>
+    <!--- Holds the whole page -->
+    <div id="container">
+        <!---  Divider on the left side of the page  -->
+        <div id="gutter">
+            <div class="class_img_container">
+                {% load static %}
+                <!--- Profile picture of the character-->
+                <div class="class_img_flex">
+                    <img src="{% static 'img/Paladin_Crest.png' %}" alt="class_image"/>
+                </div>
+                <!-- Accent-colored raised button with ripple -->
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent class_button">
+                        Button
+                </button>
+            </div>
+            <div class="upload_button">
+
+            </div>
+            <div class="armor_stats">
+
+            </div>
+            <div class="character_stats">
+
+            </div>
+            <div class="logout_button">
+
+
+            </div>
+        </div>
+        <!---  Divider holding most of the calculated stats  -->
+        <div id="stats">
+
+
+
+        </div>
+    </div>
+</body>

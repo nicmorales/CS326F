@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dndpal.apps.DndpalConfig',
+    
+    'material_widgets',
 ]
 
 MIDDLEWARE = [

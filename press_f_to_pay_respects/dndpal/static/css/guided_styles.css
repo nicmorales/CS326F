@@ -1,0 +1,62 @@
+body {
+   
+
+}
+
+#container {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    background-color: black;
+}
+
+
+#gutter { height: 100%; } #stats { height: 100%; }
+
+
+
+#gutter{
+    flex: 1;
+    background-color: #202a32;
+    display: flex;
+    flex-direction: column; 
+}
+
+#stats{
+    flex: 4;
+    background-color: #21303b;
+}
+
+.class_img_container{
+    flex: 1;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.class_button{
+    flex: 1;
+
+}
+.class_img_flex{
+    flex: 1;
+}
+
+.armor_stats{
+    flex: 1;
+    background-color: violet;
+}
+
+.character_stats{
+    flex: 2;
+    background-color: red;
+}
+
+.logout_button{
+    flex: 0.3;
+    background-color: orange;
+}
+
+

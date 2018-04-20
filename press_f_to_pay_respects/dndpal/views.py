@@ -5,6 +5,29 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 from .models import *
 
+
+
+
+
+
+
+
+def guided(request):
+    """
+    View function for guided page of site.
+    """
+    # Generate data needed for page
+
+
+    # Render the HTML template guided.html with the data in the context variable
+    return render(
+        request,
+        'guided.html',
+    )
+
+
+
+
 def home(request):
     """
     View function for home page of site.
@@ -108,8 +131,8 @@ class RaceDetailView(generic.DetailView):
         
         context['subraces'] = Subrace.objects.all()
 
-        print('lengthofrace: '+str(context['race'].name));
-        print('parent: '+str(context['raceFeatures'][0].race));
+        print('lengthofrace: '+str(context['race'].name))
+        print('parent: '+str(context['raceFeatures'][0].race))
         return context
 
 class WeaponListView(generic.ListView):
@@ -123,13 +146,6 @@ class SpellListView(generic.ListView):
 
 class SpellDetailView(generic.DetailView):
     model = Spell
-
-class ClassListView(generic.ListView):
-    model = CharacterClass
-
-class ClassDetailView(generic.DetailView):
-    model = CharacterClass
-
 
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect

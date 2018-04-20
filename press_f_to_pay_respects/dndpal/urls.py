@@ -29,3 +29,8 @@ urlpatterns = [
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
 
 ]
+
+# Niko's pages:
+urlpatterns += [
+    path('guided/', views.guided, name='guided'),
+]
