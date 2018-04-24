@@ -138,7 +138,7 @@ class CharacterClassSpellList(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this spell relative to the other spells available for this class.")
-    spell_list = models.CharField(default = '', max_length = 10000, help_text = "Enter a comma separated spell list. Ex: {\"pew\", \"explosiioonnn\"}")
+    spell_list = models.ForeignKey('Spell', on_delete=models.CASCADE)
 
 class CharacterClassFeatures(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class feature")
@@ -188,6 +188,8 @@ class Spell(models.Model):
     )
 
     school = models.CharField(max_length = 2, choices = SCHOOL_CHOICES, default = 'ab')
+
+    description = models.CharField(default = "", max_length = 10000, help_text = "Enter the spell description")
 
     def get_absolute_url(self):
         """
