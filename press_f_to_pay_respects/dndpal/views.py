@@ -267,6 +267,6 @@ def get_health(request,stub):
     return JsonResponse(data)
 
 def get_skills(request , cname) :
-    data = {"skills" : CharacterClass.objects.filter(name = cname)[0].skill_options}
+    data = {"skills" : CharacterClass.objects.filter(name = cname)[0].skill_list}
     return JsonResponse(data)
 
