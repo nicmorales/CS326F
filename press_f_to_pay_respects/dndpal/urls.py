@@ -1,4 +1,4 @@
-
+from django.conf.urls import url
 from django.urls import path, include, re_path
 from . import views
 
@@ -27,8 +27,11 @@ urlpatterns = [
     path('armor/create/', views.ArmorCreate.as_view(), name='armor_create'),
     path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
-
+	#ajax all the fucking ajax
+    url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
+	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
 ]
+
 
 # Niko's pages:
 urlpatterns += [

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from django.http import JsonResponse
 
 # Create your views here.
 from .models import *
@@ -180,9 +180,18 @@ class ArmorDelete(DeleteView):
     # max_dexterity =  models.SmallIntegerField(default= 0, help_text="Enter the maximum amount of bonus AC from dex modifier.")
     # is_stealth = models.BooleanField(default = False, help_text="Is the armor stealthy?")
     # #Units: Pounds (lbs)
-    # weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
+    # weight = models.SmallIntegerField(default= 0, 	 help_text="Enter the weight for this item in pounds.")
     # gold = models.IntegerField(default=0, help_text="Enter the gold-price component for this armor")
     # silver = models.IntegerField(default=0, help_text="Enter the silver-price component for this armor")
     # copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this armor")
     # required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
-    # required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
+    # required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")	
+
+def get_health(request,stub):
+    data = {"Hitdie" : CharacterClass.objects.filter(name = stub)[0].hitpoints} 
+    return JsonResponse(data)
+	
+def get_skills(request , cname) :
+    data = {"skills" : CharacterClass.objects.filter(name = cname)[0].skill_options}
+    return JsonResponse(data)
+	

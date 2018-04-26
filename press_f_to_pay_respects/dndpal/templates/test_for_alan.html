@@ -1,31 +1,10 @@
 {% extends "base_generic.html" %}
-
-{% block content %}
 {% load static %}
 
-
+{% block content %}
+<link rel="stylesheet" href="	{% static 'css/custom.css' %}">
+<link rel="stylesheet" href="	{% static 'css/onlyForManuel.css' %}">
 <!-- This page is for the more advanced players  -->
-
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Material Design for Bootstrap fonts and icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-
-    <!-- Material Design for Bootstrap CSS -->
-    <link rel="stylesheet"
-          href=	"{% static 'css/bootstrap-material-design.css' %}"
-          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link rel="stylesheet" href="	{% static 'css/custom.css' %}">
-    <link rel="stylesheet" href="	{% static 'css/onlyForManuel.css' %}">
-    <title>Test</title>
-</head>
-
-<body>
-
 <main role="main" class="container">
 
     <div class="container">
@@ -46,14 +25,19 @@
             <div class="col-3">
                 <h3 id="race"><span class="badge badge-light">Race: </span> Gnome</h3>
             </div>
-            <div class="col-3">
-                <h3 id="class"><span class="badge badge-light">Class: </span> Paladen</h3>
+            <div class="col-6 row">
+              <div class="col">
+                <h3 id="class"><span class="badge badge-light" style="padding-left: 0px;">Class:</h3>
+              </div>
+              <div class="col-8" style="padding-left: 0px;">
+                <input id="class-field"  type="text" class="form-control-plaintext" value="Barbarian" style="text-align: left;">
+              </div>
             </div>
             <div class="col-3 row">
               <div class="col">
                 <h3 id="level"><span class="badge badge-light">Level: </span> </h3>
               </div>
-              <div class="col">
+              <div class="col" style="padding-left: 0px">
                 <input id="level-field"  type="text" class="form-control-plaintext" value="0" style="text-align: left;">
               </div>
             </div>
@@ -71,7 +55,7 @@
             </div>
         </div>
 
-        <!-- STATS AND Additional Info -->
+        <!-- everythiong else -->
         <div class="row sec-space">
 
             <!--stats column-->
@@ -80,7 +64,7 @@
                 <!--proficency-->
                 <div class="row card text text-center justify-content-center" style="margin-top:5px ">
 
-                    <div class="row justify-content-center stat">
+                    <div class="row justify-content-center stat" style="padding-top: 10px">
                         <h6>Proficiency</h6>
                     </div>
 
@@ -338,13 +322,9 @@
                       <!--Acrobatics-->
                       <div class="form-row ">
                         <div class="col-8">
-
                           <div class="checkbox cheakbox-nudge">
-                              <label style="color:black;">
-                                  <input id="AcroP" type="checkbox"> Acrobatics
-                              </label>
+                              <label style="color:black;"> Acrobatics</label>
                           </div>
-
                         </div>
                         <div class="col-2">
                           <input id="Acro" type="text" class="form-control-plaintext" placeholder="0" readonly>
@@ -356,7 +336,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="AnimP" type="checkbox"> Animal Handling
+                                   Animal Handling
                               </label>
                           </div>
 
@@ -371,7 +351,7 @@
 
                                 <div class="checkbox cheakbox-nudge">
                                     <label style="color:black;">
-                                        <input id="ArcaP" type="checkbox"> Arcana
+                                         Arcana
                                     </label>
                                 </div>
 
@@ -386,7 +366,7 @@
 
                                 <div class="checkbox cheakbox-nudge">
                                     <label style="color:black;">
-                                        <input id="AthlP" type="checkbox"> Athletics
+                                         Athletics
                                     </label>
                                 </div>
 
@@ -401,7 +381,7 @@
 
                                 <div class="checkbox cheakbox-nudge">
                                     <label style="color:black;">
-                                        <input id="DeceP" type="checkbox"> Deception
+                                         Deception
                                     </label>
                                 </div>
 
@@ -416,7 +396,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="HistP" type="checkbox"> History
+                                   History
                               </label>
                           </div>
 
@@ -431,7 +411,7 @@
 
                                 <div class="checkbox cheakbox-nudge">
                                     <label style="color:black;">
-                                        <input id="InsiP" type="checkbox"> Insight
+                                         Insight
                                     </label>
                                 </div>
 
@@ -446,7 +426,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="IntiP" type="checkbox"> Intimidation
+                                   Intimidation
                               </label>
                           </div>
 
@@ -461,7 +441,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="InveP" type="checkbox"> Investigation
+                                   Investigation
                               </label>
                           </div>
 
@@ -476,7 +456,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="MediP" type="checkbox"> Medicine
+                                   Medicine
                               </label>
                           </div>
 
@@ -491,7 +471,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="NatuP" type="checkbox"> Nature
+                                   Nature
                               </label>
                           </div>
 
@@ -506,7 +486,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="PercP" type="checkbox"> Perception
+                                   Perception
                               </label>
                           </div>
 
@@ -521,7 +501,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="PerfP" type="checkbox"> Performance
+                                   Performance
                               </label>
                           </div>
 
@@ -536,7 +516,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="PersP" type="checkbox"> Persuation
+                                   Persuation
                               </label>
                           </div>
 
@@ -551,7 +531,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="ReliP" type="checkbox"> Religion
+                                  Religion
                               </label>
                           </div>
 
@@ -566,7 +546,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="SleiP" type="checkbox"> Sleight of Hand
+                                   Sleight of Hand
                               </label>
                           </div>
 
@@ -581,7 +561,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="SteaP" type="checkbox"> Stealth
+                                   Stealth
                               </label>
                           </div>
 
@@ -596,7 +576,7 @@
 
                           <div class="checkbox cheakbox-nudge">
                               <label style="color:black;">
-                                  <input id="SurvP" type="checkbox"> Survival
+                                  Survival
                               </label>
                           </div>
 
@@ -853,8 +833,12 @@
                             </div>
 
                           </div>
+                          <div class="">
+                            <button type="button" id="DP-btn" class="btn btn-raised btn-success">Success</button>
+                          </div>
                       </form>
                       </div>
+                      <!--end of modal-->
                     </div>
                 </div>
 
@@ -1085,7 +1069,7 @@
             <!--Old Spells column?-->
 
 
-        </div><!--row-->
+        </div>
 		<!--health modal-->
 			<div id="Health-modal" class="modal">
 
@@ -1099,7 +1083,7 @@
           <div class="col card">
             <h3 id="Roll" class="card-header"> Roll a </h3>
             <div class="card-body">
-              <input id="Roll-value" type="number" class="form-control-plaintext" name="health" placeholder="0">
+              <input id="Roll-value" type="number" class="form-control-plaintext" name="health" value="1">
               <button id="Roll-btn" type="button" name="button">Add Health</button>
             </div>
 
@@ -1120,38 +1104,164 @@
               <button id="Random-btn" type="button" name="button">Add Health</button>
             </div>
           </div>
-
-			  </form>
 			  </div>
 			</div>
+    </div>
 
+    <div id="Skills-modal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content col-3">
+      <span class="Health-close">&times;</span>
+      <div>
+        <h6>Select Your Skill proficency's</h6>
+        <p id="Skill-num">You can select 4<p>
+      </div>
+      <div>
+        <div class="row">
+        <ul id="Skills-body">
+
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="AcroP" type="checkbox"> Acrobatics
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="AnimP" type="checkbox"> Animal Handling
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="ArcaP" type="checkbox"> Arcana
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="AthlP" type="checkbox"> Athletics
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="DeceP" type="checkbox"> Deception
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="HistP" type="checkbox"> Histiory
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="InsiP" type="checkbox"> Insigt
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="IntiP" type="checkbox"> Intimidation
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="InveP" type="checkbox"> Investigation
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="MediP" type="checkbox"> Medicine
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="NatuP" type="checkbox"> Nature
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="PercP" type="checkbox"> Perception
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="PerfP" type="checkbox"> Performance
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="PersP" type="checkbox"> Persuasion
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="ReliP" type="checkbox"> Religion
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="SleiP" type="checkbox"> Sleight of Hand
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="SteaP" type="checkbox"> Stealth
+                </label>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox cheakbox-nudge">
+                <label style="color:black;">
+                    <input id="SurvP" type="checkbox"> Survival
+                </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+        <div class="row">
+          <button  id="skill-kill"type="button" name="button">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 </main>
 
-<!--Footer-->
 
-<footer>
+{% endblock %}
 
-</footer>
-<!--/.Footer-->
-<!-- Optional JavaScript -->
-<script src="{% static 'js/stuff.js' %}"></script>
-
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
-<script src="{% static 'js/bootstrap-material-design.js' %}"
-        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script>
-<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-</body>
-</html>
-
+{% block java %}
+<script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
