@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+import json
+from django.core import serializers
+
 from django.http import JsonResponse
 
 # Create your views here.
@@ -126,13 +129,85 @@ class RaceDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(RaceDetailView, self).get_context_data(**kwargs)
-        context['raceFeatures'] = RaceFeatures.objects.all()
 
-        
-        context['subraces'] = Subrace.objects.all()
+        json_data = context['race'].modifiers
+        json_parsed = json.loads(json_data)
+        strength = '0'
+        dexterity = '0'
+        constitution = '0'
+        intelligence = '0'
+        wisdom = '0'
+        charisma = '0'
+        if 'str' in json_parsed:
+            strength = json_parsed['str']
+        if 'dex' in json_parsed:
+            dexterity = json_parsed['dex']
+        if 'con' in json_parsed:
+            constitution = json_parsed['con']
+        if 'int' in json_parsed:
+            intelligence = json_parsed['int']
+        if 'wis' in json_parsed:
+            wisdom = json_parsed['wis']
+        if 'cha' in json_parsed:
+            charisma = json_parsed['cha']
 
-        print('lengthofrace: '+str(context['race'].name))
-        print('parent: '+str(context['raceFeatures'][0].race))
+        context['raceStr'] = int(strength)
+        context['raceDex'] = int(dexterity)
+        context['raceCon'] = int(constitution)
+        context['raceInt'] = int(intelligence)
+        context['raceWis'] = int(wisdom)
+        context['raceCha'] = int(charisma)
+
+
+
+        context['raceFeatures'] = RaceFeatures.objects.filter(race = context['race'])
+
+        context['subraces'] = Subrace.objects.filter(parent_race = context['race'])
+
+
+        context['subrace_mods'] = {}
+        context['subraceFeatures'] = {}
+
+        for subrace in context['subraces']:
+            sub = {}
+            sjson_data = subrace.modifiers
+            sjson_parsed = json.loads(json_data)
+            sstrength = 0
+            sdexterity = 0
+            sconstitution = 0
+            sintelligence = 0
+            swisdom = 0
+            scharisma = 0
+            if 'str' in sjson_parsed:
+                sstrength = int(sjson_parsed['str'])
+                sub['str'] = sstrength
+            if 'dex' in sjson_parsed:
+                sdexterity = int(sjson_parsed['dex'])
+                sub['dex'] = sdexterity
+            if 'con' in sjson_parsed:
+                sconstitution = int(sjson_parsed['con'])
+                sub['con'] = sconstitution
+            if 'int' in sjson_parsed:
+                sintelligence = int(sjson_parsed['int'])
+                sub['int'] = sintelligence
+            if 'wis' in sjson_parsed:
+                swisdom = int(sjson_parsed['wis'])
+                sub['wis'] = swisdom
+            if 'cha' in sjson_parsed:
+                scharisma = int(sjson_parsed['cha'])
+                sub['cha'] = scharisma
+
+            context['subrace_mods'][subrace.name] = sub
+            context['subraceFeatures'][subrace.name] = SubraceFeatures.objects.filter(subrace = subrace)
+
+
+
+        print('json_parsed = '+str(json_parsed))
+        print('stre = '+str(strength))
+        print('cons = '+str(constitution))
+        print('raceFeatures =' + str(context['raceFeatures']))
+        print('subraces =' + str(context['subraces']))
+        print('subrace_mods =' + str(context['subrace_mods']))
         return context
 
 class WeaponListView(generic.ListView):
@@ -185,13 +260,13 @@ class ArmorDelete(DeleteView):
     # silver = models.IntegerField(default=0, help_text="Enter the silver-price component for this armor")
     # copper = models.IntegerField(default=0, help_text="Enter the copper-price component for this armor")
     # required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
-    # required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")	
+    # required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
 
 def get_health(request,stub):
-    data = {"Hitdie" : CharacterClass.objects.filter(name = stub)[0].hitpoints} 
+    data = {"Hitdie" : CharacterClass.objects.filter(name = stub)[0].hitpoints}
     return JsonResponse(data)
-	
+
 def get_skills(request , cname) :
     data = {"skills" : CharacterClass.objects.filter(name = cname)[0].skill_options}
     return JsonResponse(data)
-	
+
