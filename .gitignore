@@ -66,3 +66,9 @@ venv/pip-selfcheck.json
 
 *.pyc
 *.pyo
+
+press_f_to_pay_respects/dndpal/migrations/
+
+press_f_to_pay_respects/dndpal/__pycache__/
+
+press_f_to_pay_respects/press_f_to_pay_respects/__pycache__/
