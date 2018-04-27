@@ -122,7 +122,7 @@ class CharacterClass(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
     hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hit points for this class")
     skill_proficiency_limit = models.PositiveSmallIntegerField(default = 5, help_text = "Enter the max amount of skills this class can be proficient in")
-    skill_options = models.CharField(default = '', max_length = 100, help_text = "Enter a comma separated spell list. Ex: {\"sneak\", \"toxic\"}")
+    skill_list = models.CharField(default = '', max_length = 100, help_text = "Enter a comma separated spell list. Ex: \"Acrobatics,Intimidation\" \(without the quotations\)")
 
 
     def __str__(self):
@@ -298,5 +298,5 @@ class Weapon(models.Model):
 class Properties(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this property.")
     weapon = models.ForeignKey('Weapon', on_delete=models.CASCADE, null=True)
-    description = models.ForeignKey('CharacterSubclass', on_delete=models.CASCADE, null = True)
+    description = models.CharField(default = "", max_length = 10000, help_text = "Enter the description of this property")
     
