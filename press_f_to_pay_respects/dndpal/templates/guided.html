@@ -1,11 +1,11 @@
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Material Design for Bootstrap fonts and icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    
 
     <title>PressF To Pay Respect</title>
     {% load static %}
@@ -14,8 +14,8 @@
     <script src="{% static 'css/mdl/material.min.js' %}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Static custom CSS styles -->
-    <link rel="stylesheet" href="{% static 'css/guided_styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link href="{% static 'css/guided_styles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,27 +23,47 @@
     <div id="container">
         <!---  Divider on the left side of the page  -->
         <div id="gutter">
-            <div class="class_img_container">
-                {% load static %}
+            <div id="class_img_container">
                 <!--- Profile picture of the character-->
                 <div class="class_img_flex">
                     <img src="{% static 'img/Paladin_Crest.png' %}" alt="class_image"/>
                 </div>
-                <!-- Accent-colored raised button with ripple -->
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent class_button">
-                        Button
+            </div>
+            <!-- Accent-colored raised button with ripple -->
+            <div class="upload_button_container">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Button
                 </button>
             </div>
-            <div class="upload_button">
+            <div id="armor_stats">
+                <div id="armor_header"></div>
+                <div id="armor_list_container">
+                    <ul class="demo-list-icon mdl-list">
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            Armor Class
+                            </span>
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            Hit Points
+                            </span>
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            Speed
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="character_stats">
 
             </div>
-            <div class="armor_stats">
-
-            </div>
-            <div class="character_stats">
-
-            </div>
-            <div class="logout_button">
+            <div id="logout_button">
 
 
             </div>

@@ -1,22 +1,23 @@
-body {
-   
-
-}
+@charset "utf-8";
 
 #container {
     position: relative;
     display: flex;
-    min-height: 100vh;
-    background-color: black;
+    height: 100%;
+    width: 100%;
+    background-color: white;
 }
 
+#gutter { 
+    height: 100%; 
+} 
 
-#gutter { height: 100%; } #stats { height: 100%; }
-
-
+#stats { 
+    height: 100%; 
+}
 
 #gutter{
-    flex: 1;
+    flex: 0.75;
     background-color: #202a32;
     display: flex;
     flex-direction: column; 
@@ -27,36 +28,79 @@ body {
     background-color: #21303b;
 }
 
-.class_img_container{
-    flex: 1;
+#class_img_container{
+    flex-basis: 150px;
     background-color: yellow;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-
-.class_button{
-    flex: 1;
-
-}
 .class_img_flex{
-    flex: 1;
+    flex: 1 1 auto;
+    text-align: center;
+    background-color: cyan;
 }
 
-.armor_stats{
-    flex: 1;
-    background-color: violet;
+.upload_button_container{
+    flex-basis:  50px; 
+    text-align: center;
+    background-color: hotpink;
 }
 
-.character_stats{
-    flex: 2;
+.upload_button_container > button{
+    text-align: center;
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+#armor_stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: 150px;
+    background-color: blue;
+}
+
+#armor_header {
+    background-color: orangered;
+    height: 35px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#armor_list_container{
+    background-color: olive;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.demo-list-icon {
+    min-height: 0px;
+}
+#armor_stats .mdl-list__item{
+    flex-shrink: 2;
+    min-height: 0px;
+    height: 25px;
+    background-color: yellow;
+    margin-top: 0px;
+}
+
+h6 {
+    padding-left: 15px;
+    background-color: teal;
+}
+
+#character_stats{
+    flex-basis: 250px;
     background-color: red;
 }
 
-.logout_button{
-    flex: 0.3;
+#logout_button{
+    flex-basis: 35px;
     background-color: orange;
 }
 
-
+img {
+    max-width: 62.5%;
+}
