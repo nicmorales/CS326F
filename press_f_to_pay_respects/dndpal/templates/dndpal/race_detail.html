@@ -25,8 +25,44 @@
                     <h4>Racial Modifiers:</h4>
                     <hr>
                     <h6>
+                        <!--checks racemods-->
                         <ul>
-                            <li>{{race.modifiers}}</li>
+                            {% if raceStr > 0 %}
+                            <li class="mb-3">Increase Strength Score by +{{raceStr}}</li>
+                            {% elif raceStr < 0 %}
+                            <li class="mb-3">Decrease Strength Score by -{{raceStr}}</li>
+                            {% endif %}
+
+                            {% if raceDex > 0 %}
+                            <li class="mb-3">Increase Dexterity Score by +{{raceDex}}</li>
+                            {% elif raceDex < 0 %}
+                            <li class="mb-3">Decrease Dexterity Score by -{{raceDex}}</li>
+                            {% endif %}
+
+                            {% if raceCon > 0 %}
+                            <li class="mb-3">Increase Constitution Score by +{{raceCon}}</li>
+                            {% elif raceCon < 0 %}
+                            <li class="mb-3">Decrease Constitution Score by -{{raceCon}}</li>
+                            {% endif %}
+
+                            {% if raceInt > 0 %}
+                            <li class="mb-3">Increase Intelligence Score by +{{raceInt}}</li>
+                            {% elif raceInt < 0 %}
+                            <li class="mb-3">Decrease Intelligence Score by -{{raceInt}}</li>
+                            {% endif %}
+
+                            {% if raceWis > 0 %}
+                            <li class="mb-3">Increase Wisdom Score by +{{raceWis}}</li>
+                            {% elif raceWis < 0 %}
+                            <li class="mb-3">Decrease Wisdom Score by -{{raceWis}}</li>
+                            {% endif %}
+
+                            {% if raceCha > 0 %}
+                            <li class="mb-3">Increase Charisma Score by +{{raceCha}}</li>
+                            {% elif raceCha < 0 %}
+                            <li class="mb-3">Decrease Charisma Score by -{{raceCha}}</li>
+                            {% endif %}
+
                         </ul>
                     </h6>
                 </div>
@@ -58,10 +94,7 @@
 
                         <ul>
                             {% for f in raceFeatures %}
-
-                            {% if f.race.name == race.name %}
                             <li class="mb-3">{{f.description}}</li>
-                            {% endif %}
                             {% endfor %}
                         </ul>
                     </h6>
@@ -77,7 +110,6 @@
                     <h4>Sub Races:</h4>
                     <hr>
                     {% for f in subraces %}
-                    {% if f.parent_race.name == race.name %}
                     <div class="card col-xl-10 p-3 my-3">
 
                         <h4>{{f.name}}:</h4>
@@ -88,8 +120,60 @@
 
                             <h6 class="pl-3">
                                 In addition to the Dwarf Racial Modifiers, Hill Dwarves gain:
+                                <hr>
                                 <ul>
-                                    <li>increase Wisdom Score by +1</li>
+                                    {% for subracekey, mods in subrace_mods.items %}
+                                        {% if subracekey == f.name %}
+                                            {% with sub_mods=mods %}
+                                                {% for sc, v in sub_mods.items %}
+                                                    {% if sc == 'str' %}
+                                                        {% if v > 0 %}
+                                                            <li class="mb-3">Increase Strength Score by +{{v}}</li>
+                                                        {% elif v < 0 %}
+                                                            <li class="mb-3">Decrease Strength Score by -{{v}}</li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if sc == 'dex' %}
+                                                        {% if v > 0 %}
+                                                            <li class="mb-3">Increase Dexterity Score by +{{v}}</li>
+                                                        {% elif v < 0 %}
+                                                            <li class="mb-3">Decrease Dexterity Score by -{{v}}</li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if sc == 'con' %}
+                                                        {% if v > 0 %}
+                                                            <li class="mb-3">Increase Constitution Score by +{{v}}</li>
+                                                        {% elif v < 0 %}
+                                                            <li class="mb-3">Decrease Constitution Score by -{{v}}</li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if sc == 'int' %}
+                                                        {% if v > 0 %}
+                                                            <li class="mb-3">Increase Intelligence Score by +{{v}}</li>
+                                                        {% elif v < 0 %}
+                                                            <li class="mb-3">Decrease Intelligence Score by -{{v}}</li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if sc == 'wis' %}
+                                                        {% if v > 0 %}
+                                                            <li class="mb-3">Increase Wisdom Score by +{{v}}</li>
+                                                        {% elif v < 0 %}
+                                                            <li class="mb-3">Decrease Wisdom Score by -{{v}}</li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if sc == 'cha' %}
+                                                        {% if v > 0 %}
+                                                            <li class="mb-3">Increase Charisma Score by +{{v}}</li>
+                                                        {% elif v < 0 %}
+                                                            <li class="mb-3">Decrease Charisma Score by -{{v}}</li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% empty %}
+                                                    <li class="mb-3">Nothing.</li>
+                                                {% endfor %}
+                                            {% endwith %}
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </h6>
 
@@ -100,11 +184,7 @@
                             <hr>
 
                             <h6 class="pl-3">
-                                As a hill dwarf, you have keen senses, deep intuition,
-                                and remarkable resilience. The gold dwarves of Faerein
-                                in their mighty southern kingdom are hill dwarves, as
-                                are the exiled Neidar and the debased Klar of Krynn in
-                                the Dragonlance setting.
+                                {{f.description}}
                             </h6>
 
                         </div>
@@ -116,67 +196,24 @@
                             <h6 class="pl-3">
                                 In addition to the Dwarf Racial Abilities, Hill Dwarves gain:
                                 <ul>
-                                    <li>Dwarven Toughness:<br>Your hit point maximum
-                                        increases by 1, and it increases by 1 every time you
-                                        gain a level.</li>
+                                    {% for subracekey, feats in subraceFeatures.items %}
+                                        {% if subracekey == f.name %}
+                                            {% for feat in feats %}
+                                                <li>{{feat.description}}</li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </h6>
 
                         </div>
 
                     </div>
-                    {% endif %}
                     {% endfor %}
 
 
 
-                    <div class="card col-xl-10 p-3 my-3">
 
-                        <h4>Mountain Dwarf:</h4>
-                        <hr>
-                        <div class="col-xl-12">
-                            <h4>Racial Modifiers:</h4>
-                            <hr>
-
-                            <h6 class="pl-3">
-                                In addition to the Dwarf Racial Modifiers, Mountain Dwarves gain:
-                                <ul>
-                                    <li>increase Strength Score by +2</li>
-                                </ul>
-                            </h6>
-
-                        </div>
-
-                        <div class="col-xl-12">
-                            <h4>Description:</h4>
-                            <hr>
-
-                            <h6 class="pl-3">
-                                As a mountain dwarf, you're strong and hardy,
-                                accustomed to a difficult life in rugged terrain. You're
-                                probably on the tall side (for a dwarf). and tend toward
-                                lighter coloration. The shield dwarves of northern
-                                Faerun, as well as the ruling Hylar clan and the noble
-                                Daewar clan of Dragonlance, are mountain dwarves.
-                            </h6>
-
-                        </div>
-
-                        <div class="col-xl-12">
-                            <h4>Racial Abilities:</h4>
-                            <hr>
-
-                            <h6 class="pl-3">
-                                In addition to the Dwarf Racial Abilities, Mountain Dwarves gain:
-                                <ul>
-                                    <li>Dwarven Armor Training:<br>You have proficiency with
-                                        light and medium armor.</li>
-                                </ul>
-                            </h6>
-
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
