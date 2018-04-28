@@ -2,7 +2,7 @@
 
 {% block content %}
 <main role="main" class="container">
-    <div class="container card" style="margin-top:10px;">
+    <div class="container card p-5" style="margin-top:10px;">
 
         <div class="row" style="margin-top: 10px">
             <!--Grid column-->
@@ -15,62 +15,68 @@
             </div>
 
         </div>
+        <div style="margin-left: 55px;">
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-3">
 
-        <div class="row" style="margin-top: 10px">
-            <!--Grid column-->
-            <div class="col-md-3">
+                    <h4>Damage</h4>
+                    <hr>
+                    <h6>{{weapon.damage}} {{weapon.get_damage_type_display}} Damage</h6>
 
-                <h4>Damage</h4>
-                <hr>
-                <h6>{{weapon.damage}}</h6>
 
+                </div>
+
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-3">
+
+                    <h4>Properties</h4>
+                    <hr>
+                    {% for f in properties %}
+                        <div>
+                            <h6>{{f.name}}</h6>
+                            <p> {{f.description}}</p>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-3">
+
+                    <h4>Cost</h4>
+                    <hr>
+                    <h6>{{weapon.gold}} gold <br>
+                        {{weapon.silver}} silver <br>
+                        {{weapon.copper}} copper
+                    </h6>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+                <!--Grid column-->
+                <div class="col-md-6">
+
+                    <h4>Weight</h4>
+                    <hr>
+                    <div>
+                        <h6 class="m-3">{{weapon.weight}} lbs</h6>
+                    </div>
+                </div>
 
             </div>
 
         </div>
-
-        <div class="row" style="margin-top: 10px">
-            <!--Grid column-->
-            <div class="col-md-3">
-
-                <h4>Properties</h4>
-                <hr>
-                <div>
-                    <h6>Heavy</h6>
-                    <p> small creatures have disadvantage</p>
-                </div>
-                <div>
-                    <h6>reach</h6>
-                    <p> +5 to range</p>
-                </div>
-                <div>
-                    <h6>two handed</h6>
-                    <p> reqiured to hands ya dumbass</p>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <div class="row" style="margin-top: 10px">
-            <!--Grid column-->
-            <div class="col-md-3">
-
-                <h4>Cost</h4>
-                <hr>
-                <h6>{{weapon.gold}} gold <br>
-                    {{weapon.silver}} silver <br>
-                    {{weapon.copper}} copper
-                </h6>
-
-
-
-            </div>
-
-        </div>
-
-
         <!--Main container-->
     </div>
 </main>

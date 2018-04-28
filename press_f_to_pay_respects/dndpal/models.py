@@ -296,7 +296,6 @@ class Weapon(models.Model):
 
 
 class Properties(models.Model):
-    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this property.")
+    name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this property.")
     weapon = models.ForeignKey('Weapon', on_delete=models.CASCADE, null=True)
     description = models.CharField(default = "", max_length = 10000, help_text = "Enter the description of this property")
-    

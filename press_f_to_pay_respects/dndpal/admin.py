@@ -19,10 +19,11 @@ admin.site.register(CharacterSubclassSpellList)
 admin.site.register(CharacterClassStartingEquipment)
 admin.site.register(Spell)
 
-from .models import FeatRanking, Feat, Weapon, Armor, Properties, Equipment
+from .models import FeatRanking, Feat, Weapon, Armor, Equipment, Properties
 admin.site.register(FeatRanking)
 admin.site.register(Feat)
-admin.site.register(Properties)
 admin.site.register(Armor)
 admin.site.register(Equipment)
 admin.site.register(Weapon)
+admin.site.register(Properties)
+

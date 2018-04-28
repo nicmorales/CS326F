@@ -216,6 +216,14 @@ class WeaponListView(generic.ListView):
 class WeaponDetailView(generic.DetailView):
     model = Weapon
 
+    def get_context_data(self, **kwargs):
+        context = super(WeaponDetailView, self).get_context_data(**kwargs)
+        context['properties'] = Properties.objects.filter(weapon = context['weapon'])
+        print('properties'+str(context['properties']))
+        return context
+
+
+
 class SpellListView(generic.ListView):
     model = Spell
 
