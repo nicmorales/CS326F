@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{% static 'css/guided_styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
 </head>
-
 <body>
     <div id="gutter">
         <!-- Make image size relative -->
@@ -33,7 +32,7 @@
                 Change Picture
             </button>
         </div>
-        <div id = "primary_stats">
+        <div id = "level_stats">
             <h6>Level Information</h6>
             <div class="stats_container">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -60,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div id = "secondary_stats">
+        <div id = "primary_stats">
                 <h6>Primary Stats</h6>
                 <div class="stats_container">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -135,11 +134,54 @@
                     </div>
                 </div>   
         </div>
-        <div id = "character_stats"></div>
-        <div id = "logout_button"> </div>
+        <div id = "secondary_stats">
+            <h6>Secondary Stats</h6>
+            <div class="stats_container">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="20" height="20"
+                    viewBox="0 0 252 252"
+                    style="fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,252v-252h252v252z" fill="none"></path><g fill="#95a5a6"><g id="surface1"><path d="M126,21l61.4209,73.5h-122.8418z"></path><path d="M105,78.75h42v141.75h-42z"></path></g></g></g></svg>
+                <div><h7>Armor Class:</h7></div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="20" height="20"
+                    viewBox="0 0 252 252"
+                    style="fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,252v-252h252v252z" fill="none"></path><g fill="#95a5a6"><g id="surface1"><path d="M126,21l61.4209,73.5h-122.8418z"></path><path d="M105,78.75h42v141.75h-42z"></path></g></g></g></svg>
+                <div><h7>Speed:</h7></div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="20" height="20"
+                    viewBox="0 0 252 252"
+                    style="fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,252v-252h252v252z" fill="none"></path><g fill="#95a5a6"><g id="surface1"><path d="M126,21l61.4209,73.5h-122.8418z"></path><path d="M105,78.75h42v141.75h-42z"></path></g></g></g></svg>
+                <div><h7>Initiative:</h7></div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+        </div>
+        <div id = "logout_button">
+            <button class="mdl-button mdl-js-button mdl-button--accent">
+                Logout
+            </button>    
+        </div>
     </div>        
     <div id="main">
-        <div>wtf</div>
+        <!-- Simple header with scrollable tabs. -->
+        
     </div>
 </body>
 </html>
