@@ -137,7 +137,7 @@ class CharacterClass(models.Model):
 class CharacterClassSpellList(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
-    ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this spell relative to the other spells available for this class.")
+    ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the recommended ranking of this spell relative to the other spells available for this class on a scale from 1-5. 5 being the best and 1 being the worst.")
     spell_list = models.ForeignKey('Spell', on_delete=models.CASCADE)
 
 class CharacterClassFeatures(models.Model):
@@ -165,15 +165,14 @@ class CharacterSubclassSpellList(models.Model):
 class Spell(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the spell")
     # Saved as an int, but should be interpreted as number of seconds
-    cast_time = models.PositiveIntegerField(default = 6, help_text = "Enter the amount of seconds it takes the spell to cast. If a spell takes 1 turn, enter in the value: TBD.")
+    cast_time = models.CharField(default = "", max_length = 10000, help_text = "Enter the action it takes to cast the spell.")
     # Amount of hit point damage it does. If it is a healing spell, enter the amount of hit points it heals.
-    damage = models.PositiveIntegerField(default=1, help_text="The base hit point damage of the spell. If this is a healing spell, enter in the amount of hit points it heals for")
     # Saved as an int, but should be interpreted as number of feet
-    range = models.CharField(default = "", max_length = 10000, help_text = "Enter the range of the spell in feet. If the range is infinite, enter the value: TBD")
+    range = models.CharField(default = "", max_length = 10000, help_text = "Enter the range of the spell in feet. If the range is a touch, enter the value: Touch")
     #Units: feet
-    area_effected = models.CharField(default = "", max_length = 10000, help_text = "Enter the area affected by the spell after it connects (in feet).")
-    required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
-    components = models.CharField(default = "", max_length = 10000, help_text = "Enter the spell components to cast this spell")
+    area_effected = models.CharField(default = "", max_length = 10000, blank=True, help_text = "If the spell affects an area, enter the area affected by the spell (in feet).")
+    required_materials = models.CharField(default = "", max_length = 10000, help_text = "If the Spell has material components, enter the materials here in JSON format. Else, type: {}")
+    components = models.CharField(default = "", max_length = 10000, help_text = "Enter the spell components of this spell")
     
     SCHOOL_CHOICES = (
         ('ab', 'Abjuration'),
