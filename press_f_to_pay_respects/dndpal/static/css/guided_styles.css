@@ -213,16 +213,19 @@ body {
     border-top: 1px solid #7292A9;
 }
 
-#health_container {
-    flex-basis: 187px;
+#health_container, #saving_throws, #equipment {
+    flex-shrink: 2;
+    flex-basis: 160px;
 }
 
 #saving_throws {
-    flex-basis: 187px;
+    flex-shrink: 2;
+    flex-basis: 160px;
 }
 
 #equipment {
-    flex-basis: 187px;
+    flex-shrink: 2;
+    flex-basis: 160px;
 }
 
 .page-content .mdl-textfield {
@@ -249,6 +252,6 @@ body {
 }
 
 #skills {
-    flex-basis: 600px;
+    flex-basis: 800px;
     border-left: 1px solid #7292A9;
 }
