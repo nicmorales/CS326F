@@ -164,10 +164,12 @@ class CharacterSubclassSpellList(models.Model):
 
 class Spell(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the spell")
+    spell_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the spell level of this spell")
     # Saved as an int, but should be interpreted as number of seconds
     cast_time = models.CharField(default = "", max_length = 10000, help_text = "Enter the action it takes to cast the spell.")
     # Amount of hit point damage it does. If it is a healing spell, enter the amount of hit points it heals.
     # Saved as an int, but should be interpreted as number of feet
+    duration = models.CharField(default = "", max_length = 10000, help_text = "Enter the duration of the spell in rounds.")
     range = models.CharField(default = "", max_length = 10000, help_text = "Enter the range of the spell in feet. If the range is a touch, enter the value: Touch")
     #Units: feet
     area_effected = models.CharField(default = "", max_length = 10000, blank=True, help_text = "If the spell affects an area, enter the area affected by the spell (in feet).")
