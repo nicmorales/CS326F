@@ -4,12 +4,12 @@
 
 <main role="main" class="container">
     <div class="container card p-5" style="margin-top:10px;">
-        <h1>List of Class</h1>
+        <h1>List of Classes</h1>
 
-        {% if class_list %}
+        {% if characterclass_list %}
         <ul>
 
-            {% for class in class_list %}
+            {% for class in characterclass_list %}
             <li>
                 <a href="{{ class.get_absolute_url }}">{{ class.name }}</a>
             </li>

@@ -75,7 +75,7 @@ class Character(models.Model):
         """
         Returns the url to access a detail record for this Character.
         """
-        return reverse('book-detail', args=[str(self.name)])
+        return reverse('character-detail', args=[str(self.name)])
 
 class Race(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this race")
@@ -120,7 +120,7 @@ class SubraceFeatures(models.Model):
 class CharacterClass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class")
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
-    hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hit points for this class")
+    hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hitdie of this class")
     skill_proficiency_limit = models.PositiveSmallIntegerField(default = 5, help_text = "Enter the max amount of skills this class can be proficient in")
     skill_list = models.CharField(default = '', max_length = 100, help_text = "Enter a comma separated spell list. Ex: \"Acrobatics,Intimidation\" \(without the quotations\)")
 
@@ -132,7 +132,7 @@ class CharacterClass(models.Model):
         """
         Returns the url to access a detail record for this class.
         """
-        return reverse('character-detail', args=[str(self.name)])
+        return reverse('class-detail', args=[str(self.name)])
 
 class CharacterClassSpellList(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)

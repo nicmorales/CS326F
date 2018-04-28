@@ -109,11 +109,19 @@ class ArmorListView(generic.ListView):
 class ArmorDetailView(generic.DetailView):
     model = Armor
 
-class ClassListView(generic.ListView):
+class CharacterClassListView(generic.ListView):
     model = CharacterClass
 
-class ClassDetailView(generic.DetailView):
+class CharacterClassDetailView(generic.DetailView):
     model = CharacterClass
+
+    def get_context_data(self, **kwargs):
+        context = super(CharacterClassDetailView, self).get_context_data(**kwargs)
+        context['classFeatures'] = CharacterClassFeatures.objects.filter(character_class = context['characterclass'])
+        context['clas'] = context['characterclass']
+
+        print('class = '+str(context['characterclass'].name))
+        return context
 
 class EquipmentListView(generic.ListView):
     model = Equipment
@@ -234,20 +242,10 @@ class SpellDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(SpellDetailView, self).get_context_data(**kwargs)
-        context['ranks'] = {}
-        context['sranks'] = {}
-        charQuerySet = CharacterClassSpellList.objects.filter(spell_list = context['spell'])
+        context['classes'] = CharacterClassSpellList.objects.filter(spell_list = context['spell'])
+        context['subclasses'] = CharacterSubclassSpellList.objects.filter(spell_list = context['spell'])
 
-        for s in charQuerySet:
-            context['ranks'][s.character_class.name] = s.ranking
-
-        subQuerySet = CharacterSubclassSpellList.objects.filter(spell_list = context['spell'])
-
-        for s in subQuerySet:
-            context['sranks'][s.subclass.name] = s.ranking
-
-
-        print('properties'+str(context['ranks']))
+        print('properties'+str(context['classes']))
         return context
 
 
