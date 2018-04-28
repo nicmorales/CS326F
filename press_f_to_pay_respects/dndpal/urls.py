@@ -27,6 +27,10 @@ urlpatterns = [
     path('armor/create/', views.ArmorCreate.as_view(), name='armor_create'),
     path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
+<<<<<<< HEAD
+
+    
+=======
 	#ajax all the fucking ajax
     url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
 	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
@@ -35,5 +39,6 @@ urlpatterns = [
 
 # Niko's pages:
 urlpatterns += [
+>>>>>>> 7ef1e356b12f8d68bd2ce76fdb8542dd1db74924
     path('guided/', views.guided, name='guided'),
 ]

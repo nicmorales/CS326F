@@ -60,9 +60,15 @@ fabric.properties
 '.idea' 
 venv/pip-selfcheck.json
 .vscode/settings.json
-.vscode/settings.json
-.vscode/settings.json
-.vscode/settings.json
 
-*.pyc
 *.pyo
+
+press_f_to_pay_respects/dndpal/migrations/
+
+press_f_to_pay_respects/dndpal/__pycache__/
+
+press_f_to_pay_respects/press_f_to_pay_respects/__pycache__/
+/press_f_to_pay_respects/mig.bat
+press_f_to_pay_respects/mig.bat
+/press_f_to_pay_respects/run.bat
+press_f_to_pay_respects/run.bat

@@ -1,3 +1,111 @@
+<<<<<<< HEAD
+@charset "utf-8";
+
+#container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+#gutter { 
+    height: 100%; 
+} 
+
+#stats { 
+    height: 100%; 
+}
+
+#gutter{
+    flex: 0.75;
+    background-color: #202a32;
+    display: flex;
+    flex-direction: column; 
+}
+
+#stats{
+    flex: 4;
+    background-color: #21303b;
+}
+
+#class_img_container{
+    flex-basis: 150px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.class_img_flex{
+    flex: 1 1 auto;
+    text-align: center;
+    background-color: cyan;
+}
+
+.upload_button_container{
+    flex-basis:  50px; 
+    text-align: center;
+    background-color: hotpink;
+}
+
+.upload_button_container > button{
+    text-align: center;
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+#armor_stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: 150px;
+    background-color: blue;
+}
+
+#armor_header {
+    background-color: orangered;
+    height: 35px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#armor_list_container{
+    background-color: olive;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.demo-list-icon {
+    min-height: 0px;
+}
+#armor_stats .mdl-list__item{
+    flex-shrink: 2;
+    min-height: 0px;
+    height: 25px;
+    background-color: yellow;
+    margin-top: 0px;
+}
+
+h6 {
+    padding-left: 15px;
+    background-color: teal;
+}
+
+#character_stats{
+    flex-basis: 250px;
+    background-color: red;
+}
+
+#logout_button{
+    flex-basis: 35px;
+    background-color: orange;
+}
+
+img {
+    max-width: 62.5%;
+}
+=======
 body {
    
 
@@ -60,3 +168,4 @@ body {
 }
 
 
+>>>>>>> 7ef1e356b12f8d68bd2ce76fdb8542dd1db74924
