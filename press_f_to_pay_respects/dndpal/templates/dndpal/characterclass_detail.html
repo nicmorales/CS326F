@@ -47,9 +47,9 @@
                             <!-- Hit Points -->
                             <li class="mb-3"><u>Hit Points</u>
                                 <ul>
-                                    <li class="mb-3">Hit Dice: 1d10 per {{clas.name}} level</li>
-                                    <li class="mb-3">Hit Points at 1st Level: 10 + Constitution modifier</li>
-                                    <li>Hit Points at Higher Levels: 1d10 (or 6) + Constitution modifier per fighter level after 1st</li>
+                                    <li class="mb-3">Hit Dice: 1d{{clas.hitpoints}} per {{clas.name}} level</li>
+                                    <li class="mb-3">Hit Points at 1st Level: {{clas.hitpoints}} + Constitution modifier</li>
+                                    <li>Hit Points at Higher Levels: 1d{{clas.hitpoints}} (or {{hpAverage}}) + Constitution modifier per {{clas.name}} level after 1st</li>
                                 </ul>
                             </li>
                             <!-- Proficiencies -->

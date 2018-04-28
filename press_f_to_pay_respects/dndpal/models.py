@@ -139,6 +139,7 @@ class CharacterClassSpellList(models.Model):
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the recommended ranking of this spell relative to the other spells available for this class on a scale from 1-5. 5 being the best and 1 being the worst.")
     spell_list = models.ForeignKey('Spell', on_delete=models.CASCADE)
+    ran_note = models.CharField(default = "", max_length = 10000, help_text = "Enter the ranking note for this spell for this class")
 
 class CharacterClassFeatures(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class feature")
@@ -159,6 +160,7 @@ class CharacterSubclassSpellList(models.Model):
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the recommended ranking of this spell relative to the other spells available for this class on a scale from 1-5. 5 being the best and 1 being the worst.")
     spell_list = models.ForeignKey('Spell', on_delete=models.CASCADE)
+    ran_note = models.CharField(default = "", max_length = 10000, help_text = "Enter the ranking note for this feat for this subclass")
 
 
 
@@ -202,6 +204,7 @@ class FeatRanking(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the feat this ranking describes")
     required_level = required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this spell")
     ranking = models.SmallIntegerField(default= 0, help_text="Enter the ranking of this feature relative to the other features available for this class.")
+    ran_note = models.CharField(default = "", max_length = 10000, help_text = "Enter the ranking note for this feat")
 
 class Feat(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this feat.")

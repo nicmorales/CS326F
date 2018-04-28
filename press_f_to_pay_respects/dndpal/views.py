@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import json
 from django.core import serializers
+import math
 
 from django.http import JsonResponse
 
@@ -119,7 +120,7 @@ class CharacterClassDetailView(generic.DetailView):
         context = super(CharacterClassDetailView, self).get_context_data(**kwargs)
         context['classFeatures'] = CharacterClassFeatures.objects.filter(character_class = context['characterclass'])
         context['clas'] = context['characterclass']
-
+        context['hpAverage'] = math.ceil((context['clas'].hitpoints + 1)/2)
         print('class = '+str(context['characterclass'].name))
         return context
 
