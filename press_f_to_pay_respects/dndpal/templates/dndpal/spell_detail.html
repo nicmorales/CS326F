@@ -40,9 +40,18 @@
                             <td>1st level</td>
                             <td>{{spell.get_school_display}} Spell</td>
                             <td>{{spell.cast_time}}</td>
-                            <td>{{spell.range}}</td>
-                            <td>Instantaneous</td>
-                            <td>Visual, Somatic</td>
+                            {% if spell.area_effected == "" %}
+                                <td>{{spell.range}}</td>
+                            {% else %}
+                                <td>{{spell.range}} ({{spell.area_effected}})</td>
+                            {% endif %}
+                            <td>{{spell.duration}}</td>
+                            {% if spell.components == "" %}
+                                <td>{{spell.components}}</td>
+                            {% else %}
+                                <td>{{spell.components}} ({{spell.area_effected}})</td>
+                            {% endif %}
+
                         </tr>
                         </tbody>
                     </table>

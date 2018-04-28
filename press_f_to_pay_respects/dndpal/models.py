@@ -173,7 +173,7 @@ class Spell(models.Model):
     range = models.CharField(default = "", max_length = 10000, help_text = "Enter the range of the spell in feet. If the range is a touch, enter the value: Touch")
     #Units: feet
     area_effected = models.CharField(default = "", max_length = 10000, blank=True, help_text = "If the spell affects an area, enter the area affected by the spell (in feet).")
-    required_materials = models.CharField(default = "", max_length = 10000, help_text = "If the Spell has material components, enter the materials here in JSON format. Else, type: {}")
+    materials = models.CharField(default = "", max_length = 10000, help_text = "If the Spell has material components, enter the materials here in JSON format. Else, type: {}")
     components = models.CharField(default = "", max_length = 10000, help_text = "Enter the spell components of this spell")
     
     SCHOOL_CHOICES = (
