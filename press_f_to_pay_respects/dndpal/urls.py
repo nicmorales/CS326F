@@ -38,3 +38,9 @@ urlpatterns = [
 urlpatterns += [
     path('guided/', views.guided, name='guided'),
 ]
+
+
+urlpatterns += [
+    path('mycharacters/', views.CharacterListView.as_view(), name='my-characters'),
+    path('character/<int:pk>', views.CharacterDetailView.as_view(), name ='character-detail'),
+]

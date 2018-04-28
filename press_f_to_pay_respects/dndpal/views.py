@@ -5,6 +5,8 @@ from django.core import serializers
 
 from django.http import JsonResponse
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 # Create your views here.
 from .models import *
 
@@ -229,6 +231,40 @@ class SpellListView(generic.ListView):
 
 class SpellDetailView(generic.DetailView):
     model = Spell
+
+    def get_context_data(self, **kwargs):
+        context = super(SpellDetailView, self).get_context_data(**kwargs)
+        context['ranks'] = {}
+        context['sranks'] = {}
+        charQuerySet = CharacterClassSpellList.objects.filter(spell_list = context['spell'])
+
+        for s in charQuerySet:
+            context['ranks'][s.character_class.name] = s.ranking
+
+        subQuerySet = CharacterSubclassSpellList.objects.filter(spell_list = context['spell'])
+
+        for s in subQuerySet:
+            context['sranks'][s.subclass.name] = s.ranking
+
+
+        print('properties'+str(context['ranks']))
+        return context
+
+
+
+class CharacterListView(LoginRequiredMixin,generic.ListView):
+    model = Character
+    template_name ='char_list.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        return Character.objects.filter(username=self.request.user)
+
+
+class CharacterDetailView(generic.DetailView):
+    model = Character
+    template_name ='test_for_alan.html'
+
 
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect

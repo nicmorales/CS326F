@@ -69,7 +69,7 @@ class Character(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.char_name
 
     def get_absolute_url(self):
         """
