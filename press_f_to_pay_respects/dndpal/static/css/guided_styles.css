@@ -1,8 +1,6 @@
 body {
     background-color: white;
     display: inline-flex;
-    width: 100vw;
-    height: 100vh;
 }
 
 #gutter {
@@ -18,7 +16,7 @@ body {
     flex-grow: 3;
     flex-shrink: 0;
     flex-basis: 600px;
-    display: flex;
+    display: block;
     background-color: #22303B;  
     box-shadow: 0 38px 57px rgba(0,0,0,0.30), 0 18px 15px rgba(0,0,0,0.22);
 }
@@ -37,10 +35,10 @@ body {
 
 #character_img_frame {
 /* -------- Height == width & border radius == 50% for circle effect --------- */
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 90px;
     background-color: #bbb;
     overflow: hidden;
@@ -60,16 +58,23 @@ body {
 #upload_button {
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 25px;
+    flex-basis: 15px;
 }
 
 #gutter button {
-    width: 75%;
-    height: 4.5%;
+    width: 60%;
+    height: 3.5%;
     text-align: center;
     vertical-align: middle;
-    margin-top: 0px;
-    margin-left: 12.5%;
+    margin-left: 20%;
+}
+
+#upload_button button{
+    top: -10px;
+}
+
+#logout_button button{
+    margin-top: -5px;
 }
 
 #level_stats {
@@ -129,7 +134,6 @@ body {
     width: 125px;
 }
 
-
 #primary_stats {
     flex-grow: 1;
     flex-shrink: 1;
@@ -141,7 +145,7 @@ body {
 #secondary_stats {
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 200px;
+    flex-basis: 155px;
 }
 
 #logout_button {  
@@ -152,3 +156,99 @@ body {
 }
 
 /* ---------- Gutter CSS end ---------*/
+
+.mdl-layout {
+    width: 100%;
+}
+
+.mdl-js-layout{
+    width: 100%;
+}
+
+.mdl-layout__container{
+    width: 75%;
+}
+
+.mdl-layout__header-row {
+}
+
+.mdl-layout__header {
+    background-color: #22303B;
+}
+
+.mdl-layout-subtitle {
+    margin-top: 15px;
+}
+
+.mdl-layout__header-row{
+    display: inline-block;
+
+}
+
+.character_name h6{
+    margin: 7px 0px 0px 0px;
+}
+
+.character_class h5{
+    margin: 0px 0px 0px 0px;
+}
+
+.mdl-layout__tab-bar {
+    background-color: #22303B;
+}
+
+#health_container h5, #saving_throws h5, #equipment h5, #skills h5{
+    margin-left: 15px;
+    color: white;
+}
+
+.page-content {
+    display: flex;
+    height: 84%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#saving_throws, #equipment{
+    border-top: 1px solid #7292A9;
+}
+
+#health_container {
+    flex-basis: 187px;
+}
+
+#saving_throws {
+    flex-basis: 187px;
+}
+
+#equipment {
+    flex-basis: 187px;
+}
+
+.page-content .mdl-textfield {
+    margin-top: -12.5px;
+    margin-left: 25px;
+    width: 125px;
+}
+
+.page-content .mdl-textfield__label {
+    font-size: 13px;
+    color: white;
+}
+
+.page-content .mdl-textfield__input{
+    font-size: 14px;
+    color: #7292A9;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.page-content .mdl-textfield__error{
+    top: 50px;
+    height: 50px;
+    width: 125px;
+}
+
+#skills {
+    flex-basis: 600px;
+    border-left: 1px solid #7292A9;
+}
