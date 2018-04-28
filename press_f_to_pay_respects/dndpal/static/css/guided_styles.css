@@ -1,62 +1,152 @@
 body {
-   
-
+    background-color: white;
+    display: inline-flex;
+    width: 100vw;
+    height: 100vh;
 }
 
-#container {
-    position: relative;
+#gutter {
+   flex-grow: 1;
+   background-color: #22303B;
+   display: inline-flex;
+   flex-direction: column;
+   flex-shrink: 0;
+   flex-basis: 200px;
+}
+
+#main {
+    flex-grow: 3;
+    flex-shrink: 0;
+    flex-basis: 600px;
     display: flex;
-    min-height: 100vh;
-    background-color: black;
+    background-color: #202A32;
+}
+
+/* -------- Gutter CSS Start --------- */
+
+#character_img {
+    flex-grow: 1;
+    flex-basis: 100px;
+    background-color: snow;
+}
+
+#character_img img {
+    max-height: 100%;
+    max-width: 100%;
+    background-color: purple;
+}
+
+#character_img_frame {
+/* -------- Height == width & border radius == 50% for circle effect --------- */
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 62.5px;
+    background-color: #bbb;
+    overflow: hidden;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    display: inline-block;
+}
+
+#upload_button {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 10px;
+    background-color: blue;
+}
+
+#upload_button .mdl-button {
+    width: 50%;
+    height: 35px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 25%;
+}
+
+#primary_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+}
+
+#primary_stats h6, #secondary_stats h6{
+    margin: 0 0 0 15px ;
+    color: white;
+}
+
+.stats_container h7{
+    height: 36px;
+    width: 250px;
+    color: #7292A9;
+}
+
+.stats_container div {
+    display: inline-block;
+    width: 116.734px;
+}
+
+.stats_container .mdl-textfield {
+    margin: -10 0 0 12.5px; /* top, right, bottom, left */
+    width: 75px;
+    color: rgb(100,255,218);
+}
+
+.stats_container {
+    height: 40px;
+    align: center;
+}
+
+.stats_container svg{
+    margin: 0 0 0 20px;
+}
+
+.stats_container .mdl-textfield__input{
+    font-size: 14px;
+}
+
+.stats_container .mdl-textfield__error{
+    top: 22.5px;
+    left: 125px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
+
+}
+
+.stats_container .experience_error{
+    top: 22.5px;
+    left: 96px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
 }
 
 
-#gutter { height: 100%; } #stats { height: 100%; }
-
-
-
-#gutter{
-    flex: 1;
-    background-color: #202a32;
-    display: flex;
-    flex-direction: column; 
-}
-
-#stats{
-    flex: 4;
-    background-color: #21303b;
-}
-
-.class_img_container{
-    flex: 1;
-    background-color: yellow;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-.class_button{
-    flex: 1;
-
-}
-.class_img_flex{
-    flex: 1;
-}
-
-.armor_stats{
-    flex: 1;
-    background-color: violet;
-}
-
-.character_stats{
-    flex: 2;
-    background-color: red;
-}
-
-.logout_button{
-    flex: 0.3;
+#secondary_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
     background-color: orange;
 }
 
 
+
+#character_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
+    background-color: yellow;
+}
+
+#logout_button {    
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 30px;
+    background-color: purple;
+}
+
+/* ---------- Gutter CSS end ---------*/

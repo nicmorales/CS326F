@@ -7,7 +7,7 @@
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-    <title>PressF To Pay Respect</title>
+    <title>Guided Character Page</title>
     {% load static %}
     <!-- Loads the MDL styles -->
     <link rel="stylesheet" href="{% static 'css/mdl/material.min.css' %}">
@@ -19,40 +19,127 @@
 </head>
 
 <body>
-    <!--- Holds the whole page -->
-    <div id="container">
-        <!---  Divider on the left side of the page  -->
-        <div id="gutter">
-            <div class="class_img_container">
-                {% load static %}
-                <!--- Profile picture of the character-->
-                <div class="class_img_flex">
-                    <img src="{% static 'img/Paladin_Crest.png' %}" alt="class_image"/>
+    <div id="gutter">
+        <!-- Make image size relative -->
+        <div id = "character_img">
+            {% load static %}
+            <div id = "character_img_frame">
+                    <img src="{% static "img/fighter.jpg" %}" alt="Character image"/>
+            </div>
+        </div>
+        <div id = "upload_button">
+            <!-- Flat button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-button--accent">
+                Change Picture
+            </button>
+        </div>
+        <div id = "primary_stats">
+            <h6>Level Information</h6>
+            <div class="stats_container">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="20" height="20"
+                    viewBox="0 0 252 252"
+                    style="fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,252v-252h252v252z" fill="none"></path><g fill="#95a5a6"><g id="surface1"><path d="M126,21l61.4209,73.5h-122.8418z"></path><path d="M105,78.75h42v141.75h-42z"></path></g></g></g></svg>
+                <div><h7>Current Level:</h7></div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
-                <!-- Accent-colored raised button with ripple -->
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent class_button">
-                        Button
-                </button>
             </div>
-            <div class="upload_button">
-
-            </div>
-            <div class="armor_stats">
-
-            </div>
-            <div class="character_stats">
-
-            </div>
-            <div class="logout_button">
-
-
+            <div class="stats_container">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+    width="20" height="20"
+    viewBox="0 0 24 24"
+    style="fill:#7f8c8d;"><g id="surface1"><path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path></g></svg>
+                <div><h7>Experience Points:</h7></div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
             </div>
         </div>
-        <!---  Divider holding most of the calculated stats  -->
-        <div id="stats">
-
-
-
+        <div id = "secondary_stats">
+                <h6>Primary Stats</h6>
+                <div class="stats_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="20" height="20"
+                        viewBox="0 0 252 252"
+                        style="fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,252v-252h252v252z" fill="none"></path><g fill="#95a5a6"><g id="surface1"><path d="M126,21l61.4209,73.5h-122.8418z"></path><path d="M105,78.75h42v141.75h-42z"></path></g></g></g></svg>
+                        <div><h7>Strength:</h7></div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                        <label class="mdl-textfield__label " for="sample2">1</label>
+                        <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                </div>
+                <div class="stats_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="20" height="20"
+        viewBox="0 0 24 24"
+        style="fill:#7f8c8d;"><g id="surface1"><path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path></g></svg>
+                    <div><h7>Dexterity:</h7></div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                        <label class="mdl-textfield__label " for="sample2">1</label>
+                        <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                    </div>
+                </div>
+                <div class="stats_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="20" height="20"
+        viewBox="0 0 24 24"
+        style="fill:#7f8c8d;"><g id="surface1"><path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path></g></svg>
+                    <div><h7>Constitution:</h7></div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                        <label class="mdl-textfield__label " for="sample2">1</label>
+                        <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                    </div>
+                </div>
+                <div class="stats_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="20" height="20"
+        viewBox="0 0 24 24"
+        style="fill:#7f8c8d;"><g id="surface1"><path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path></g></svg>
+                    <div><h7>Intelligence:</h7></div>  
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                        <label class="mdl-textfield__label " for="sample2">1</label>
+                        <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                    </div>
+                </div>
+                <div class="stats_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="20" height="20"
+        viewBox="0 0 24 24"
+        style="fill:#7f8c8d;"><g id="surface1"><path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path></g></svg>
+                    <div><h7>Wisdom:</h7></div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                        <label class="mdl-textfield__label " for="sample2">1</label>
+                        <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                    </div>
+                </div>
+                <div class="stats_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="20" height="20"
+        viewBox="0 0 24 24"
+        style="fill:#7f8c8d;"><g id="surface1"><path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path></g></svg>
+                    <div><h7>Charisma:</h7></div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                        <label class="mdl-textfield__label " for="sample2">1</label>
+                        <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                    </div>
+                </div>   
         </div>
+        <div id = "character_stats"></div>
+        <div id = "logout_button"> </div>
+    </div>        
+    <div id="main">
+        <div>wtf</div>
     </div>
 </body>
+</html>
