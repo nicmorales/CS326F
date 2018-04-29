@@ -29,6 +29,7 @@ body {
 }
 
 #character_img img {
+    
     max-height: 100%;
     max-width: 100%;
     background-color: purple;
@@ -36,11 +37,13 @@ body {
 
 #character_img_frame {
 /* -------- Height == width & border radius == 50% for circle effect --------- */
-    height: 70px;
-    width: 70px;
+    width: 6vw;
+    height: 6vw;
+    margin: 0 auto;
+    position: relative;
+    margin-left: 37%;
+    margin-top: 5%;
     border-radius: 50%;
-    margin-top: 15px;
-    margin-left: 90px;
     background-color: #bbb;
     overflow: hidden;
     text-align: center;
@@ -353,7 +356,7 @@ skill_header h5 {
 
 .tab_2 .mdl-textfield__input{
     font-size: 14px;
-    color: #7292A9;
+    color: white;
     border-bottom: 1px solid rgb(100,255,218);
 }
 
