@@ -126,7 +126,6 @@ class CharacterClass(models.Model):
     armor_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of armor proficiencies list for the class")
     weapon_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of weapon proficiencies list for the class")
     saving_throws = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated list of saving throws for the class")
-    starting_gear = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated list of starting gear for the class")
 
 
     def __str__(self):
@@ -228,7 +227,6 @@ class Feat(models.Model):
 
 class CharacterClassStartingEquipment(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null=True)
-    amount = models.SmallIntegerField(default= 2, null=True, help_text="Enter the number of starting items this class starts with")
     items = models.CharField(default = '', max_length = 1000, help_text = "Enter a list of the items in JSON format. Ex: {\"item_1\": \"Spatula\", \"item_2\": \"Dishsoap\"}")
 
 class Equipment(models.Model):

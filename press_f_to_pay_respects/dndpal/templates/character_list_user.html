@@ -137,16 +137,73 @@
 
 {% if character_list %}
 <ul>
-
-    {% for c in character_list %}
     <li>
+    {% for c in character_list %}
+
         <a href="{% url 'character-detail' c.pk %}">{{c.char_name}}</a> ({{ c.char_class.name }})
-    </li>
+
     {% endfor %}
+
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+           style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
+
+            <table>
+                <col width="20%">
+                <col width="80%">
+                <tbody>
+                <tr>
+                    <th>
+                        <div class="avatar">
+                            <img style="width:75%;max-width: 400px;height:auto;"
+                                 src="img/add.png"
+                                 class="rounded-circle img-responsive"
+                            >
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Add New</h5>
+                            <small class="text-muted"></small>
+                        </div>
+                        <p class="mb-1"></p>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </a>
+
+    {% else %}
+        <p>There are no characters.</p>
+
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+       style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
+
+        <table>
+            <col width="20%">
+            <col width="80%">
+            <tbody>
+            <tr>
+                <th>
+                    <div class="avatar">
+                        <img style="width:75%;max-width: 400px;height:auto;"
+                             src="img/add.png"
+                             class="rounded-circle img-responsive"
+                        >
+                    </div>
+                </th>
+                <th scope="row">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Add New</h5>
+                        <small class="text-muted"></small>
+                    </div>
+                    <p class="mb-1"></p>
+                </th>
+            </tr>
+            </tbody>
+        </table>
+    </a>
+
+    {% endif %}
+    </li>
 </ul>
-
-{% else %}
-<p>There are no characters.</p>
-{% endif %}
-
 {% endblock %}
