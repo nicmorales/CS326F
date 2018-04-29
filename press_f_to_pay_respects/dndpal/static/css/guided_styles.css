@@ -283,6 +283,7 @@ body {
 #personal_info, #weapon_info{
     flex-shrink: 2;
     flex-basis: 100px;
+    border-top: 1px solid #7292A9;
 }
 
 .main_stats .mdl-textfield {
@@ -337,6 +338,16 @@ body {
     width: 25px;
 }
 
+#coin_info {
+    border-top: 1px solid #7292A9;
+}
+
+#coin_info .mdl-textfield__label, #coin_info .mdl-textfield__input{
+    flex-shrink: 1;
+    flex-basis: 100px;
+    width: 100px;
+}
+
 #skills .skills_container h7{
     height: 18px;
     font-size: 12px;
@@ -354,6 +365,8 @@ body {
     text-align: center;
     color: rgb(100,255,218);
 }
+
+
 
 
 #skills .skills_container .mdl-textfield__label {
