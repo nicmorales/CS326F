@@ -122,7 +122,7 @@ class CharacterClass(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
     hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hitdie of this class")
     skill_proficiency_limit = models.PositiveSmallIntegerField(default = 5, help_text = "Enter the max amount of skills this class can be proficient in")
-    skill_list = models.CharField(default = '', max_length = 100, help_text = "Enter a comma separated skill list. Ex: \"Acrobatics,Intimidation\" \(without the quotations\)")
+    skill_list = models.CharField(default = '', max_length = 300, help_text = "Enter a comma separated skill list. Ex: \"Acrobatics,Intimidation\" \(without the quotations\)")
     armor_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of armor proficiencies list for the class")
     weapon_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of weapon proficiencies list for the class")
     saving_throws = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated list of saving throws for the class")
