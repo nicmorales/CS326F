@@ -100,6 +100,7 @@ class RaceFeatures(models.Model):
     race = models.ForeignKey('Race', on_delete=models.CASCADE, null = True)
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this feature; i.e. what this feature does")
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
+    feature_type = models.CharField(default= '', max_length = 5000, help_text = "Enter a note what this feature modifies")
 
 class Subrace(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
@@ -116,6 +117,7 @@ class SubraceFeatures(models.Model):
     sub_feature_name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this feature")
     #name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description for these features")
+    feature_type = models.CharField(default= '', max_length = 5000, help_text = "Enter a note what this feature modifies")
 
 class CharacterClass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class")
@@ -149,6 +151,7 @@ class CharacterClassFeatures(models.Model):
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this feature; i.e. what this feature does")
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
+    feature_type = models.CharField(default= '', max_length = 5000, help_text = "Enter a note what this feature modifies")
 
 class CharacterSubclass(models.Model):
     name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this Subclass")
@@ -156,6 +159,14 @@ class CharacterSubclass(models.Model):
     parent_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null=True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this Subclass")
     ranking = models.SmallIntegerField(default= 0, null=True, help_text="Enter the ranking of this subclass relative to the other subclasses available for this class.")
+
+
+class CharacterSubclassFeatures(models.Model):
+    name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this class feature")
+    character_subclass = models.ForeignKey('CharacterSubclass', on_delete=models.CASCADE, null = True)
+    description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this feature; i.e. what this feature does")
+    required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
+    feature_type = models.CharField(default= '', max_length = 5000, help_text = "Enter a note what this feature modifies")
 
 
 class CharacterSubclassSpellList(models.Model):
@@ -307,3 +318,5 @@ class Properties(models.Model):
     name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this property.")
     weapon = models.ForeignKey('Weapon', on_delete=models.CASCADE, null=True)
     description = models.CharField(default = "", max_length = 10000, help_text = "Enter the description of this property")
+
+

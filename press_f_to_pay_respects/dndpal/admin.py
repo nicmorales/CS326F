@@ -13,11 +13,12 @@ admin.site.register(CharacterClass)
 admin.site.register(CharacterClassSpellList)
 admin.site.register(CharacterClassFeatures)
 
-from .models import CharacterSubclass, CharacterSubclassSpellList, CharacterClassStartingEquipment, Spell
+from .models import CharacterSubclass, CharacterSubclassSpellList, CharacterClassStartingEquipment, Spell, CharacterSubclassFeatures
 admin.site.register(CharacterSubclass)
 admin.site.register(CharacterSubclassSpellList)
 admin.site.register(CharacterClassStartingEquipment)
 admin.site.register(Spell)
+admin.site.register(CharacterSubclassFeatures)
 
 from .models import FeatRanking, Feat, Weapon, Armor, Equipment, Properties
 admin.site.register(FeatRanking)
