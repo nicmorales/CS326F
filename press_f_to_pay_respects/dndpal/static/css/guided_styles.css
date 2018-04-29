@@ -198,12 +198,12 @@ body {
     background-color: #22303B;
 }
 
-#health_container h5, #saving_throws h5, #equipment h5, #skills h5, #personal_info h5{
+.page-content h5{
     margin-left: 15px;
     color: white;
 }
 
-.page-content {
+.main_stats {
     display: flex;
     height: 85%;
     flex-direction: column;
@@ -230,24 +230,24 @@ body {
 }
 
 
-.page-content .mdl-textfield {
+.main_stats .mdl-textfield {
     margin-top: -12.5px;
     margin-left: 25px;
     width: 125px;
 }
 
-.page-content .mdl-textfield__label {
+.main_stats .mdl-textfield__label {
     font-size: 13px;
     color: white;
 }
 
-.page-content .mdl-textfield__input{
+.main_stats .mdl-textfield__input{
     font-size: 14px;
     color: #7292A9;
     border-bottom: 1px solid rgb(100,255,218);
 }
 
-.page-content .mdl-textfield__error{
+.main_stats .mdl-textfield__error{
     top: 50px;
     height: 50px;
     width: 125px;
@@ -329,8 +329,46 @@ skill_header h5 {
     height: 59.5%;
 }
 
-#skill_column_1{
+#character_info .mdl-textfield{
+    margin-left: 25px;
 }
 
-#skill_column_2{
+#character_info .mdl-textfield {
+    color: white;
 }
+
+#top_row, #mid_row, #bot_row {
+    display: block;
+}
+
+#character_info, #spells_info, #equipment_info, #other_info, #feature_info{
+    flex-basis: 200px;
+    height: 35%;
+}
+
+.tab_2 .mdl-textfield__label {
+    font-size: 13px;
+    color: white;
+}
+
+.tab_2 .mdl-textfield__input{
+    font-size: 14px;
+    color: #7292A9;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.tab_2 .mdl-textfield__error{
+    top: 50px;
+    height: 50px;
+    width: 125px;
+}
+
+
+.tab_2 .mdl-textfield {
+    margin-left: 25px;
+}
+
+.tab_2{
+    display: flex;
+}
+

@@ -25,7 +25,7 @@
         <div id="character_img">
             <div id="character_img_frame">
                 {% load static %}
-                <img src="{% static " img/fighter.jpg " %}" alt="My image" />
+                <img src="{% static "img/Janet_Yellen.jpg" %}" alt="My image" />
             </div>
         </div>
         <div id="upload_button">
@@ -263,22 +263,21 @@
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
                     <div class="character_name">
-                        <h6>Jeb!</h6>
+                        <h6>Janet Yellen</h6>
                     </div>
                     <div class="character_class">
-                        <h5>Unholy Death Knight</h5>
+                        <h5>Chair of Federal Reserve</h5>
                     </div>
                 </div>
                 <!-- Tabs -->
                 <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
                     <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Main Stats</a>
-                    <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
-                    <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
+                    <a href="#fixed-tab-2" class="mdl-layout__tab">Spells &amp; Abilities</a>
                 </div>
             </header>
             <main class="mdl-layout__content">
                 <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-                    <div class="page-content">
+                    <div class="page-content main_stats">
                         <!-- Your content goes here -->
                         <div id="health_container">
                             <div class="main_stat_header">
@@ -589,63 +588,95 @@
                                 </div>
                             </div>
                         </div>
-                        <div id = "personal_info">
-                                <div class="main_stat_header">
-                                        <h5> Peronsal Information </h5>
-                                    </div>
-                                    <div class="hitpoint_textfield">
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                            <label class="mdl-textfield__label" for="sample4">Enter Gold</label>
-                                            <span class="mdl-textfield__error">Input is not a number!</span>
-                                        </div>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                            <label class="mdl-textfield__label" for="sample4">Enter Silver</label>
-                                            <span class="mdl-textfield__error">Input is not a number!</span>
-                                        </div>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                            <label class="mdl-textfield__label" for="sample4">Enter Copper</label>
-                                            <span class="mdl-textfield__error">Input is not a number!</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                            <label class="mdl-textfield__label" for="sample4">Enter Height</label>
-                                            <span class="mdl-textfield__error">Input is not a number!</span>
-                                        </div>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                            <label class="mdl-textfield__label" for="sample4">Enter Weight</label>
-                                            <span class="mdl-textfield__error">Input is not a number!</span>
-                                        </div>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                            <label class="mdl-textfield__label" for="sample4">Enter Age</label>
-                                            <span class="mdl-textfield__error">Input is not a number!</span>
-                                        </div>
-                                    </div>
+                        <div id="personal_info">
+                            <div class="main_stat_header">
+                                <h5> Peronsal Information </h5>
+                            </div>
+                            <div class="hitpoint_textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Gold</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Silver</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Copper</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Height</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Weight</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Age</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                        <div class="page-content tab_2">
+                            <div id = "top_row">
+                                <div id="character_info">
+                                    <h5>Character Information</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                                <div id="spells_info">
+                                    <h5>Attacks &amp; Spellcasting</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id=mid_row>
+                                <div id="equipment_info">
+                                    <h5>Other Proficiencies &amp; Languages </h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                                <div id="other_info">
+                                    <h5>Equipment</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id=footer_row>
+                                <div id="feature_info">
+                                    <h5>Features &amp; Traits</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
             </div>
         </div>
-    </div> 
-    </section>
-    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-        <div class="page-content">
-            <!-- Your content goes here -->
-        </div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-        <div class="page-content">
-            <!-- Your content goes here -->
-        </div>
-    </section>
     </main>
-    </div>
     </div>
 </body>
 
