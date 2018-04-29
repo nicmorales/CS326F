@@ -313,6 +313,7 @@ class Weapon(models.Model):
     # )
     # category = models.CharField(max_length = 1,choices= WEAPON_CATEGORIES, default ='s')
     #properties = ?
+    properties = models.CharField(default = '', max_length = 1000, help_text = "Enter the properties of this weapon in a comma separated list.")
 
     def get_absolute_url(self):
         """
@@ -323,7 +324,6 @@ class Weapon(models.Model):
 
 class Properties(models.Model):
     name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this property.")
-    weapon = models.ForeignKey('Weapon', on_delete=models.CASCADE, null=True)
     description = models.CharField(default = "", max_length = 10000, help_text = "Enter the description of this property")
 
 
