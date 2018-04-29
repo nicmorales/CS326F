@@ -55,11 +55,10 @@
                             <!-- Proficiencies -->
                             <li class="mb-3"><u>Proficiencies</u>
                                 <ul>
-                                    <li class="mb-3">Armor: All armor, shields</li>
-                                    <li class="mb-3">Weapons: Simple weapons, martial weapons</li>
-                                    <li class="mb-3">Tools: None</li>
-                                    <li class="mb-3">Saving Throws: Strength, Constitution</li>
-                                    <li>Skills: Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</li>
+                                    <li class="mb-3">Armor: {% for x in armorProf%} {{x}} {% endfor%}</li>
+                                    <li class="mb-3">Weapons: {% for x in weaponProf%} {{x}} {% endfor%}</li>
+                                    <li class="mb-3">Saving Throws: {% for x in savingThrows%} {{x}} {% endfor%}</li>
+                                    <li>Skills: Choose {{clas.skill_proficiency_limit}} skills from {% for x in skillList%} {{x}}, {% endfor%}and {{skillLast}}</li>
                                 </ul>
                             </li>
                             <!-- Equipment -->

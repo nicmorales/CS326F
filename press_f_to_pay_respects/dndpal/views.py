@@ -121,6 +121,16 @@ class CharacterClassDetailView(generic.DetailView):
         context['classFeatures'] = CharacterClassFeatures.objects.filter(character_class = context['characterclass'])
         context['clas'] = context['characterclass']
         context['hpAverage'] = math.ceil((context['clas'].hitpoints + 1)/2)
+        string = context['clas'].armor_prof
+        context['armorProf'] = [x.strip() for x in string.split(',')]
+        string = context['clas'].weapon_prof
+        context['weaponProf'] = [x.strip() for x in string.split(',')]
+        string = context['clas'].saving_throws
+        context['savingThrows'] = [x.strip() for x in string.split(',')]
+        string = context['clas'].skill_list
+        context['skillList'] = [x.strip() for x in string.split(',')]
+        context['skillLast'] = context['skillList'][-1]
+        context['skillList'] = context['skillList'][:-1]
         print('class = '+str(context['characterclass'].name))
         return context
 
