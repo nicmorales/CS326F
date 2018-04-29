@@ -5,6 +5,7 @@ body {
 
 #gutter {
    flex-grow: 1;
+   flex-shrink: 1;
    background-color: #202A32;
    display: inline-flex;
    flex-direction: column;
@@ -14,8 +15,8 @@ body {
 
 #main {
     flex-grow: 3;
-    flex-shrink: 0;
-    flex-basis: 600px;
+    flex-shrink: 1;
+    flex-basis: 800px;
     display: block;
     background-color: #22303B;  
     box-shadow: 0 38px 57px rgba(0,0,0,0.30), 0 18px 15px rgba(0,0,0,0.22);
@@ -197,36 +198,37 @@ body {
     background-color: #22303B;
 }
 
-#health_container h5, #saving_throws h5, #equipment h5, #skills h5{
+#health_container h5, #saving_throws h5, #equipment h5, #skills h5, #personal_info h5{
     margin-left: 15px;
     color: white;
 }
 
 .page-content {
     display: flex;
-    height: 84%;
+    height: 85%;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-#saving_throws, #equipment{
+#saving_throws, #equipment, #personal_info{
     border-top: 1px solid #7292A9;
 }
 
 #health_container, #saving_throws, #equipment {
     flex-shrink: 2;
-    flex-basis: 160px;
+    flex-basis: 180px;
 }
 
-#saving_throws {
+#personal_info{
     flex-shrink: 2;
-    flex-basis: 160px;
+    flex-basis: 180px;
 }
 
-#equipment {
-    flex-shrink: 2;
-    flex-basis: 160px;
+#skills {
+    flex-basis: 240px;
 }
+
 
 .page-content .mdl-textfield {
     margin-top: -12.5px;
@@ -251,7 +253,84 @@ body {
     width: 125px;
 }
 
-#skills {
-    flex-basis: 800px;
+#divider {
+    height: inherit;
+    width: 1px;
+    background-color: #7292A9;
+}
+
+#skills, #personal_info {
     border-left: 1px solid #7292A9;
+}
+
+#skills {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills_container {
+    flex-grow: 1;
+    display: flex;
+}
+
+#skills .mdl-radio{
+    color: white;
+
+}
+
+#skills .skills_container h7{
+    height: 36px;
+    color: #7292A9;
+}
+
+#skills .skills_container div {
+    display: inline-block;
+    width: 150px;
+}
+
+#skills .skills_container .mdl-textfield {
+    margin: -25px 20px 0px 0px; /* top, right, bottom, left */
+    width: 25px;
+    text-align: center;
+    color: rgb(100,255,218);
+}
+
+#skills .skills_container .mdl-textfield__label {
+    text-align: center;
+    color: white;
+}
+
+#skills .skills_container .mdl-textfield__input{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+#skills .mdl-textfield__error{
+    top: 22.5px;
+    left: 96px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
+}
+
+#skill_header {
+    display: block;
+}
+
+skill_header h5 {
+    display: block;
+}
+
+#skill_column_containers{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 59.5%;
+}
+
+#skill_column_1{
+}
+
+#skill_column_2{
 }
