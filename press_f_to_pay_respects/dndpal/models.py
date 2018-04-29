@@ -128,6 +128,7 @@ class CharacterClass(models.Model):
     armor_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of armor proficiencies list for the class")
     weapon_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of weapon proficiencies list for the class")
     saving_throws = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated list of saving throws for the class")
+    recommended_gear = models.CharField(default = "", max_length = 10000, help_text = "Enter the names of the recommended gear for this class")
 
 
     def __str__(self):
