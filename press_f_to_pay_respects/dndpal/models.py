@@ -83,7 +83,7 @@ class Race(models.Model):
     speed = models.SmallIntegerField(default=0, help_text="Enter the speed for this race")
     # Only applied once at character creation, will use a JS parser (or something) to parse the raw string (format of string is JSON)
     # object and apply the mods to the characters stats
-    modifiers = models.CharField(default = '', max_length = 20, help_text = "Enter the stats modifiers in JSON format. Ex: {\"str\": 2, \"dex\": 8}")
+    modifiers = models.CharField(default = '', max_length = 100, help_text = "Enter the stats modifiers in JSON format. Ex: {\"str\": 2, \"dex\": 8}")
 
 
     def __str__(self):
@@ -124,7 +124,7 @@ class CharacterClass(models.Model):
     descrtiption = models.CharField(default = '', max_length = 1000, help_text = "Enter a description of this class")
     hitpoints = models.PositiveIntegerField(default = 10, help_text = "Enter the hitdie of this class")
     skill_proficiency_limit = models.PositiveSmallIntegerField(default = 5, help_text = "Enter the max amount of skills this class can be proficient in")
-    skill_list = models.CharField(default = '', max_length = 100, help_text = "Enter a comma separated skill list. Ex: \"Acrobatics,Intimidation\" \(without the quotations\)")
+    skill_list = models.CharField(default = '', max_length = 300, help_text = "Enter a comma separated skill list. Ex: \"Acrobatics,Intimidation\" \(without the quotations\)")
     armor_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of armor proficiencies list for the class")
     weapon_prof = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated of weapon proficiencies list for the class")
     saving_throws = models.CharField(default = "", max_length = 10000, help_text = "Enter a comma separated list of saving throws for the class")
@@ -306,6 +306,12 @@ class Weapon(models.Model):
     #Unit: Pounds (lb)
     weight = models.SmallIntegerField(default= 0, help_text="Enter the weight for this item in pounds.")
     weapon_type = models.CharField(default = "", max_length = 10000, help_text = "Enter the weapon category of the weapon. IE: Simple, Martial, etc.")
+    # WEAPON_CATEGORIES = (
+    #     ('s', 'Simple'),
+    #     ('m', 'Martial'),
+    # )
+    # category = models.CharField(max_length = 1,choices= WEAPON_CATEGORIES, default ='s')
+    #properties = ?
 
     def get_absolute_url(self):
         """
