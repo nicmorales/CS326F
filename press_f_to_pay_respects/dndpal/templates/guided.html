@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 
@@ -7,72 +8,679 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
 
-    <title>PressF To Pay Respect</title>
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <title>Guided Character Page</title>
     {% load static %}
     <!-- Loads the MDL styles -->
     <link rel="stylesheet" href="{% static 'css/mdl/material.min.css' %}">
     <script src="{% static 'css/mdl/material.min.js' %}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Static custom CSS styles -->
-    <link href="{% static 'css/guided_styles.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/guided_styles.css' %}">
 </head>
 
 <body>
-    <!--- Holds the whole page -->
-    <div id="container">
-        <!---  Divider on the left side of the page  -->
-        <div id="gutter">
-            <div id="class_img_container">
-                <!--- Profile picture of the character-->
-                <div class="class_img_flex">
-                    <img src="{% static 'img/Paladin_Crest.png' %}" alt="class_image"/>
-                </div>
-            </div>
-            <!-- Accent-colored raised button with ripple -->
-            <div class="upload_button_container">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Button
-                </button>
-            </div>
-            <div id="armor_stats">
-                <div id="armor_header"></div>
-                <div id="armor_list_container">
-                    <ul class="demo-list-icon mdl-list">
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon">person</i>
-                            Armor Class
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon">person</i>
-                            Hit Points
-                            </span>
-                        </li>
-                        <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-icon">person</i>
-                            Speed
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="character_stats">
-
-            </div>
-            <div id="logout_button">
-
-
+    <div id="gutter">
+        <!-- Make image size relative -->
+        <div id="character_img">
+            <div id="character_img_frame">
+                {% load static %}
+                <img src="{% static "img/Janet_Yellen.jpg" %}" alt="My image" />
             </div>
         </div>
-        <!---  Divider holding most of the calculated stats  -->
-        <div id="stats">
-
-
-
+        <div id="upload_button">
+            <!-- Flat button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-button--accent">
+                Change Picture
+            </button>
+        </div>
+        <div id="level_stats">
+            <h6>Level Information</h6>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 252 252" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,252v-252h252v252z" fill="none"></path>
+                        <g fill="#95a5a6">
+                            <g id="surface1">
+                                <path d="M126,21l61.4209,73.5h-122.8418z"></path>
+                                <path d="M105,78.75h42v141.75h-42z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Current Level:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24" style="fill:#7f8c8d;">
+                    <g id="surface1">
+                        <path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Experience Points:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
+            </div>
+        </div>
+        <div id="primary_stats">
+            <h6>Primary Stats</h6>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 252 252" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,252v-252h252v252z" fill="none"></path>
+                        <g fill="#95a5a6">
+                            <g id="surface1">
+                                <path d="M126,21l61.4209,73.5h-122.8418z"></path>
+                                <path d="M105,78.75h42v141.75h-42z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Strength:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24" style="fill:#7f8c8d;">
+                    <g id="surface1">
+                        <path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Dexterity:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24" style="fill:#7f8c8d;">
+                    <g id="surface1">
+                        <path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Constitution:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24" style="fill:#7f8c8d;">
+                    <g id="surface1">
+                        <path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Intelligence:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24" style="fill:#7f8c8d;">
+                    <g id="surface1">
+                        <path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Wisdom:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24" style="fill:#7f8c8d;">
+                    <g id="surface1">
+                        <path style=" " d="M 22 10 L 15 9 L 12 2 L 9 9 L 2 10 L 7 15 L 6 22.019531 L 12 19 L 18 22 L 17 15 Z "></path>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Charisma:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                </div>
+            </div>
+        </div>
+        <div id="secondary_stats">
+            <h6>Secondary Stats</h6>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 252 252" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,252v-252h252v252z" fill="none"></path>
+                        <g fill="#95a5a6">
+                            <g id="surface1">
+                                <path d="M126,21l61.4209,73.5h-122.8418z"></path>
+                                <path d="M105,78.75h42v141.75h-42z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Armor Class:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 252 252" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,252v-252h252v252z" fill="none"></path>
+                        <g fill="#95a5a6">
+                            <g id="surface1">
+                                <path d="M126,21l61.4209,73.5h-122.8418z"></path>
+                                <path d="M105,78.75h42v141.75h-42z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Speed:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+            <div class="stats_container">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 252 252" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,252v-252h252v252z" fill="none"></path>
+                        <g fill="#95a5a6">
+                            <g id="surface1">
+                                <path d="M126,21l61.4209,73.5h-122.8418z"></path>
+                                <path d="M105,78.75h42v141.75h-42z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div>
+                    <h7>Initiative:</h7>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                    <label class="mdl-textfield__label " for="sample2">1</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+            </div>
+        </div>
+        <div id="logout_button">
+            <button class="mdl-button mdl-js-button mdl-button--accent">
+                Logout
+            </button>
         </div>
     </div>
+    <div id="main">
+        <!-- Simple header with scrollable tabs. -->
+        <!-- Simple header with fixed tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+    mdl-layout--fixed-tabs main_side">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <div class="character_name">
+                        <h6>Janet Yellen</h6>
+                    </div>
+                    <div class="character_class">
+                        <h5>Chair of Federal Reserve</h5>
+                    </div>
+                </div>
+                <!-- Tabs -->
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                    <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Main Stats</a>
+                    <a href="#fixed-tab-2" class="mdl-layout__tab">Spells &amp; Abilities</a>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                    <div class="page-content main_stats">
+                        <!-- Your content goes here -->
+                        <div id="health_container">
+                            <div class="main_stat_header">
+                                <h5> Health Information </h5>
+                            </div>
+                            <!-- Numeric Textfield with Floating Label -->
+                            <div class="hitpoint_textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Current Hit Points</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Maximum Hit Points</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Temporary Hit Points</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Hit Dice</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Initiative</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Speed</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="saving_throws">
+                            <div class="main_stat_header">
+                                <h5> Saving Throws </h5>
+                            </div>
+                            <div class="hitpoint_textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Strength</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Constitution</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Dexterity</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Intelligence</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Wisdom</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Charisma</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="equipment">
+                            <div class="main_stat_header">
+                                <h5> Miscellaneous Stats </h5>
+                            </div>
+                            <div class="hitpoint_textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Select an Armor</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Set Inspiration</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Set Proficieny Bonus</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Select a Weapon</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Set Pass. Perception</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Set # of Proficiencies</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skills">
+                            <div id="skill_header">
+                                <h5> Skills </h5>
+                            </div>
+                            <div id="skill_column_containers">
+                                <div id="skill_column_1">
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Acrobatics (Dex)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Animal Handling (Wis)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Arcana (Int)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Athletics (Str)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Deception (Cha)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>History (Int)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Insight (Wis)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Intimidation (Cha)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Investigation (Int)</h7>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="skill_column_2">
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Medicine (Wis)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Nature (Int)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Perception (Wis)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Performance (Cha)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Persuasion (Cha)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Religion (Int)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Sleight of Hand (Dex)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Stealth (Dex)</h7>
+                                        </div>
+                                    </div>
+                                    <div class="skills_container">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                                            <label class="mdl-textfield__label " for="sample2">1</label>
+                                            <span class="mdl-textfield__error experience_error">Input is not a number!</span>
+                                        </div>
+                                        <div>
+                                            <h7>Survival (Wis)</h7>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="personal_info">
+                            <div class="main_stat_header">
+                                <h5> Peronsal Information </h5>
+                            </div>
+                            <div class="hitpoint_textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Gold</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Silver</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Copper</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Height</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Weight</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                    <label class="mdl-textfield__label" for="sample4">Enter Age</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                        <div class="page-content tab_2">
+                            <div id = "top_row">
+                                <div id="character_info">
+                                    <h5>Character Information</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                                <div id="spells_info">
+                                    <h5>Attacks &amp; Spellcasting</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id=mid_row>
+                                <div id="equipment_info">
+                                    <h5>Other Proficiencies &amp; Languages </h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                                <div id="other_info">
+                                    <h5>Equipment</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id=footer_row>
+                                <div id="feature_info">
+                                    <h5>Features &amp; Traits</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    </div>
 </body>
+
+</html>

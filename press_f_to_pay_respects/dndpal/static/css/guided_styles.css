@@ -1,104 +1,227 @@
-<<<<<<< HEAD
-@charset "utf-8";
+body {
+   
+
+}
 
 #container {
     position: relative;
-    display: flex;
-    height: 100%;
+    margin-left: 37%;
+    margin-top: 5%;
+    border-radius: 50%;
+    background-color: #bbb;
+    overflow: hidden;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    display: inline-block;
+}
+
+.charater_name {
+    margin-left: 100px;
+    width: 35px;
+    color: red;
+    background-color: indigo;
+}
+
+#upload_button {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 15px;
+}
+
+#gutter button {
+    width: 60%;
+    height: 3.5%;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 20%;
+}
+
+#upload_button button{
+    top: -10px;
+}
+
+#logout_button button{
+    margin-top: -5px;
+}
+
+#level_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+}
+
+#gutter h6{
+    margin: 0 0 0 15px ;
+    color: white;
+}
+
+.stats_container h7{
+    height: 36px;
+    width: 250px;
+    color: #7292A9;
+}
+
+.stats_container div {
+    display: inline-block;
+    width: 116.734px;
+}
+
+.stats_container .mdl-textfield {
+    margin: -10 0 0 12.5px; /* top, right, bottom, left */
+    width: 25px;
+    text-align: center;
+    color: rgb(100,255,218);
+}
+
+.stats_container {
+    height: 40px;
+    align: center;
+}
+
+.stats_container svg{
+    margin: 0 0 0 20px;
+}
+
+.stats_container .mdl-textfield__label {
+    text-align: center;
+    color: white;
+}
+
+.stats_container .mdl-textfield__input{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.stats_container .mdl-textfield__error{
+    top: 22.5px;
+    left: 96px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
+}
+
+#primary_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
+}
+
+
+
+#secondary_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 155px;
+}
+
+#logout_button {  
+    border-top: 1px solid #7292A9;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 25px;
+}
+
+/* ---------- Gutter CSS end ---------*/
+
+.mdl-layout {
     width: 100%;
-    background-color: white;
 }
 
-#gutter { 
-    height: 100%; 
-} 
-
-#stats { 
-    height: 100%; 
+.mdl-js-layout{
+    width: 100%;
 }
+
+.mdl-layout__container{
+    width: 75%;
+}
+
+.mdl-layout__header-row {
+}
+
+.mdl-layout__header {
+    background-color: #22303B;
+}
+
+.mdl-layout-subtitle {
+    margin-top: 15px;
+}
+
+.mdl-layout__header-row{
+    display: inline-block;
+
+}
+
+.character_name h6{
+    margin: 7px 0px 0px 0px;
+}
+
+.character_class h5{
+    margin: 0px 0px 0px 0px;
+}
+
+.mdl-layout__tab-bar {
+    background-color: #22303B;
+}
+
+.page-content h5{
+    margin-left: 15px;
+    color: white;
+}
+
+.main_stats {
+    display: flex;
+    min-height: 100vh;
+    background-color: black;
+}
+
+
+#gutter { height: 100%; } #stats { height: 100%; }
+
+
 
 #gutter{
-    flex: 0.75;
+    flex: 1;
     background-color: #202a32;
     display: flex;
-    flex-direction: column; 
 }
 
-#stats{
-    flex: 4;
-    background-color: #21303b;
+#skills .mdl-radio{
+    color: white;
+
 }
 
-#class_img_container{
-    flex-basis: 150px;
+.class_img_container{
+    flex: 1;
     background-color: yellow;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.class_img_flex{
-    flex: 1 1 auto;
-    text-align: center;
-    background-color: cyan;
-}
-
-.upload_button_container{
-    flex-basis:  50px; 
-    text-align: center;
-    background-color: hotpink;
-}
-
-.upload_button_container > button{
-    text-align: center;
-    display: table-cell; 
-    vertical-align: middle;
-}
-
-#armor_stats{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 150px;
-    background-color: blue;
-}
-
-#armor_header {
-    background-color: orangered;
-    height: 35px;
+    justify-content: space-around;
     width: 100%;
-    flex-shrink: 0;
+    height: 59.5%;
 }
 
-#armor_list_container{
-    background-color: olive;
-    display: inline-block;
-    vertical-align: top;
+
+.class_button{
+    flex: 1;
+
+}
+.class_img_flex{
+    flex: 1;
 }
 
-.demo-list-icon {
-    min-height: 0px;
-}
-#armor_stats .mdl-list__item{
-    flex-shrink: 2;
-    min-height: 0px;
-    height: 25px;
-    background-color: yellow;
-    margin-top: 0px;
+.armor_stats{
+    flex: 1;
+    background-color: violet;
 }
 
-h6 {
-    padding-left: 15px;
-    background-color: teal;
-}
-
-#character_stats{
-    flex-basis: 250px;
+.character_stats{
+    flex: 2;
     background-color: red;
 }
 
-#logout_button{
-    flex-basis: 35px;
+.logout_button{
+    flex: 0.3;
     background-color: orange;
 }
 
@@ -169,3 +292,183 @@ body {
 
 
 >>>>>>> 7ef1e356b12f8d68bd2ce76fdb8542dd1db74924
+
+
+body {
+    background-color: white;
+    display: inline-flex;
+}
+#gutter {
+   flex-grow: 1;
+   flex-shrink: 1;
+   background-color: #202A32;
+   display: inline-flex;
+   flex-direction: column;
+   flex-shrink: 0;
+   flex-basis: 200px;
+}
+
+#main {
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 800px;
+    display: block;
+    background-color: #22303B;  
+    box-shadow: 0 38px 57px rgba(0,0,0,0.30), 0 18px 15px rgba(0,0,0,0.22);
+}
+
+/* -------- Gutter CSS Start --------- */
+
+#character_img {
+    flex-basis: 100px;
+}
+
+#character_img img {
+    
+    max-height: 100%;
+    max-width: 100%;
+    background-color: purple;
+}
+
+#character_img_frame {
+/* -------- Height == width & border radius == 50% for circle effect --------- */
+    width: 6vw;
+    height: 6vw;
+    margin: 0 auto;
+    height: 85%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+#saving_throws, #equipment, #personal_info{
+    border-top: 1px solid #7292A9;
+}
+#health_container, #saving_throws, #equipment {
+    flex-shrink: 2;
+    flex-basis: 180px;
+}
+#personal_info{
+    flex-shrink: 2;
+    flex-basis: 180px;
+}
+
+#skills {
+    flex-basis: 240px;
+}
+
+
+.main_stats .mdl-textfield {
+    margin-top: -12.5px;
+    margin-left: 25px;
+    width: 125px;
+}
+
+.main_stats .mdl-textfield__label {
+    font-size: 13px;
+    color: white;
+}
+
+.main_stats .mdl-textfield__input{
+    font-size: 14px;
+    color: #7292A9;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.main_stats .mdl-textfield__error{
+    top: 50px;
+    height: 50px;
+    width: 125px;
+}
+
+#divider {
+    height: inherit;
+    width: 1px;
+    background-color: #7292A9;
+}
+
+#skills, #personal_info {
+    border-left: 1px solid #7292A9;
+}
+
+#skills {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills_container {
+    flex-grow: 1;
+#skills .skills_container h7{
+    height: 36px;
+    color: #7292A9;
+}
+
+#skills .skills_container div {
+    display: inline-block;
+    width: 150px;
+}
+
+#skills .skills_container .mdl-textfield {
+    margin: -25px 20px 0px 0px; /* top, right, bottom, left */
+    width: 25px;
+    text-align: center;
+    color: rgb(100,255,218);
+}
+
+#skills .skills_container .mdl-textfield__label {
+    text-align: center;
+    color: white;
+}
+
+#skills .skills_container .mdl-textfield__input{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+#skills .mdl-textfield__error{
+    top: 22.5px;
+    left: 96px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
+}
+
+#skill_header {
+    display: block;
+}
+
+skill_header h5 {
+    display: block;
+}
+
+#skill_column_containers{
+#character_info .mdl-textfield{
+    margin-left: 25px;
+}
+#character_info .mdl-textfield {
+    color: white;
+}
+#top_row, #mid_row, #bot_row {
+    display: block;
+
+#character_info, #spells_info, #equipment_info, #other_info, #feature_info{
+    flex-basis: 200px;
+    height: 35%;
+.tab_2 .mdl-textfield__label {
+    font-size: 13px;
+    color: white;
+.tab_2 .mdl-textfield__input{
+    font-size: 14px;
+    color: white;
+    border-bottom: 1px solid rgb(100,255,218);
+.tab_2 .mdl-textfield__error{
+    top: 50px;
+    height: 50px;
+    width: 125px;
+.tab_2 .mdl-textfield {
+    margin-left: 25px;
+}
+
+.tab_2{
+    display: flex;
+}
+
