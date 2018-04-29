@@ -78,53 +78,29 @@
 
                     <h4>Spell rankings sorted by class:</h4>
                     <hr>
-
+                    {% for c in classes %}
                     <div class="card col-xl-10 p-3 my-3">
 
 
-                        <h4>Bard:</h4>
+                        <h4>{{c.character_class.name}}: {{c.ranking}}/5</h4>
                         <hr>
 
                         <h6 class="pl-3">
-                            [Insert rant from a handbook about how good/bad this is for the class]
+                            {% if c.ranking == 5 %}
+                                This spell is highly recommended and/or generally strong in most scenarios for this class.
+                            {% elif c.ranking == 4 %}
+                                This spell is good pick and/or handy in most scenarios for this class.
+                            {% elif c.ranking == 3 %}
+                                This spell is mediocre and/or situationally decent in some scenarios for this class.
+                            {% elif c.ranking == 2 %}
+                                This spell is not great and/or situationally ok in some scenarios for this class. Should be picked for flavor usually.
+                            {% elif c.ranking == 1 %}
+                                This spell is weak for this class. Only reason to typically pick this is for flavor.
+                            {% endif %}
                         </h6>
                     </div>
-                    <div class="card col-xl-10 p-3 my-3">
+                    {% endfor %}
 
-                        <h4>Cleric:</h4>
-                        <hr>
-
-                        <h6 class="pl-3">
-                            [Insert rant from a handbook about how good/bad this is for the class]
-                        </h6>
-                    </div>
-                    <div class="card col-xl-10 p-3 my-3">
-
-                        <h4>Druid:</h4>
-                        <hr>
-
-                        <h6 class="pl-3">
-                            [Insert rant from a handbook about how good/bad this is for the class]
-                        </h6>
-                    </div>
-                    <div class="card col-xl-10 p-3 my-3">
-
-                        <h4>Paladin:</h4>
-                        <hr>
-
-                        <h6 class="pl-3">
-                            [Insert rant from a handbook about how good/bad this is for the class]
-                        </h6>
-                    </div>
-                    <div class="card col-xl-10 p-3 my-3">
-
-                        <h4>Ranger:</h4>
-                        <hr>
-
-                        <h6 class="pl-3">
-                            [Insert rant from a handbook about how good/bad this is for the class]
-                        </h6>
-                    </div>
                 </div>
 
             </div>
