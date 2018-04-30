@@ -96,7 +96,7 @@ class Race(models.Model):
         return reverse('race-detail', args=[str(self.name)])
 
 class RaceFeatures(models.Model):
-    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this race feature")
+    name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this race feature")
     race = models.ForeignKey('Race', on_delete=models.CASCADE, null = True)
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this feature; i.e. what this feature does")
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
@@ -114,7 +114,7 @@ class Subrace(models.Model):
 class SubraceFeatures(models.Model):
     subrace = models.ForeignKey('Subrace', on_delete=models.CASCADE, null = True)
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")
-    sub_feature_name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this feature")
+    sub_feature_name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this feature")
     #name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of the subrace")
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description for these features")
     feature_type = models.CharField(default= '', max_length = 5000, help_text = "Enter a note what this feature modifies")
@@ -148,7 +148,7 @@ class CharacterClassSpellList(models.Model):
     ran_note = models.CharField(default = "", max_length = 10000, help_text = "Enter the ranking note for this spell for this class")
 
 class CharacterClassFeatures(models.Model):
-    name = models.CharField(default = '', primary_key = True, max_length = 100, help_text = "Enter the name of this class feature")
+    name = models.CharField(default = '', max_length = 100, help_text = "Enter the name of this class feature")
     character_class = models.ForeignKey('CharacterClass', on_delete=models.CASCADE, null = True)
     description = models.CharField(default= '', max_length = 5000, help_text = "Enter a description of this feature; i.e. what this feature does")
     required_level = models.SmallIntegerField(default= 0, null=True, help_text="Enter the required level for this feature")

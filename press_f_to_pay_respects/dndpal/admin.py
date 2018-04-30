@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Character, Race, RaceFeatures, Subrace, SubraceFeatures
+from .models import Character, Race, Subrace, RaceFeatures, SubraceFeatures
 admin.site.register(Character)
 admin.site.register(Race)
 admin.site.register(RaceFeatures)
