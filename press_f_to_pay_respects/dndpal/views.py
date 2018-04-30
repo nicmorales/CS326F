@@ -239,7 +239,11 @@ class WeaponDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(WeaponDetailView, self).get_context_data(**kwargs)
-        context['properties'] = Properties.objects.filter(weapon = context['weapon'])
+        string = context['weapon'].properties
+        property_list = [x.strip() for x in string.split(',')]
+        context['properties'] = Properties.objects.filter(name = 'asfhndikjahghndndjndfndjfndjfnksdnfdskjnf')
+        for x in property_list:
+            context['properties'] = context['properties']|Properties.objects.filter(name = x)
         print('properties'+str(context['properties']))
         return context
 
