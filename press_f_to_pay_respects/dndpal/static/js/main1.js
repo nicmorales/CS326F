@@ -502,10 +502,26 @@ var SurvDP = document.getElementById('SurvDP');
 
 /*other shit mabey*/
 
+  function getValues(url) {
+      var result = null;
+      $.ajax({
+          url: url,
+          type: 'get',
+          async: false,
+          success: function(data) {
+              result = data;
+          }
+      });
+     return result;
+  }
+
  //level up shit
 
     //grabing stuff needed
+
+      var levelshit = null;
       var control;
+      var moreControl;
       var lvlbtn = document.getElementById('level-up-btn');
       var lvl = document.getElementById('level-field');
       lvlbtn.onclick = function(){
@@ -515,14 +531,44 @@ var SurvDP = document.getElementById('SurvDP');
 
         //main controll function
         function leveling(){
-
-          //start Health modal
-          if(parseInt(lvl.value) === 0)
+          if(parseInt(lvl.value) === 0 && control < 4)
           prestuff();
           else{
-            alert('done');
-          }
-        }
+
+            console.log("levelshit before if" + levelshit);
+            if(levelshit == null){
+              lvl.value = parseInt(lvl.value) + 1;
+              moreControl = 0;
+              levelshit = getValues('/dndpal/ajax/get_features/'+ cname.value + '/'+ lvl.value);
+              levelshit = JSON.parse(levelshit);
+              levelshit.push( JSON.parse('{"fields":{"feature_type":"end"}}') );
+              console.log(levelshit);
+              leveling();
+            }else{
+              console.log("moreControll =" + moreControl);
+                var currentAbility = levelshit[moreControl].fields.feature_type;
+
+                  console.log(currentAbility);
+
+                  switch (currentAbility){
+                    case 'Ability':
+                      AddAbility(levelshit[moreControl].fields.description,levelshit[moreControl].pk)
+                      moreControl = moreControl + 1;
+                      leveling();
+                      break;
+                    case 'end':
+                      alert("done");
+                      levelshit = null;
+                      break;
+                    default:
+                    console.log(currentAbility + "default" + lvl.value);
+                    moreControl = moreControl + 1;
+                    leveling();
+                  }//end switch
+            }
+
+          }// end if level is zero controll loop
+        }// end leveling
 
         function prestuff() {
           switch (control) {
@@ -536,12 +582,13 @@ var SurvDP = document.getElementById('SurvDP');
               Skillsmain();
               break;
             case 3:
-              lvl.value = parseInt(lvl.value) + 1;
+              control = control + 1;
               leveling();
               break;
           }
           control = control + 1;
         }//end prestuff
+
 
 
 
@@ -572,10 +619,7 @@ var SurvDP = document.getElementById('SurvDP');
     $.ajax({
         url: healthstr,
         success: function (data) {
-          console.log(lvl.value);
           if(lvl.value == 0){
-            console.log("true");
-            console.log(data.Hitdie);
             addHealth(data.Hitdie);
           }else{
           setHitdie(data.Hitdie);
@@ -661,3 +705,18 @@ $('#Stats-kill').click(
       $('#Stat-modal').hide();
       leveling();
   });
+
+// adding abilites to the view
+  function AddAbility(description , name) {
+    $('#Ability-list').append(
+      `
+      <li>
+        <div class="card">
+          <h6  class="card-header">  ${name}   </h6>
+          <p class="card-body"> ${description}   </p>
+        </div>
+      </li>
+      `
+    );
+
+  }
