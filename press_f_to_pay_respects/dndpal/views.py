@@ -58,7 +58,7 @@ def alan(request):
     # Render the HTML template index.html with the data in the context variable
     return render(
         request,
-        'test_for_alan.html',
+        'guided.html',
     )
 
 
@@ -327,3 +327,10 @@ def get_skills(request , cname) :
     data = {"skills" : CharacterClass.objects.filter(name = cname)[0].skill_list}
     return JsonResponse(data)
 
+def get_spells(request,cname,lvl,thing):
+	return (1)
+
+def get_features(request,cname,lvl):
+    qs = CharacterClassFeatures.objects.all().filter(character_class = cname).filter(required_level = lvl)
+    qs_json = serializers.serialize('json', qs)
+    return JsonResponse(qs_json,safe = False)

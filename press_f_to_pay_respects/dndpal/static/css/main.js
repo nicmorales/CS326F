@@ -23,11 +23,11 @@ function thing(){
 }
 /*Ability Scores*/
   /* changes everything related to strength*/
-  document.getElementById("str").onchange = function() {updateStr()};
+  document.getElementById("str").onchange = function() {updatestr()};
     var str = document.getElementById("str");
     var strmd = document.getElementById("strmd");
     var strmod = str.value;
-    function updateStr(){
+    function updatestr(){
       strmod = str.value;
       strmod = Math.floor(strmod/2);
       strmod = strmod-5;
@@ -505,10 +505,11 @@ var SurvDP = document.getElementById('SurvDP');
  //level up shit
 
     //grabing stuff needed
+      var control;
       var lvlbtn = document.getElementById('level-up-btn');
       var lvl = document.getElementById('level-field');
       lvlbtn.onclick = function(){
-        lvl.value = parseInt(lvl.value) + 1;
+        control = parseInt(lvl.value);
         leveling();
       }
 
@@ -516,9 +517,34 @@ var SurvDP = document.getElementById('SurvDP');
         function leveling(){
 
           //start Health modal
-          Healthmain()
-          Skillsmain();
+          if(parseInt(lvl.value) === 0)
+          prestuff();
+          else{
+            alert('done');
+          }
         }
+
+        function prestuff() {
+          switch (control) {
+            case 0:
+              statsMain();
+              break;
+            case 1:
+              Healthmain();
+              break;
+            case 2:
+              Skillsmain();
+              break;
+            case 3:
+              lvl.value = parseInt(lvl.value) + 1;
+              leveling();
+              break;
+          }
+          control = control + 1;
+        }//end prestuff
+
+
+
 
 // Health modal stuff
   // grabing
@@ -542,17 +568,24 @@ var SurvDP = document.getElementById('SurvDP');
  // Health "main"
   function Healthmain(){
     //ajax call to set hit die
-    Healthmodal.style.display = "Block";
     var healthstr = '/dndpal/ajax/get_health/'+ cname.value;
     $.ajax({
         url: healthstr,
         success: function (data) {
+          console.log(lvl.value);
+          if(lvl.value == 0){
+            console.log("true");
+            console.log(data.Hitdie);
+            addHealth(data.Hitdie);
+          }else{
           setHitdie(data.Hitdie);
+          }
         }
       });
   }
 
   function setHitdie(gg){
+    Healthmodal.style.display = "Block";
     Hitdie = gg;
     Roll.innerHTML = 'Roll a d' + Hitdie;
     Averageval.value = Math.floor(Hitdie/2) + 1;
@@ -571,8 +604,9 @@ var SurvDP = document.getElementById('SurvDP');
   }
 
   function addHealth(healthval){
-    HitPoints.value =parseInt(HitPoints.value) + parseInt(healthval) + conmd.value;
+    HitPoints.value =parseInt(HitPoints.value) + parseInt(healthval) +(parseInt(conmd.value.replace('+','')));
     Healthmodal.style.display = "";
+    leveling();
   }
 // end Health
 
@@ -586,7 +620,7 @@ function Skillsmain() {
   $.ajax({
       url: '/dndpal/ajax/get_skills/'+ cname.value,
       success: function (data) {
-        var d = data.skills.split(',');
+        var d = data.skills.split(', ');
         enableshit(d);
       }
     });
@@ -600,4 +634,30 @@ function enableshit(skillarray) {
 }
 $('#skill-kill').click(function(){
   $('#Skills-modal').hide();
+  leveling();
 });
+
+// end skills
+
+// stats
+function statsMain() {
+$('#Stat-modal').show();
+}
+
+$('#Stats-kill').click(
+  function(){
+      $("#str").val($("#Temp-str").val()) ;
+      $("#dex").val($("#Temp-dex").val()) ;
+      $("#con").val($("#Temp-con").val()) ;
+      $("#int").val($("#Temp-int").val()) ;
+      $("#wis").val($("#Temp-wis").val()) ;
+      $("#chr").val($("#Temp-chr").val()) ;
+      updatestr();
+      updatedex();
+      updatecon();
+      updateint();
+      updatewis();
+      updatechr();
+      $('#Stat-modal').hide();
+      leveling();
+  });
