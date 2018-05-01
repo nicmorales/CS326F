@@ -1,0 +1,83 @@
+body {
+    background-color: #202A32;
+
+}
+
+h5 {
+    margin-bottom: 25px;
+    color: white;
+}
+
+label {
+    font-size: 0.8rem;
+    color: white;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    color: white;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid rgb(100,255,218);
+}
+#form_container{
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding: 40px 40px 40px 40px;
+    margin-left: 25%;
+    width: 50%;
+    background-color: #22303B; 
+    box-shadow: 0 38px 57px rgba(0,0,0,0.30), 0 18px 15px rgba(0,0,0,0.22);
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.input-field > label {
+    color: white;
+}
+
+input:not([type]):focus:not([readonly]) + label, input[type=text]:not(.browser-default):focus:not([readonly]) + label, input[type=password]:not(.browser-default):focus:not([readonly]) + label, input[type=email]:not(.browser-default):focus:not([readonly]) + label, input[type=url]:not(.browser-default):focus:not([readonly]) + label, input[type=time]:not(.browser-default):focus:not([readonly]) + label, input[type=date]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label, input[type=tel]:not(.browser-default):focus:not([readonly]) + label, input[type=number]:not(.browser-default):focus:not([readonly]) + label, input[type=search]:not(.browser-default):focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: white;
+}
+
+.input-field > label {
+    color: white;
+}
+
+.checkbox-field label {
+    color: white;
+}
+
+.btn, .btn-large, .btn-small {
+    color: rgb(100,255,218);
+    background-color: #22303B;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    color: white;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.dropdown-content {
+    background-color: #22303B; 
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: white; 
+}
+
+[type="checkbox"].filled-in:not(:checked) + span:not(.lever):after {
+    background-color: transparent;
+    border: 2px solid rgb(100,255,218);;
+}
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(100,255,218);
+    background-color: rgb(100,255,218);
+    z-index: 0;
+}

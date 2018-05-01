@@ -1,0 +1,448 @@
+body {
+    background-color: white;
+    display: inline-flex;
+}
+
+#gutter {
+   flex-grow: 1;
+   flex-shrink: 1;
+   background-color: #202A32;
+   display: inline-flex;
+   flex-direction: column;
+   flex-shrink: 0;
+   flex-basis: 200px;
+}
+
+#main {
+    position: relative;
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 800px;
+    display: block;
+    background-color: #22303B;  
+    box-shadow: 0 38px 57px rgba(0,0,0,0.30), 0 18px 15px rgba(0,0,0,0.22);
+}
+
+.mdl-layout__container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main_stats {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+
+/* -------- Gutter CSS Start --------- */
+
+#character_img {
+    flex-basis: 100px;
+}
+
+#character_img img {
+    
+    max-height: 100%;
+    max-width: 100%;
+    background-color: purple;
+}
+
+#character_img_frame {
+/* -------- Height == width & border radius == 50% for circle effect --------- */
+    width: 6vw;
+    height: 6vw;
+    margin: 0 auto;
+    position: relative;
+    margin-left: 37%;
+    margin-top: 5%;
+    border-radius: 50%;
+    background-color: #bbb;
+    overflow: hidden;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    display: inline-block;
+}
+
+.charater_name {
+    margin-left: 100px;
+    width: 35px;
+    color: red;
+    background-color: indigo;
+}
+
+#upload_button {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 15px;
+}
+
+#gutter button {
+    width: 60%;
+    height: 3.5%;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 20%;
+}
+
+#upload_button button{
+    top: -10px;
+}
+
+#logout_button button{
+    margin-top: -5px;
+}
+
+#level_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+}
+
+#gutter h6{
+    margin: 0 0 0 15px ;
+    color: white;
+}
+
+.stats_container h7{
+    height: 36px;
+    width: 250px;
+    color: #7292A9;
+}
+
+.stats_container .dropdown_header {
+    width: 75px;
+}
+
+#secondary_stats .stats_container {
+    height: 55px;
+    align: center;
+}
+#secondary_stats .dropdown_header{
+    width: 115px;
+}
+
+#secondary_stats #select_race, #secondary_stats #select_armor, #secondary_stats #select_alignment {
+    margin-left: -27px;
+}
+
+.mdl-selectfield__label {
+    font-size: 12px;
+    color: white;
+}
+
+.stats_container .mdl-textfield__label {
+    font-size: 12px;
+}
+
+.mdl-selectfield--floating-label.is-dirty .mdl-selectfield__label, .mdl-selectfield--floating-label.is-focused .mdl-selectfield__label{
+    color: white;
+}
+
+.mdl-selectfield__box .mdl-selectfield__arrow-down__container .mdl-selectfield__arrow-down {
+    border-top: 5px solid white;
+}
+
+.mdl-selectfield__box {
+    border-bottom: 1px solid rgb(100,255,218);
+}   
+
+.mdl-selectfield--floating-label{
+    color: white;
+}
+
+.stats_container div {
+    display: inline-block;
+    width: 116.734px;
+}
+
+
+#gutter #menu-top-right{
+    width: 32px;
+    height: 32px;
+    margin-left: 0px;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+
+
+.stats_container .mdl-textfield {
+    margin: -10 0 0 12.5px; /* top, right, bottom, left */
+    width: 25px;
+    text-align: center;
+    color: rgb(100,255,218);
+}
+
+#level_stats .mdl-textfield__input, #level_stats .mdl-textfield__label {
+    width: 45px;
+    text-align: center;
+}
+
+#level_stats .mdl-textfield__label {
+    color: white;
+}
+
+.stats_container {
+    height: 40px;
+    align: center;
+}
+
+.stats_container svg{
+    margin: 0 0 0 10px;
+}
+
+.stats_container .mdl-textfield__label {
+    text-align: center;
+    color: white;
+}
+
+.stats_container .mdl-textfield__input{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.stats_container .mdl-textfield__error{
+    top: 22.5px;
+    left: 96px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
+}
+
+#primary_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
+}
+
+
+
+#secondary_stats {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 155px;
+}
+
+#logout_button {  
+    border-top: 1px solid #7292A9;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 25px;
+}
+
+/* ---------- Gutter CSS end ---------*/
+
+
+
+.mdl-layout__header {
+    background-color: #22303B;
+}
+
+.mdl-layout-subtitle {
+    margin-top: 15px;
+}
+
+.mdl-layout__header-row{
+    display: inline-block;
+
+}
+
+.character_name h6{
+    margin: 7px 0px 0px 0px;
+}
+
+.character_class h5{
+    margin: 0px 0px 0px 0px;
+}
+
+.mdl-layout__tab-bar {
+    background-color: #22303B;
+}
+
+.page-content h5{
+    margin-left: 15px;
+    color: white;
+}
+
+#saving_throws, #equipment /* #personal_info */ {
+    border-top: 1px solid #7292A9;
+}
+
+#health_container, #saving_throws, #equipment {
+    flex-shrink: 2;
+    flex-basis: 180px;
+}
+
+#personal_info, #weapon_info{
+    flex-shrink: 2;
+    flex-basis: 100px;
+    border-top: 1px solid #7292A9;
+}
+
+.main_stats .mdl-textfield {
+    margin-top: -12.5px;
+    flex-shrink: 1;
+    flex-basis: 100px;
+    width: auto;
+}
+
+.main_stats .mdl-textfield__label {
+    font-size: 12px;
+    color: white;
+}
+
+.main_stats .mdl-textfield__input{
+    font-size: 14px;
+    color: #7292A9;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.main_stats .mdl-textfield__error{
+    top: 50px;
+    height: 50px;
+    width: 125px;
+}
+
+.textfield_div_block {
+    display: flex;
+    justify-content: space-around;
+}
+
+#skills /* #personal_info */ {
+    flex-basis: 360px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-left: 1px solid #7292A9;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills_container {
+    display: flex;
+    justify-content: center;
+}
+
+#skills .mdl-radio{
+    color: white;
+
+}
+
+#skills .mdl-textfield__label, #skills .mdl-textfield__input{
+    width: 25px;
+}
+
+#coin_info {
+    border-top: 1px solid #7292A9;
+}
+
+#coin_info .mdl-textfield__label, #coin_info .mdl-textfield__input{
+    flex-shrink: 1;
+    flex-basis: 100px;
+    width: 100px;
+}
+
+#skills .skills_container h7{
+    height: 18px;
+    font-size: 12px;
+    color: #7292A9;
+}
+
+#skills .skills_container div {
+    display: inline-block;
+    width: 150px;
+}
+
+#skills .skills_container .mdl-textfield {
+    margin: -30px 0px 0px 10px; /* top, right, bottom, left */
+    width: 25px;
+    text-align: center;
+    color: rgb(100,255,218);
+}
+
+
+
+
+#skills .skills_container .mdl-textfield__label {
+    text-align: center;
+    color: white;
+}
+
+#skills .skills_container .mdl-textfield__input{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+#skills .mdl-textfield__error{
+    top: 22.5px;
+    left: 96px;
+    bottom: 0px;
+    height: 50px;
+    width: 125px;
+}
+
+#skill_header {
+    display: block;
+}
+
+skill_header h5 {
+    display: block;
+}
+
+#skill_column_containers{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+}
+
+#character_info .mdl-textfield{
+    margin-left: 25px;
+}
+
+#character_info .mdl-textfield {
+    color: white;
+}
+
+#top_row, #mid_row, #bot_row {
+    display: block;
+}
+
+#character_info, #spells_info, #equipment_info, #other_info, #feature_info{
+    flex-basis: 200px;
+    height: 35%;
+}
+
+.tab_2 .mdl-textfield__label {
+    font-size: 13px;
+    color: white;
+}
+
+.tab_2 .mdl-textfield__input{
+    font-size: 14px;
+    color: white;
+    border-bottom: 1px solid rgb(100,255,218);
+}
+
+.tab_2 .mdl-textfield__error{
+    top: 50px;
+    height: 50px;
+    width: 125px;
+}
+
+
+.tab_2 .mdl-textfield {
+    margin-left: 25px;
+}
+
+.tab_2{
+    display: flex;
+}
+
