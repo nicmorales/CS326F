@@ -21,6 +21,12 @@ function thing(){
   updateSurv();
 
 }
+
+$( window ).on( "load", function() {
+  control = parseInt(lvl.value);
+  console.log(control + "onload");
+  setTimeout(function(){leveling()},200);
+});
 /*Ability Scores*/
   /* changes everything related to strength*/
   document.getElementById("str").onchange = function() {updatestr()};
@@ -518,7 +524,7 @@ var SurvDP = document.getElementById('SurvDP');
  //level up shit
 
     //grabing stuff needed
-
+      var pageSlots = [0,0,0,0,0,0,0,0,0,0];
       var levelshit = null;
       var control;
       var moreControl;
@@ -535,14 +541,14 @@ var SurvDP = document.getElementById('SurvDP');
           prestuff();
           else{
 
-            console.log("levelshit before if" + levelshit);
+            console.log(levelshit);
             if(levelshit == null){
+              console.log("Incressed level");
               lvl.value = parseInt(lvl.value) + 1;
               moreControl = 0;
               levelshit = getValues('/dndpal/ajax/get_features/'+ cname.value + '/'+ lvl.value);
               levelshit = JSON.parse(levelshit);
               levelshit.push( JSON.parse('{"fields":{"feature_type":"end"}}') );
-              console.log(levelshit);
               leveling();
             }else{
               console.log("moreControll =" + moreControl);
@@ -552,21 +558,33 @@ var SurvDP = document.getElementById('SurvDP');
 
                   switch (currentAbility){
                     case 'Ability':
-                      AddAbility(levelshit[moreControl].fields.description,levelshit[moreControl].pk)
+                      console.log(levelshit);
+                      AddAbility(levelshit[moreControl].fields.description,levelshit[moreControl].fields.name)
                       moreControl = moreControl + 1;
                       leveling();
                       break;
                     case 'end':
-                      alert("done");
+                      console.log("finished");
                       levelshit = null;
                       break;
+                    case 'Spell Slots':
+                    var doing =  JSON.parse(levelshit[moreControl].fields.description);
+                    console.log(doing);
+                    if(cname.substring("Wizard")){
+
+                    }
+                    for (var key in doing) {
+                      apendSlots(key,doing[key])
+                      }
+                        moreControl = moreControl + 1;
+                      leveling();
+                    break;
                     default:
                     console.log(currentAbility + "default" + lvl.value);
                     moreControl = moreControl + 1;
                     leveling();
                   }//end switch
             }
-
           }// end if level is zero controll loop
         }// end leveling
 
@@ -664,7 +682,7 @@ function Skillsmain() {
   $.ajax({
       url: '/dndpal/ajax/get_skills/'+ cname.value,
       success: function (data) {
-        var d = data.skills.split(', ');
+        var d = data.skills.split(',');
         enableshit(d);
       }
     });
@@ -719,4 +737,30 @@ $('#Stats-kill').click(
       `
     );
 
+  }
+// spells and spell shit
+
+  function apendSlots(slotname,slotamount) {
+    var slotnum = slotname;
+    slotnum = slotnum.replace("Slot","");
+    slotnum = parseInt(slotnum);
+    var slotcount = parseInt(slotamount)
+    if(slotcount > pageSlots[slotnum]){
+      for(slotcount ; slotcount > pageSlots[slotnum];slotcount--)
+        $("#"+slotname).append(
+          `
+          <li>
+            <form class="form-inline">
+              <div class="form-group">
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+              </div>
+            </form>
+          </li>
+          `
+        );
+      pageSlots[slotnum] = parseInt(slotamount);
+    }
   }

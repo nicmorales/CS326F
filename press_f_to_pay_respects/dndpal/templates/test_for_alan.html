@@ -30,7 +30,7 @@
                   <h3 id="class"> <span class="badge badge-light" style="padding-left: 0px;"> Class: </span></h3>
               </div>
               <div class="col-8" style="padding-left: 0px;">
-                <input id="class-field"  type="text" class="form-control-plaintext" value="Barbarian" style="text-align: left;">
+                <input id="class-field"  type="text" class="form-control-plaintext" value="Wizard" style="text-align: left;">
               </div>
             </div>
             <div class="col-3 row">
@@ -1065,26 +1065,54 @@
 
 
             </div><!--end of colomb-->
-
+          </div>
             <!--Old Spells column?-->
+        <!--spells and abilities -->
+        <div class="row">
 
+          <div class="col">
 
+                  <div class="card" style="margin-bottom:5px;">
+                    <h4>Spell list</h4>
+                    <ul id="spell-list-body">
 
-        </div>
-        <div class="card">
-          <h4>Spell list</h4>
-          <ul id="spell-list-body">
+                    </ul>
 
-          </ul>
+                  </div>
 
-        </div>
+                  <div class="card" style="margin-bottom:5px;">
+                    <h4>Ability list</h4>
+                    <ul id="Ability-list">
 
-        <div class="card">
-          <h4>ability list</h4>
-          <ul id="Ability-list">
+                    </ul>
 
-          </ul>
+                  </div>
+          </div>
 
+          <div class="col-3-sm">
+            <h6>Cantrips</h6>
+
+            <ul id="Slot0" style="padding-left: 0px; ">
+
+            </ul>
+            <div class="row">
+            <h6 class="col-9">lvl 1 SpellSlots</h6>
+            <h6>cast</h6>
+            </div>
+            <ul id="Slot1" style="padding-left: 0px; ">
+            </ul>
+
+            <h6>lvl 2 SpellSlots</h6>
+
+            <ul id="Slot2" style="padding-left: 0px; ">
+            </ul>
+
+            <h6>lvl 3 SpellSlots</h6>
+
+            <ul id="Slot3" style="padding-left: 0px; ">
+
+            </ul>
+          </div>
         </div>
 		<!--health modal-->
 			<div id="Health-modal" class="modal">
@@ -1355,5 +1383,5 @@
 {% endblock %}
 
 {% block java %}
-<script src="{% static 'js/main1.js' %}"></script>
+<script src="{% static 'js/mains.js' %}"></script>
 {% endblock %}
