@@ -3,7 +3,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="	{% static 'css/custom.css' %}">
-<link rel="stylesheet" href="	{% static 'css/Manuel.css' %}">
+<link rel="stylesheet" href="	{% static 'css/Manuel3.css' %}">
 <!-- This page is for the more advanced players  -->
 <main role="main" class="container">
 
@@ -16,6 +16,7 @@
           </div>
           <div class="col">
             <button id="level-up-btn" type="button" class="btn btn-primary">Level Up!</button>
+            <button id="Test" type="button" class="btn btn-primary">Test</button>
           </div>
 
         </div>
@@ -38,7 +39,7 @@
                 <h3 id="level"><span class="badge badge-light">Level: </span> </h3>
               </div>
               <div class="col" style="padding-left: 0px">
-                <input id="level-field"  type="text" class="form-control-plaintext" value="0" style="text-align: left;">
+                <input id="level-field"  type="text" class="form-control-plaintext" value="1" style="text-align: left;">
               </div>
             </div>
         </div>
@@ -1073,28 +1074,47 @@
           <div class="col">
 
                   <div class="card" style="margin-bottom:5px;">
-                    <h4>Spell list</h4>
-                    <ul id="spell-list-body">
+                    <div class="card-header">
+                      <h4>Spell list</h4>
+                    </div>
+                    <div class="card-body">
+                      <ul id="spell-list-body">
+                        <p>Level 1 spells</p>
 
-                    </ul>
 
+                        <p>Level 2 spells</p>
+
+                        <p>Level 3 spells</p>
+
+                        <p>Level 4 spells</p>
+
+                        <p>Level 5 spells</p>
+
+                        <p>Level 6 spells</p>
+
+                        <p>Level 7 spells</p>
+
+                        <p>Level 8 spells</p>
+
+                        <p>Level 9 spells</p>
+                      </ul>
+                    </div>
                   </div>
 
                   <div class="card" style="margin-bottom:5px;">
-                    <h4>Ability list</h4>
-                    <ul id="Ability-list">
+                    <div class="card-header">
+                      <h4>Ability list</h4>
+                    </div>
+                    <div class="card-body">
+                      <ul id="Ability-list">
 
-                    </ul>
+                      </ul>
+                    </div>
 
                   </div>
           </div>
 
           <div class="col-3-sm">
-            <h6>Cantrips</h6>
-
-            <ul id="Slot0" style="padding-left: 0px; ">
-
-            </ul>
             <div class="row">
             <h6 class="col-9">lvl 1 SpellSlots</h6>
             <h6>cast</h6>
@@ -1110,6 +1130,36 @@
             <h6>lvl 3 SpellSlots</h6>
 
             <ul id="Slot3" style="padding-left: 0px; ">
+
+            </ul>
+            <h6>lvl 4 SpellSlots</h6>
+
+            <ul id="Slot4" style="padding-left: 0px; ">
+
+            </ul>
+            <h6>lvl 5 SpellSlots</h6>
+
+            <ul id="Slot5" style="padding-left: 0px; ">
+
+            </ul>
+            <h6>lvl 6 SpellSlots</h6>
+
+            <ul id="Slot6" style="padding-left: 0px; ">
+
+            </ul>
+            <h6>lvl 7 SpellSlots</h6>
+
+            <ul id="Slot7" style="padding-left: 0px; ">
+
+            </ul>
+            <h6>lvl 8 SpellSlots</h6>
+
+            <ul id="Slot8" style="padding-left: 0px; ">
+
+            </ul>
+            <h6>lvl 9 SpellSlots</h6>
+
+            <ul id="Slot9" style="padding-left: 0px; ">
 
             </ul>
           </div>
@@ -1376,12 +1426,69 @@
       </div>
   </div>
 
+
+
+
+
+  <!--spell modal-->
+    <div id="Spell-modal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content col-8">
+      <span class="Health-close">&times;</span>
+      <div>
+        <h6>Select Your spells</h6>
+      </div>
+      <div class="justify-content-center"  >
+        <div>
+        <div class=" active row" style="height: 60vh;">
+          <div class="col-9 tab-pane">
+            <ul id="Spell-modal-body">
+              <p>Level 1 spells</p>
+
+
+              <p>Level 2 spells</p>
+
+              <p>Level 3 spells</p>
+
+              <p>Level 4 spells</p>
+
+              <p>Level 5 spells</p>
+
+              <p>Level 6 spells</p>
+
+              <p>Level 7 spells</p>
+
+              <p>Level 8 spells</p>
+
+              <p>Level 9 spells</p>
+
+            </ul>
+          </div>
+          <div class="col">
+            <h6>Color guid to spells</h6>
+
+            <p><font color="blue">Best</font></p>
+            <p><font color="green">good</font></p>
+            <p><font color="black">ok</font></p>
+            <p><font color="orange">bad</font></p>
+            <p><font color="red">Worst</font></p>
+
+          </div>
+        </div>
+        <button id="Close-spells" type="button" class="btn btn-primary">Submit</button>
+      </div>
+      </div>
+    </div>
+  </div>
     </div>
 </main>
+
+
 
 
 {% endblock %}
 
 {% block java %}
-<script src="{% static 'js/mains.js' %}"></script>
+<script src="{% static 'js/main5.js' %}"></script>
 {% endblock %}

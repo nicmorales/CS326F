@@ -29,7 +29,8 @@ urlpatterns = [
 	#ajax all the fucking ajax
     url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
 	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
-	url(r'^ajax/get_spells/(?P<cname>[-\w]+)$/(?P<lvl>[-\w]+)/(?P<thing>[-\w]+)/$', views.get_spells),
+	url(r'^ajax/get_spells/(?P<cname>[-\w]+)/(?P<lvl>[-\w]+)/$', views.get_spells),
+    url(r'^ajax/get_cantrip/(?P<cname>[-\w]+)/$', views.get_cantrip),
 	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),
 ]
 

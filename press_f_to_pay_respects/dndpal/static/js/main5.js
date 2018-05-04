@@ -1,3 +1,16 @@
+$('#Test').click(function(){
+  $('#Spell-modal').show();
+
+});
+
+
+
+
+
+
+
+
+
 var Proficiency = document.getElementById('Proficiency');
 document.getElementById('Proficiency').onchange = function(){thing()};
 function thing(){
@@ -25,7 +38,9 @@ function thing(){
 $( window ).on( "load", function() {
   control = parseInt(lvl.value);
   console.log(control + "onload");
+  if(control == 0)
   setTimeout(function(){leveling()},200);
+
 });
 /*Ability Scores*/
   /* changes everything related to strength*/
@@ -570,15 +585,35 @@ var SurvDP = document.getElementById('SurvDP');
                     case 'Spell Slots':
                     var doing =  JSON.parse(levelshit[moreControl].fields.description);
                     console.log(doing);
-                    if(cname.substring("Wizard")){
 
-                    }
                     for (var key in doing) {
-                      apendSlots(key,doing[key])
+                      console.log(key);
+                        if(key == "Slot0")
+                        console.log('nothing');
+                        else
+                          apendSlots(key,doing[key])
                       }
                         moreControl = moreControl + 1;
                       leveling();
                     break;
+
+                    case 'New Spells':
+                      var newSpells = parseInt(levelshit[moreControl].fields.description);
+
+                      $.ajax({
+                          url: '/dndpal/ajax/get_spells/'+ cname.value + '/'+lvl.value + '/',
+                          success: function (data) {
+                            for(var sp in data){
+                              var cursp = data[sp];
+                              appendmodalspell(cursp.ranking , modalSpelllvls[(cursp.spell_level - 1)] , cursp.name , cursp.description , cursp);
+                            }
+                            $('#Spell-modal').show();
+                          }
+                        });
+                        console.log(newSpells);
+                      moreControl = moreControl + 1;
+                      leveling();
+                      break;
                     default:
                     console.log(currentAbility + "default" + lvl.value);
                     moreControl = moreControl + 1;
@@ -739,7 +774,7 @@ $('#Stats-kill').click(
 
   }
 // spells and spell shit
-
+  // adding spell slots
   function apendSlots(slotname,slotamount) {
     var slotnum = slotname;
     slotnum = slotnum.replace("Slot","");
@@ -763,4 +798,77 @@ $('#Stats-kill').click(
         );
       pageSlots[slotnum] = parseInt(slotamount);
     }
+  }
+// closing spell modal
+$('#Close-spells').click(function(){
+  $('#Spell-modal-body').find("li").each(function(){
+    $(this).remove();
+  });
+    $('#Spell-modal').hide();
+});
+
+//spell on click selection
+function Selectedthing(e){
+
+  var elem = $(e).clone().wrap('<li>').html();
+  var po = $(e);
+  po = po[0].parentElement.parentElement;
+  console.log(po);
+  if( po.classList.contains('selected') ){
+    po.classList.remove('selected');
+  }else{
+    po.classList.add('selected');
+  }
+
+}
+// FILLING OUT  spell modal
+  // get all the modal spell positions
+  var modalSpelllvls = $('#Spell-modal-body').find("p");
+
+  // add shit to the modal
+  function appendmodalspell(ranking , place, spell, description , json_data) {
+    console.log("ranking = " + ranking);
+    var rank;
+    switch (ranking) {
+      case 0:
+        rank = "";
+        break;
+
+      case 1:
+        rank = "five";
+        break;
+      case 2:
+        rank = "four";
+        break;
+
+      case 3:
+        rank = "three";
+        break;
+      case 4:
+        rank = "two";
+        break;
+
+      case 5:
+        rank = "one";
+        break;
+      default:
+
+    }
+
+    $(place).after(
+      `
+      <li>
+        <div class="card one ${rank}" id = ${JSON.stringify(json_data)}>
+            <div class="row" >
+              <div class="col-10" onclick="Selectedthing(this)" >
+                <h6 class="card-header col">${spell}</h6>
+              </div>
+              <div class="col">
+               <a href="http://127.0.0.1:8000/dndpal/spell/${spell}" target="_blank" class="btn btn-primary col">More Info</a>
+              </div>
+            </div>
+        </div>
+      </li>
+      `
+    );
   }

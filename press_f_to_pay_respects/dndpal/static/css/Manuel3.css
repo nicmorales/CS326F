@@ -68,6 +68,53 @@ li > div > label{
   margin:8px;
 }
 
+li>div{
+  margin-top: 8px;
+  width: 95%;
+}
+
 ul{
   list-style-type: none;
+}
+
+.tab-pane{
+  overflow-y:scroll;
+  width:100%;
+}
+
+.one{
+  border-left: solid 5px blue;
+}
+
+.two{
+  border-left: solid 5px #17d817;
+}
+
+.three{
+  border-left: solid 5px black;
+}
+
+.four{
+  border-left: solid 5px orange;
+}
+
+.five{
+  border-left: solid 5px red;
+}
+
+.selected{
+  border-top:solid 3px cyan;
+  border-bottom:solid 3px cyan;
+  border-right:solid 3px cyan;
+
+}
+
+ul > p{
+  margin-top: 1em;
+}
+
+a {
+    margin-bottom: 8px;
+    border-top-width: 5px;
+    margin-top: 8px;
 }

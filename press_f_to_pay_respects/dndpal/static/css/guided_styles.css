@@ -1,6 +1,16 @@
 body {
-   
+    background-color: white;
+    display: inline-flex;
+}
 
+#gutter {
+   flex-grow: 1;
+   flex-shrink: 1;
+   background-color: #202A32;
+   display: inline-flex;
+   flex-direction: column;
+   flex-shrink: 0;
+   flex-basis: 200px;
 }
 
 #main {
@@ -264,6 +274,7 @@ body {
 #saving_throws, #equipment /* #personal_info */ {
     border-top: 1px solid #7292A9;
 }
+
 #health_container, #saving_throws, #equipment {
     flex-shrink: 2;
     flex-basis: 180px;
@@ -395,26 +406,38 @@ skill_header h5 {
 #character_info .mdl-textfield{
     margin-left: 25px;
 }
+
 #character_info .mdl-textfield {
     color: white;
 }
+
 #top_row, #mid_row, #bot_row {
     display: block;
+}
 
 #character_info, #spells_info, #equipment_info, #other_info, #feature_info{
     flex-basis: 200px;
     height: 35%;
+}
+
 .tab_2 .mdl-textfield__label {
     font-size: 13px;
     color: white;
+}
+
 .tab_2 .mdl-textfield__input{
     font-size: 14px;
     color: white;
     border-bottom: 1px solid rgb(100,255,218);
+}
+
 .tab_2 .mdl-textfield__error{
     top: 50px;
     height: 50px;
     width: 125px;
+}
+
+
 .tab_2 .mdl-textfield {
     margin-left: 25px;
 }
