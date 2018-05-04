@@ -86,17 +86,7 @@
                         <hr>
 
                         <h6 class="pl-3">
-                            {% if c.ranking == 5 %}
-                                This spell is highly recommended and/or generally strong in most scenarios for this class.
-                            {% elif c.ranking == 4 %}
-                                This spell is good pick and/or handy in most scenarios for this class.
-                            {% elif c.ranking == 3 %}
-                                This spell is mediocre and/or situationally decent in some scenarios for this class.
-                            {% elif c.ranking == 2 %}
-                                This spell is not great and/or situationally ok in some scenarios for this class. Should be picked for flavor usually.
-                            {% elif c.ranking == 1 %}
-                                This spell is weak for this class. Only reason to typically pick this is for flavor.
-                            {% endif %}
+                            {{c.ran_note}}
                         </h6>
                     </div>
                     {% endfor %}

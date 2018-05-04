@@ -39,9 +39,9 @@ class Character(models.Model):
     )
 
     alignment = models.CharField(max_length = 2, choices = ALIGNMENT_CHOICES, default = 'NN')
-    proficiency_list = models.CharField( default = '', max_length = 30, help_text = "Enter the list of proficiencies for this character in JSON format.")
-    ability_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of abilities for this character in JSON format.")
-    spell_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of spells for this character in JSON format.")
+    proficiency_list = models.CharField( default = '', max_length = 30, blank=True, help_text = "Enter the list of proficiencies for this character in JSON format.")
+    ability_list = models.CharField( default = '', max_length = 1000, blank=True, help_text = "Enter the list of abilities for this character in JSON format.")
+    spell_list = models.CharField( default = '', max_length = 1000, blank=True, help_text = "Enter the list of spells for this character in JSON format.")
     gold = models.IntegerField(default=0, help_text="Enter the gold of the character")
     silver = models.IntegerField(default=0, help_text="Enter the gold of the character")
     copper = models.IntegerField(default=0, help_text="Enter the gold of the character")
@@ -54,7 +54,7 @@ class Character(models.Model):
     cur_hp = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the current hitpoints for your character")
     armor_class = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the armor class for your character")
     init = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the initiative bonus for your character")
-    bonus_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of bonuses for this character in JSON format.")
+    bonus_list = models.CharField( default = '', max_length = 1000, blank=True, help_text = "Enter the list of bonuses for this character in JSON format.")
 
     strength = models.SmallIntegerField(default= 0, help_text="Enter the strength state for your character.")
     dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity state for your character.")

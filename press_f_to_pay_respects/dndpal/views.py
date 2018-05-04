@@ -278,6 +278,11 @@ class CharacterDetailView(generic.DetailView):
     model = Character
     template_name ='test_for_alan.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(CharacterDetailView, self).get_context_data(**kwargs)
+
+        return context
+
 
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect

@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <main role="main" class="container">
     <div class="container">
 
@@ -49,8 +48,66 @@
                         </table>
                     </a>
                 {% endfor %}
+                    <a href="alan" class="list-group-item list-group-item-action flex-column align-items-start"
+               style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
+
+                <table>
+                    <col width="20%">
+                    <col width="80%">
+                    <tbody>
+                    <tr>
+                        <th>
+                            <div class="avatar">
+                                <img style="width:75%;
+													  max-width: 400px;
+													  height:auto;"
+                                     src="img/add.png"
+                                     class="rounded-circle img-responsive"
+                                >
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Add New</h5>
+                                <small class="text-muted"></small>
+                            </div>
+                            <p class="mb-1"></p>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </a>
             {% else %}
                 <h1>There are no characters.</h1>
+                <a href="alan" class="list-group-item list-group-item-action flex-column align-items-start"
+               style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
+
+                <table>
+                    <col width="20%">
+                    <col width="80%">
+                    <tbody>
+                    <tr>
+                        <th>
+                            <div class="avatar">
+                                <img style="width:75%;
+													  max-width: 400px;
+													  height:auto;"
+                                     src="img/add.png"
+                                     class="rounded-circle img-responsive"
+                                >
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Add New</h5>
+                                <small class="text-muted"></small>
+                            </div>
+                            <p class="mb-1"></p>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </a>
             {% endif %}
             <!--Grid column-->
 
@@ -58,6 +115,8 @@
         <!--Main container-->
     </div>
 </main>
+
+
 
 
 {% endblock %}
