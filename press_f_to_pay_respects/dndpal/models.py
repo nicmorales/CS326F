@@ -45,6 +45,7 @@ class Character(models.Model):
     gold = models.IntegerField(default=0, help_text="Enter the gold of the character")
     silver = models.IntegerField(default=0, help_text="Enter the gold of the character")
     copper = models.IntegerField(default=0, help_text="Enter the gold of the character")
+    exp = models.IntegerField(default=0, help_text="Enter the exp of the character")
 
     armor = models.ForeignKey('Armor', on_delete=models.SET_NULL, null = True)
     weapon = models.ForeignKey('Weapon', on_delete=models.SET_NULL, null = True)
@@ -64,6 +65,8 @@ class Character(models.Model):
     charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
 
     character_view = models.CharField( default = '', max_length = 30, help_text = "Enter view for character (simple/guided/manual).")
+
+
 
 
 

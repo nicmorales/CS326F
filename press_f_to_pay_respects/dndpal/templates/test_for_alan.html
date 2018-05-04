@@ -23,14 +23,14 @@
         <!--Race Class Level-->
         <div class="row">
             <div class="col-3">
-                <h3 id="race"><span class="badge badge-light">Race: </span> Gnome</h3>
+                <h3 id="race"><span class="badge badge-light">Race: </span> {{character.race}}</h3>
             </div>
             <div class="col-6 row">
               <div class="col">
                   <h3 id="class"> <span class="badge badge-light" style="padding-left: 0px;"> Class: </span></h3>
               </div>
               <div class="col-8" style="padding-left: 0px;">
-                <input id="class-field"  type="text" class="form-control-plaintext" value="Barbarian" style="text-align: left;">
+                <input id="class-field"  type="text" class="form-control-plaintext" value="{{character.char_class}}" style="text-align: left;">
               </div>
             </div>
             <div class="col-3 row">
@@ -38,17 +38,22 @@
                 <h3 id="level"><span class="badge badge-light">Level: </span> </h3>
               </div>
               <div class="col" style="padding-left: 0px">
-                <input id="level-field"  type="text" class="form-control-plaintext" value="0" style="text-align: left;">
+                <input id="level-field"  type="text" class="form-control-plaintext" value="{{character.level}}" style="text-align: left;">
               </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-3">
-                <h3 id="alignment"><span class="badge badge-light">Alignment: </span> CN</h3>
+                <h3 id="alignment"><span class="badge badge-light">Alignment: </span> {{character.level}}</h3>
             </div>
-            <div class="col-3">
-                <h3 id="exp"><span class="badge badge-light">Exp: </span> 15000</h3>
+            <div class="col-3 row">
+                <div class="col">
+                    <h3 id="exp"><span class="badge badge-light">Exp: </span> </h3>
+                </div>
+                <div class="col" style="padding-left: 0px">
+                    <input id="exp-field"  type="text" class="form-control-plaintext" value="{{character.level}}" style="text-align: left;">
+                </div>
             </div>
             <div class="col-3">
                 <h3 id="faction"><span class="badge badge-light">Faction </span> n/a</h3>
