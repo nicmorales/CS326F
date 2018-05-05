@@ -9,11 +9,12 @@
 
     <div class="container ml-5 mt-4">
 
+        <!--Top info-->
         <div class="row">
             <div class="col-md-11">
-                <div class="card px-5 pb-4">
+                <div class="card pl-5 pr-4 pb-4">
                     <!--Char name-->
-                    <div class="row sec-space pl-5">
+                    <div class="row sec-space pl-5 mb-2">
                         <div class="col-8">
                             <h1 id="char-name"><span class="badge">Name: </span>{{character.char_name}}</h1>
                         </div>
@@ -25,9 +26,13 @@
                     </div>
 
                     <!--Race Class Level-->
-                    <div class="row pl-5 ml-5">
+                    <div class="row pl-5 ml-3">
                         <div class="col-4">
-                            <h3 id="race"><b class="badge">Race: </b>{{character.race.name}}</h3>
+                            <div class="row">
+                                <h3 id="race"><b class="badge">Race: </b></h3>
+                                <h5 class="mt-2"><a href="{{character.race.get_absolute_url}}"
+                                       target="_blank">{{character.race.name}}</a></h5>
+                            </div>
                         </div>
                         <div class="col-4 row">
                             <div class="col-4">
@@ -39,7 +44,7 @@
                                        style="text-align: left;">
                             </div>
                         </div>
-                        <div class="col-3 row">
+                        <div class="col-4 row">
                             <div class="col">
                                 <h3 id="level"><span class="badge">Level: </span></h3>
                             </div>
@@ -51,16 +56,24 @@
                         </div>
                     </div>
 
-                    <div class="row pl-5">
-                        <div class="col-3">
-                            <h3 id="alignment"><span class="badge">Alignment: </span>
-                                {{character.get_alignment_display}}</h3>
+                    <!--Alignment + EXP-->
+                    <div class="row pl-5 ml-5 pt-2">
+                        <div class="col-6">
+                            <h4 id="alignment"><span class="badge">Alignment: </span>
+                                {{character.get_alignment_display}}</h4>
                         </div>
-                        <div class="col-3">
-                            <h3 id="exp"><span class="badge">Exp: </span> 15000</h3>
+                        <div class="col-4 row">
+                            <div class="col">
+                                <h4 id="exp"><span class="badge">Experience: </span></h4>
+                            </div>
+                            <div class="col" style="padding-left: 0px">
+                                <input id="exp-field" type="text" class="form-control-plaintext"
+                                       value="0"
+                                       style="text-align: left;">
+                            </div>
                         </div>
                         <!--<div class="col-3">-->
-                            <!--<h3 id="faction"><span class="badge">Faction </span> n/a</h3>-->
+                        <!--<h3 id="faction"><span class="badge">Faction </span> n/a</h3>-->
                         <!--</div>-->
                     </div>
                 </div>
@@ -99,7 +112,8 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="str" type="text" class="form-control-plaintext" value="15">
+                                    <input id="str" type="text" class="form-control-plaintext"
+                                           value="{{character.strength}}">
 
                                 </div>
                             </div>
