@@ -113,7 +113,7 @@ ul > p{
   margin-top: 1em;
 }
 
-a {
+div > a {
     margin-bottom: 8px;
     border-top-width: 5px;
     margin-top: 8px;

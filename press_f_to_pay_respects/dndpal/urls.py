@@ -32,6 +32,7 @@ urlpatterns = [
 	url(r'^ajax/get_spells/(?P<cname>[-\w]+)/(?P<lvl>[-\w]+)/$', views.get_spells),
     url(r'^ajax/get_cantrip/(?P<cname>[-\w]+)/$', views.get_cantrip),
 	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),
+    url(r'^ajax/test_post/$', views.testing_post),
 ]
 
 # Niko's pages:

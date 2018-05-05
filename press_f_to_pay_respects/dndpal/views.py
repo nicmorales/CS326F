@@ -336,13 +336,13 @@ def get_skills(request , cname) :
 
 def get_spells(request,cname,lvl):
     with connection.cursor() as cursor:
-        cursor.execute("SELECT dndpal_characterclassspelllist.ranking , dndpal_spell.name , dndpal_spell.description , dndpal_spell.spell_level FROM dndpal_characterclassspelllist, dndpal_spell  WHERE dndpal_characterclassspelllist.spell_list_id = dndpal_spell.name AND dndpal_characterclassspelllist.character_class_id = %s AND dndpal_characterclassspelllist.required_level > 0 AND dndpal_characterclassspelllist.required_level <= %s " , [cname , lvl])
+        cursor.execute("SELECT dndpal_characterclassspelllist.ranking , dndpal_spell.name , dndpal_spell.spell_level FROM dndpal_characterclassspelllist, dndpal_spell  WHERE dndpal_characterclassspelllist.spell_list_id = dndpal_spell.name AND dndpal_characterclassspelllist.character_class_id = %s AND dndpal_characterclassspelllist.required_level > 0 AND dndpal_characterclassspelllist.required_level <= %s" , [cname , lvl])
         row = dictfetchall(cursor)
     return JsonResponse(row,safe = False)
 
 def get_cantrip(request,cname):
     with connection.cursor() as cursor:
-        cursor.execute("SELECT dndpal_characterclassspelllist.ranking , dndpal_spell.name , dndpal_spell.description , dndpal_spell.spell_level FROM dndpal_characterclassspelllist, dndpal_spell  WHERE dndpal_characterclassspelllist.spell_list_id = dndpal_spell.name AND dndpal_characterclassspelllist.character_class_id = %s AND dndpal_characterclassspelllist.required_level = 0 " , [cname])
+        cursor.execute("SELECT dndpal_characterclassspelllist.ranking , dndpal_spell.name , dndpal_spell.spell_level FROM dndpal_characterclassspelllist, dndpal_spell  WHERE dndpal_characterclassspelllist.spell_list_id = dndpal_spell.name AND dndpal_characterclassspelllist.character_class_id = %s AND dndpal_characterclassspelllist.required_level = 0 " , [cname])
         row = dictfetchall(cursor)
     return JsonResponse(row,safe = False)
 
@@ -350,3 +350,9 @@ def get_features(request,cname,lvl):
     qs = CharacterClassFeatures.objects.all().filter(character_class = cname).filter(required_level = lvl)
     qs_json = serializers.serialize('json', qs)
     return JsonResponse(qs_json,safe = False)
+
+def testing_post (request):
+    print('*'*50)
+    print(request.body)
+    print('*'*50)
+    return JsonResponse({"data" : 0})

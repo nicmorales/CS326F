@@ -1,10 +1,44 @@
 $('#Test').click(function(){
-  $('#Spell-modal').show();
+  $.ajax({
+      url: "/dndpal/ajax/test_post/",
+      type: "POST",
+      contentType: 'application/json',
+      dataType:'json',
+      data: JSON.stringify({spells: "knownSpellNameList"}),
+      success: function (data) {
+        console.log('done');
+      }
+    });
 
 });
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
 
-
-
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
 
 
 
@@ -14,34 +48,27 @@ $('#Test').click(function(){
 var Proficiency = document.getElementById('Proficiency');
 document.getElementById('Proficiency').onchange = function(){thing()};
 function thing(){
-  updateAcro();
-  updateAnim();
-  updateArca();
-  updateAthl();
-  updateDece();
-  updateHist();
-  updateInsi();
-  updateInti();
-  updateInve();
-  updateMedi();
-  updateNatu();
-  updatePerc();
-  updatePerf();
-  updatePers();
-  updateReli();
-  updateSlei();
-  updateStea();
-  updateSurv();
+  updatestr();
+  updatedex();
+  updatecon();
+  updatewis();
+  updateint();
+  updatechr();
+
 
 }
-
+// on load functiuon handling loading or initial setup
 $( window ).on( "load", function() {
+
   control = parseInt(lvl.value);
+  thing();
   console.log(control + "onload");
   if(control == 0)
   setTimeout(function(){leveling()},200);
 
 });
+
+
 /*Ability Scores*/
   /* changes everything related to strength*/
   document.getElementById("str").onchange = function() {updatestr()};
@@ -556,9 +583,7 @@ var SurvDP = document.getElementById('SurvDP');
           prestuff();
           else{
 
-            console.log(levelshit);
             if(levelshit == null){
-              console.log("Incressed level");
               lvl.value = parseInt(lvl.value) + 1;
               moreControl = 0;
               levelshit = getValues('/dndpal/ajax/get_features/'+ cname.value + '/'+ lvl.value);
@@ -566,30 +591,23 @@ var SurvDP = document.getElementById('SurvDP');
               levelshit.push( JSON.parse('{"fields":{"feature_type":"end"}}') );
               leveling();
             }else{
-              console.log("moreControll =" + moreControl);
                 var currentAbility = levelshit[moreControl].fields.feature_type;
 
-                  console.log(currentAbility);
 
                   switch (currentAbility){
                     case 'Ability':
-                      console.log(levelshit);
                       AddAbility(levelshit[moreControl].fields.description,levelshit[moreControl].fields.name)
                       moreControl = moreControl + 1;
                       leveling();
                       break;
                     case 'end':
-                      console.log("finished");
                       levelshit = null;
                       break;
                     case 'Spell Slots':
                     var doing =  JSON.parse(levelshit[moreControl].fields.description);
-                    console.log(doing);
 
                     for (var key in doing) {
-                      console.log(key);
-                        if(key == "Slot0")
-                        console.log('nothing');
+                        if(key == "Slot0"){}
                         else
                           apendSlots(key,doing[key])
                       }
@@ -601,21 +619,23 @@ var SurvDP = document.getElementById('SurvDP');
                       var newSpells = parseInt(levelshit[moreControl].fields.description);
 
                       $.ajax({
-                          url: '/dndpal/ajax/get_spells/'+ cname.value + '/'+lvl.value + '/',
+                          url: "/dndpal/ajax/get_spells/"+ cname.value + "/"+lvl.value + "/",
                           success: function (data) {
                             for(var sp in data){
                               var cursp = data[sp];
-                              appendmodalspell(cursp.ranking , modalSpelllvls[(cursp.spell_level - 1)] , cursp.name , cursp.description , cursp);
+                              spellarray.push(cursp);
+                              if(! spellExists(cursp.name)){
+                                appendmodalspell(cursp.ranking , modalSpelllvls[(cursp.spell_level - 1)] , cursp.name , true , sp);
+                              }
                             }
                             $('#Spell-modal').show();
                           }
                         });
-                        console.log(newSpells);
                       moreControl = moreControl + 1;
                       leveling();
                       break;
                     default:
-                    console.log(currentAbility + "default" + lvl.value);
+
                     moreControl = moreControl + 1;
                     leveling();
                   }//end switch
@@ -801,11 +821,35 @@ $('#Stats-kill').click(
   }
 // closing spell modal
 $('#Close-spells').click(function(){
+
+
+
+
   $('#Spell-modal-body').find("li").each(function(){
+    var toAdd = $(this).find("div")[0];
+
+    if(toAdd.classList.contains("selected")){
+      var toAddId = toAdd.id;
+      console.log(toAddId);
+      toAddId = spellarray[toAddId];
+      appendmodalspell(0, pageSpelllvls[(toAddId.spell_level - 1)] , toAddId.name , false, 0);
+      knownSpellList.push(toAddId);
+      console.log(knownSpellList);
+    }
     $(this).remove();
   });
+  spellarray = [];
     $('#Spell-modal').hide();
 });
+// cheak if spell is already on page
+function spellExists(splname) {
+  for(i =0; i < knownSpellList.length; i++){
+    if(splname == knownSpellList[i].name)
+      return true;
+
+  }
+  return false;
+}
 
 //spell on click selection
 function Selectedthing(e){
@@ -824,46 +868,47 @@ function Selectedthing(e){
 // FILLING OUT  spell modal
   // get all the modal spell positions
   var modalSpelllvls = $('#Spell-modal-body').find("p");
-
+  var pageSpelllvls = $('#spell-list-body').find("p");
+  var spellarray = []; // temp spell list for appending spells to the spell list on page
+  var knownSpellList = []; // list of known spells ie spells appended to the spell list on page
   // add shit to the modal
-  function appendmodalspell(ranking , place, spell, description , json_data) {
-    console.log("ranking = " + ranking);
+  function appendmodalspell(ranking , place, spell, clickable , pos) {
     var rank;
     switch (ranking) {
       case 0:
-        rank = "";
+        rank = "zero";
         break;
-
       case 1:
         rank = "five";
         break;
       case 2:
         rank = "four";
         break;
-
       case 3:
         rank = "three";
         break;
       case 4:
         rank = "two";
         break;
-
       case 5:
         rank = "one";
         break;
       default:
-
+    }
+    var cl = '';
+    if(clickable){
+      cl = 'onclick="Selectedthing(this)"'
     }
 
     $(place).after(
       `
       <li>
-        <div class="card one ${rank}" id = ${JSON.stringify(json_data)}>
+        <div class="card ${rank}" id = "${pos}">
             <div class="row" >
-              <div class="col-10" onclick="Selectedthing(this)" >
+              <div class="col" ${cl}>
                 <h6 class="card-header col">${spell}</h6>
               </div>
-              <div class="col">
+              <div class="col-4">
                <a href="http://127.0.0.1:8000/dndpal/spell/${spell}" target="_blank" class="btn btn-primary col">More Info</a>
               </div>
             </div>
