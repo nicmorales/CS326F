@@ -21,7 +21,7 @@ class Character(models.Model):
     char_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)
     race = models.ForeignKey('Race', on_delete=models.SET_NULL, null = True)
     subrace = models.ForeignKey('Subrace', on_delete=models.SET_NULL, null = True)
-    level = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the level your character")
+    level = models.PositiveSmallIntegerField(default = 0, help_text = "Enter the level your character")
 
     # In tuple: First field is the value that gets saved in the database, Second is the one the human sees
     ALIGNMENT_CHOICES = (
