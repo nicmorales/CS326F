@@ -21,7 +21,8 @@ class Character(models.Model):
     char_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)
     race = models.ForeignKey('Race', on_delete=models.SET_NULL, null = True)
     subrace = models.ForeignKey('Subrace', on_delete=models.SET_NULL, null = True)
-    level = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the level your character")
+    level = models.PositiveSmallIntegerField(default = 0, help_text = "Enter the level your character")
+    exp = models.PositiveSmallIntegerField(default = 0, help_text = "Enter the starting exp of your character")
 
     # In tuple: First field is the value that gets saved in the database, Second is the one the human sees
     ALIGNMENT_CHOICES = (
@@ -56,12 +57,12 @@ class Character(models.Model):
     init = models.PositiveSmallIntegerField(default = 1, help_text = "Enter the initiative bonus for your character")
     bonus_list = models.CharField( default = '', max_length = 1000, help_text = "Enter the list of bonuses for this character in JSON format.")
 
-    strength = models.SmallIntegerField(default= 0, help_text="Enter the strength state for your character.")
-    dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity state for your character.")
-    constitution = models.SmallIntegerField(default= 0, help_text="Enter the constitution state for your character.")
-    intelligence = models.SmallIntegerField(default= 0, help_text="Enter the intelligence state for your character.")
-    wisdom = models.SmallIntegerField(default= 0, help_text="Enter the wisdowm state for your character.")
-    charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma state for your character.")
+    strength = models.SmallIntegerField(default= 0, help_text="Enter the strength stat for your character.")
+    dexterity = models.SmallIntegerField(default= 0, help_text="Enter the dexterity stat for your character.")
+    constitution = models.SmallIntegerField(default= 0, help_text="Enter the constitution stat for your character.")
+    intelligence = models.SmallIntegerField(default= 0, help_text="Enter the intelligence stat for your character.")
+    wisdom = models.SmallIntegerField(default= 0, help_text="Enter the wisdom stat for your character.")
+    charisma = models.SmallIntegerField(default= 0, help_text="Enter the charisma stat for your character.")
 
     character_view = models.CharField( default = '', max_length = 30, help_text = "Enter view for character (simple/guided/manual).")
 
