@@ -49,7 +49,6 @@ def CharacterCreateForm(request):
         if form.is_valid():
             new_character = form.save(commit=False)
             new_character.username = request.user
-            new_character.char_id = uuid.uuid4().hex
             new_character.save()
             return redirect('my-characters')
     else:
