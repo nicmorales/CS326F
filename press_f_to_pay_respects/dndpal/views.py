@@ -41,13 +41,21 @@ from .models import Character
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView
+from .forms import CharacterForm
+import uuid
 
-class CharacterCreate(CreateView):
-    model = Character
-    fields = ['char_name','char_class','race','subrace']
-    template_name = "character_create.html"
-    success_url =  reverse_lazy('my-characters')
+def CharacterCreateForm(request):
+    form = CharacterForm()
+    if request.method == "POST":
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            new_character = form.save(commit=False)
+            new_character.username = request.user
+            new_character.save()
+            return redirect('my-characters')
+    else:
+        form = form = CharacterForm()
+    return render(request, 'character_form.html', {'form': form})
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -363,13 +371,6 @@ class ArmorDelete(DeleteView):
     # required_strength = models.SmallIntegerField(default= 0, help_text="Enter the required strength to use this armor.")
     # required_materials = models.CharField(default = "", max_length = 10000, help_text = "Enter the required materials to cast this spell in JSON format.")
 
-def dictfetchall(cursor):
-    "Return all rows from a cursor as a dict"
-    columns = [col[0] for col in cursor.description]
-    return [
-        dict(zip(columns, row))
-        for row in cursor.fetchall()
-    ]
 def get_health(request,stub):
     data = {"Hitdie" : CharacterClass.objects.filter(name = stub)[0].hitpoints}
     return JsonResponse(data)
@@ -378,17 +379,8 @@ def get_skills(request , cname) :
     data = {"skills" : CharacterClass.objects.filter(name = cname)[0].skill_list}
     return JsonResponse(data)
 
-def get_spells(request,cname,lvl):
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT dndpal_characterclassspelllist.ranking , dndpal_spell.name , dndpal_spell.spell_level FROM dndpal_characterclassspelllist, dndpal_spell  WHERE dndpal_characterclassspelllist.spell_list_id = dndpal_spell.name AND dndpal_characterclassspelllist.character_class_id = %s AND dndpal_characterclassspelllist.required_level > 0 AND dndpal_characterclassspelllist.required_level <= %s" , [cname , lvl])
-        row = dictfetchall(cursor)
-    return JsonResponse(row,safe = False)
-
-def get_cantrip(request,cname):
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT dndpal_characterclassspelllist.ranking , dndpal_spell.name , dndpal_spell.spell_level FROM dndpal_characterclassspelllist, dndpal_spell  WHERE dndpal_characterclassspelllist.spell_list_id = dndpal_spell.name AND dndpal_characterclassspelllist.character_class_id = %s AND dndpal_characterclassspelllist.required_level = 0 " , [cname])
-        row = dictfetchall(cursor)
-    return JsonResponse(row,safe = False)
+def get_spells(request,cname,lvl,thing):
+	return (1)
 
 def get_features(request,cname,lvl):
     qs = CharacterClassFeatures.objects.all().filter(character_class = cname).filter(required_level = lvl)

@@ -15,7 +15,7 @@ from django.contrib.auth.models import User
 
 
 class Character(models.Model):
-    char_id= models.PositiveIntegerField(default = 1, unique=True, primary_key = True, help_text = "Enter Character ID")
+    char_id= models.PositiveIntegerField(unique=True, primary_key = True, help_text = "Enter Character ID")
     username = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
     char_name = models.CharField( default = '', max_length = 30, help_text = "Enter a name for your character")
     char_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)

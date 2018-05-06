@@ -69,3 +69,13 @@
 #         Returns the url to access a detail record for this armor.
 #         """
 #         return reverse('armor-detail', args=[str(self.name)])
+
+
+from django.forms import ModelForm
+from .models import Character
+
+class CharacterForm(ModelForm):
+    class Meta:
+        model = Character
+        fields = ['char_name','char_class','race','subrace']
+
