@@ -34,6 +34,23 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from .models import Character
+
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.views.generic import TemplateView
+
+class CharacterCreate(CreateView):
+    model = Character
+    fields = ['char_name','char_class','race','subrace']
+    template_name = "character_create.html"
+    
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 
 def guided(request):
     """

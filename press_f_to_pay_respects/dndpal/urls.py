@@ -41,6 +41,8 @@ from django.conf.urls import url
 urlpatterns += [
      url(r'^signup/$', views.signup, name='signup'),
     path('guided/', views.guided, name='guided'),
+    path('character/create/', views.CharacterCreate.as_view(), name='character_create'),
+
 ]
 
 
