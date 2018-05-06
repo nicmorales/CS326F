@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 from .models import *
+from django.db import connection
 
 
 
