@@ -26,7 +26,7 @@ urlpatterns = [
     path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
 
-	#ajax all the ajax
+#ajax all the ajax
     url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
 	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
 	url(r'^ajax/get_spells/(?P<cname>[-\w]+)/(?P<lvl>[-\w]+)/$', views.get_spells),
@@ -42,11 +42,11 @@ from django.conf.urls import url
 
 # Niko's pages:
 urlpatterns += [
-    url(r'^signup/$', views.signup, name='signup'),
+     url(r'^signup/$', views.signup, name='signup'),
     path('guided/', views.guided, name='guided'),
-    path('character/create/', views.CharacterCreateForm, name='character_create'),
-    
-]   
+    path('character/create/', views.CharacterCreate.as_view(), name='character_create'),
+
+]
 
 
 urlpatterns += [
