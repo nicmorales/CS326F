@@ -1,10 +1,33 @@
-$('#Test').click(function(){
+var proflist = new Array(18);
+function getProflist() {
+  var pageProf = $('#Skills-body').find("input");
+    for(p=0 ; p<18 ; p++){
+      proflist[p] = pageProf[p].cheaked;
+    }
+    console.log(proflist.tostring());
+    return proflist.tostring();
+}
+
+
+
+function setProflist() {
+  var pageProf = $('#Skills-body').find("input");
+    for(p=0 ; p<18 ; p++){
+      pageProf[p].cheaked = proflist[p];
+    }
+}
+
+
+
+
+
+$('#save').click(function(){
   $.ajax({
       url: "/dndpal/ajax/test_post/",
       type: "POST",
       contentType: 'application/json',
       dataType:'json',
-      data: JSON.stringify({spells: "knownSpellNameList"}),
+      data: JSON.stringify({spells: knownSpellList , proficency: getProflist() , health: HitPoints.value, temphp : $('TempHit').value , spellsots: pageSlots.tostring()}),
       success: function (data) {
         console.log('done');
       }

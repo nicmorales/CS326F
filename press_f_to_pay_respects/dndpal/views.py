@@ -52,7 +52,7 @@ class CharacterCreate(CreateView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-    
+
 
 
 def guided(request):
@@ -331,7 +331,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Armor
 
-# @login_required ? 
+# @login_required ?
 class ArmorCreate(CreateView):
     model = Armor
     fields = '__all__'
@@ -392,6 +392,11 @@ def get_cantrip(request,cname):
 
 def get_features(request,cname,lvl):
     qs = CharacterClassFeatures.objects.all().filter(character_class = cname).filter(required_level = lvl)
+    qs_json = serializers.serialize('json', qs)
+    return JsonResponse(qs_json,safe = False)
+
+def get_abilites(request,cname,lvl):
+    qs = CharacterClassFeatures.objects.all().filter(character_class = cname).filter(feature_type = "Ability").filter(required_level__lte = lvl)
     qs_json = serializers.serialize('json', qs)
     return JsonResponse(qs_json,safe = False)
 

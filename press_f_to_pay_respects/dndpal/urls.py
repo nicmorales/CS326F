@@ -26,16 +26,13 @@ urlpatterns = [
     path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
 
-	#ajax all the fucking ajax
-    url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
-	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
-	url(r'^ajax/get_spells/(?P<cname>[-\w]+)$/(?P<lvl>[-\w]+)/(?P<thing>[-\w]+)/$', views.get_spells),
-	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),#ajax all the fucking ajax
+	#ajax all the ajax
     url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
 	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
 	url(r'^ajax/get_spells/(?P<cname>[-\w]+)/(?P<lvl>[-\w]+)/$', views.get_spells),
     url(r'^ajax/get_cantrip/(?P<cname>[-\w]+)/$', views.get_cantrip),
 	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),
+    url(r'^ajax/get_abilites/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_abilites),
     url(r'^ajax/test_post/$', views.testing_post),
 ]
 
