@@ -40,19 +40,21 @@ from .models import Character
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView
+from .forms import CharacterForm
+import uuid
 
-class CharacterCreate(CreateView):
-    model = Character
-    fields = ['char_name','char_class','race','subrace']
-    template_name = "character_create.html"
-    success_url =  reverse_lazy('my-characters')
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
-    
-
+def CharacterCreateForm(request):
+    if request.method == "POST":
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            new_character = form.save(commit=False)
+            new_character.username = request.user
+            new_character.char_id = uuid.uuid4().hex
+            new_character.save()
+            return redirect('my-characters')
+    else:
+        form = form = CharacterForm()
+    return render(request, 'character_form.html', {'form': form})
 
 def guided(request):
     """
