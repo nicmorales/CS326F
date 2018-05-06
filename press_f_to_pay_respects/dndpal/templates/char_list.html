@@ -1,7 +1,6 @@
 {% extends "base_generic.html" %}
-
+{% load static %}
 {% block content %}
-
 
 <main role="main" class="container">
     <div class="container">
@@ -20,37 +19,95 @@
 
         <div class="list-group">
             {% if character_list %}
-                {% for c in character_list %}
-                    <a href="{% url 'character-detail' c.pk %}" class="list-group-item list-group-item-action flex-column align-items-start"
-                       style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px">
+            {% for c in character_list %}
+            <a href="{% url 'character-detail' c.pk %}" class="list-group-item list-group-item-action flex-column align-items-start"
+               style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px">
 
-                        <table>
-                            <col width="20%">
-                            <col width="80%">
-                            <tbody>
-                            <tr>
-                                <th>
-                                    <div class="avatar">
-                                        <img style="width:75%; max-width: 400px;height:auto;"src="img/bar.png"class="rounded-circle img-responsive">
-                                    </div>
-                                </th>
-                                <th scope="row">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">{{c.char_name}}</h5>
-                                        <small class="text-muted">LVL {{c.level}}</small>
-                                    </div>
-                                    <div class="d-flex w-100 justify-content-between" style="align-items: center;">
-                                        <p class="mb-1">{{c.race}} {{c.char_class}}</p>
-                                        <button type="button" class="btn btn-flat btn-danger">Delete</button>
-                                    </div>
-                                </th>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </a>
-                {% endfor %}
+                <table>
+                    <col width="20%">
+                    <col width="80%">
+                    <tbody>
+                    <tr>
+                        <th>
+                            <div class="avatar">
+                                <img style="width:75%; max-width: 400px;height:auto;"src="{% static 'img/barb-weapon.png' %}"class="rounded-circle img-responsive">
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1"><b>Name: {{c.char_name}}</b></h5>
+                                <small class="text-muted">LVL {{c.level}}</small>
+                            </div>
+                            <div class="d-flex w-100 justify-content-between" style="align-items: center;">
+                                <p class="mb-1">Race: {{c.race}} <br/> Class: {{c.char_class}}</p>
+                                <button type="button" class="btn btn-flat btn-danger">Delete</button>
+                            </div>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </a>
+            {% endfor %}
+            <a href="alan" class="list-group-item list-group-item-action flex-column align-items-start"
+               style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
+
+                <table>
+                    <col width="20%">
+                    <col width="80%">
+                    <tbody>
+                    <tr>
+                        <th>
+                            <div class="avatar">
+                                <img style="width:75%;
+													  max-width: 400px;
+													  height:auto;"
+                                     src="{% static 'img/Add.png' %}"
+                                     class="rounded-circle img-responsive"
+                                >
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Add New</h5>
+                                <small class="text-muted"></small>
+                            </div>
+                            <p class="mb-1"></p>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </a>
             {% else %}
-                <h1>There are no characters.</h1>
+            <h1>There are no characters.</h1>
+            <a href="alan" class="list-group-item list-group-item-action flex-column align-items-start"
+               style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
+
+                <table>
+                    <col width="20%">
+                    <col width="80%">
+                    <tbody>
+                    <tr>
+                        <th>
+                            <div class="avatar">
+                                <img style="width:75%;
+													  max-width: 400px;
+													  height:auto;"
+                                     src="{% static 'img/Add.png' %}"
+                                     class="rounded-circle img-responsive"
+                                >
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Add New</h5>
+                                <small class="text-muted"></small>
+                            </div>
+                            <p class="mb-1"></p>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </a>
             {% endif %}
             <!--Grid column-->
 
@@ -58,6 +115,8 @@
         <!--Main container-->
     </div>
 </main>
+
+
 
 
 {% endblock %}
