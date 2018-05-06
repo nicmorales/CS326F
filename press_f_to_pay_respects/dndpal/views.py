@@ -28,7 +28,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+            return redirect('character_create')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
@@ -46,10 +46,12 @@ class CharacterCreate(CreateView):
     model = Character
     fields = ['char_name','char_class','race','subrace']
     template_name = "character_create.html"
-    
+    success_url =  reverse_lazy('my-characters')
+
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
+    
 
 
 def guided(request):
@@ -303,6 +305,8 @@ class CharacterListView(LoginRequiredMixin,generic.ListView):
     model = Character
     template_name ='char_list.html'
     paginate_by = 10
+
+
 
     def get_queryset(self):
         return Character.objects.filter(username=self.request.user)

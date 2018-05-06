@@ -48,7 +48,7 @@
                         </table>
                     </a>
                 {% endfor %}
-                    <a href="alan" class="list-group-item list-group-item-action flex-column align-items-start"
+                    <a href="{% url 'character_create' %}" class="list-group-item list-group-item-action flex-column align-items-start"
                style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
 
                 <table>
@@ -79,7 +79,7 @@
             </a>
             {% else %}
                 <h1>There are no characters.</h1>
-                <a href="alan" class="list-group-item list-group-item-action flex-column align-items-start"
+                <a href="{% url 'character_create' %}" class="list-group-item list-group-item-action flex-column align-items-start"
                style=" border-radius: 25px;background-color: #DCDCDC; margin-bottom:5px ">
 
                 <table>
