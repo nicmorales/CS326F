@@ -84,7 +84,7 @@
 
       {% else %}
       <a class="btn btn-light" href="{% url 'login'%}?next={{request.path}}" role="button">Login</a>
-
+      <a class="btn btn-light" href="{% url 'signup'%}?next={{request.path}}" role="button">Sign Up</a>
       {% endif %}
 
     </div>

@@ -33,8 +33,13 @@ urlpatterns = [
 	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),
 ]
 
+
+from django.conf.urls import url
+
+
 # Niko's pages:
 urlpatterns += [
+     url(r'^signup/$', views.signup, name='signup'),
     path('guided/', views.guided, name='guided'),
 ]
 
