@@ -409,22 +409,17 @@ def get_abilites(request,cname,lvl):
     return JsonResponse(qs_json,safe = False)
 
 def testing_post (request):
-    print('*'*50)
-    print(request.body)
-    print('*'*50)
+
 
     data = request.body
     data = json.loads(data)
-    print(data)
-    print('*'*50)
-    print(data['spells'])
+
     q = Character.objects.all().filter(uuid = data['id']).update(level = data['lvl'],proficiency_list = data['skills'],ability_list = data['spellslots'], gold = data['Gold'], silver = data['Silver'], copper = data['Copper'] , exp = data['exp'] , max_hp = data['MaxHp'] , temp_hp = data['TempHp'], cur_hp = data['CurrentHp'], armor_class = data['Ac'], init = data['Inititive'] , strength = data['str'] , dexterity = data['dex'], constitution = data['con'], intelligence = data['int'], wisdom = data['wis'], charisma = data['chr'])
 
     if not data['spells']:
         print('spells empty')
     else:
         Character.objects.all().filter(uuid = data['id']).update(spell_list = data['spells'])
-    print(q)
     return JsonResponse({"data" : 0})
 
 

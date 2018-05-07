@@ -5,7 +5,6 @@ function getProflist() {
     for(p=0 ; p<18 ; p++){
       proflist[p] = pageProf[p].checked;
     }
-    console.log(proflist.toString());
     return proflist.toString();
 }
 
@@ -27,7 +26,6 @@ $('#save').click(function(){
   chrID = window.location.href.split('/');
   chrID = chrID[chrID.length - 1];
   var sendspells = JSON.stringify(knownSpellList);
-  console.log($('#con').val());
   var json_save ={
     id: chrID,
     lvl:lvl.value,
@@ -51,16 +49,12 @@ $('#save').click(function(){
     Silver:$('#Silver').val(),
     Gold:$('#Gold').val()
   };
-  console.log("spells = " + json_save.spells);
   if(json_save.spells === []){
     json_save.spells = 'none';
 
   }
 
-
-  console.log(json_save);
   chrID = chrID[chrID.length - 1];
-  console.log(chrID);
   $.ajax({
       url: "/dndpal/ajax/test_post/",
       type: "POST",
@@ -125,7 +119,6 @@ $( window ).on( "load", function() {
   chrID = chrID[chrID.length - 1];
   control = parseInt(lvl.value);
   thing();
-  console.log(control + "onload");
 
   if(control == 0)
   setTimeout(function(){leveling()},200);
@@ -136,7 +129,6 @@ $( window ).on( "load", function() {
 
 
           var loadtuffthings = JSON.parse(data);
-          console.log(loadtuffthings);
           // get all abilities
           loadAblilities();
 
@@ -146,16 +138,13 @@ $( window ).on( "load", function() {
           // load spells
           var loadspells = loadtuffthings[0].fields.spell_list;
           loadspells = JSON.parse(loadspells);
-          console.log(loadspells);
           for(spl in loadspells){
             appendmodalspell(0, pageSpelllvls[(loadspells[spl].spell_level - 1)] , loadspells[spl].name , false, 0);
           }
           knownSpellList = loadspells;
           // load spell slots
           var temppageSlots = (loadtuffthings[0].fields.ability_list).split(",");
-          console.log("incoming slots = " +temppageSlots);
           for(qwop = 1 ; qwop < temppageSlots.length ; qwop++){
-            console.log("to append Slot" + qwop + " with value = " + temppageSlots[qwop]);
             apendSlots("Slot"+ qwop,temppageSlots[qwop]);
           }
         }
@@ -169,9 +158,7 @@ function loadAblilities() {
   $.ajax({
       url: "/dndpal/ajax/get_abilites/" + cname.value + "/"+ lvl.value + "/",
       success: function (datas) {
-        console.log(JSON.parse(datas));
         var loadab = JSON.parse(datas);
-        console.log(loadab);
         for(pap in loadab){
           AddAbility(loadab[pap].fields.description ,loadab[pap].fields.name);
         }
@@ -942,11 +929,9 @@ $('#Close-spells').click(function(){
 
     if(toAdd.classList.contains("selected")){
       var toAddId = toAdd.id;
-      console.log(toAddId);
       toAddId = spellarray[toAddId];
       appendmodalspell(0, pageSpelllvls[(toAddId.spell_level - 1)] , toAddId.name , false, 0);
       knownSpellList.push(toAddId);
-      console.log(knownSpellList);
     }
     $(this).remove();
   });
@@ -970,7 +955,6 @@ function Selectedthing(e){
   var elem = $(e).clone().wrap('<li>').html();
   var po = $(e);
   po = po[0].parentElement.parentElement;
-  console.log(po);
   if( po.classList.contains('selected') ){
     po.classList.remove('selected');
   }else{
