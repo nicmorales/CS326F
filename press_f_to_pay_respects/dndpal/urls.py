@@ -34,6 +34,7 @@ urlpatterns = [
 	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),
     url(r'^ajax/get_abilites/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_abilites),
     url(r'^ajax/test_post/$', views.testing_post),
+    url(r'^ajax/get_character/(?P<id>[-\w]+)/$', views.get_character),
 ]
 
 

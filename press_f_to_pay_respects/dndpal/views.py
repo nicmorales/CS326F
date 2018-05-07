@@ -426,3 +426,9 @@ def testing_post (request):
         Character.objects.all().filter(uuid = data['id']).update(spell_list = data['spells'])
     print(q)
     return JsonResponse({"data" : 0})
+
+
+def get_character(request,id):
+    qs = Character.objects.all().filter(uuid = id)
+    qs_json = serializers.serialize('json', qs)
+    return JsonResponse(qs_json,safe = False)

@@ -1,3 +1,4 @@
+var chrID;
 var proflist = new Array(18);
 function getProflist() {
   var pageProf = $('#Skills-body').find("input");
@@ -10,7 +11,8 @@ function getProflist() {
 
 
 
-function setProflist() {
+function setProflist(profstr) {
+  proflist = profstr.split(",");
   var pageProf = $('#Skills-body').find("input");
     for(p=0 ; p<18 ; p++){
       pageProf[p].cheaked = proflist[p];
@@ -22,8 +24,9 @@ function setProflist() {
 
 
 $('#save').click(function(){
-  var chrID = window.location.href.split('/');
+  chrID = window.location.href.split('/');
   chrID = chrID[chrID.length - 1];
+  var sendspells = JSON.stringify(knownSpellList);
   console.log($('#con').val());
   var json_save ={
     id: chrID,
@@ -42,7 +45,7 @@ $('#save').click(function(){
     int: $('#int').val(),
     wis: $('#wis').val(),
     chr: $('#chr').val(),
-    spells: knownSpellList ,
+    spells: sendspells ,
     spellslots: pageSlots.toString(),
     Copper:$('#Copper').val(),
     Silver:$('#Silver').val(),
@@ -65,7 +68,7 @@ $('#save').click(function(){
       dataType:'json',
       data:JSON.stringify(json_save),
       success: function (data) {
-        console.log('done');
+        alert('saved');
       }
     });
 
@@ -118,16 +121,65 @@ function thing(){
 }
 // on load functiuon handling loading or initial setup
 $( window ).on( "load", function() {
-
+  chrID = window.location.href.split('/');
+  chrID = chrID[chrID.length - 1];
   control = parseInt(lvl.value);
   thing();
   console.log(control + "onload");
 
   if(control == 0)
   setTimeout(function(){leveling()},200);
+  else{
+    $.ajax({
+        url: "/dndpal/ajax/get_character/" + chrID + "/",
+        success: function (data) {
+
+
+          var loadtuffthings = JSON.parse(data);
+          console.log(loadtuffthings);
+          // get all abilities
+          loadAblilities();
+
+          // set proficiencies
+          setProflist(loadtuffthings[0].fields.proficiency_list);
+          thing();
+          // load spells
+          var loadspells = loadtuffthings[0].fields.spell_list;
+          loadspells = JSON.parse(loadspells);
+          console.log(loadspells);
+          for(spl in loadspells){
+            appendmodalspell(0, pageSpelllvls[(loadspells[spl].spell_level - 1)] , loadspells[spl].name , false, 0);
+          }
+          knownSpellList = loadspells;
+          // load spell slots
+          var temppageSlots = (loadtuffthings[0].fields.ability_list).split(",");
+          console.log("incoming slots = " +temppageSlots);
+          for(qwop = 1 ; qwop < temppageSlots.length ; qwop++){
+            console.log("to append Slot" + qwop + " with value = " + temppageSlots[qwop]);
+            apendSlots("Slot"+ qwop,temppageSlots[qwop]);
+          }
+        }
+      });
+
+  }
 
 });
 
+function loadAblilities() {
+  $.ajax({
+      url: "/dndpal/ajax/get_abilites/" + cname.value + "/"+ lvl.value + "/",
+      success: function (datas) {
+        console.log(JSON.parse(datas));
+        var loadab = JSON.parse(datas);
+        console.log(loadab);
+        for(pap in loadab){
+          AddAbility(loadab[pap].fields.description ,loadab[pap].fields.name);
+        }
+
+      }
+    });
+
+}
 
 /*Ability Scores*/
   /* changes everything related to strength*/
@@ -670,7 +722,7 @@ var SurvDP = document.getElementById('SurvDP');
                     for (var key in doing) {
                         if(key == "Slot0"){}
                         else
-                          apendSlots(key,doing[key])
+                          apendSlots(key,doing[key]);
                       }
                         moreControl = moreControl + 1;
                       leveling();
@@ -884,9 +936,6 @@ $('#Stats-kill').click(
   }
 // closing spell modal
 $('#Close-spells').click(function(){
-
-
-
 
   $('#Spell-modal-body').find("li").each(function(){
     var toAdd = $(this).find("div")[0];
