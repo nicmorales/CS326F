@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import json
@@ -772,14 +771,6 @@ def get_features(request,cname,lvl):
     qs_json = serializers.serialize('json', qs)
     return JsonResponse(qs_json,safe = False)
 
-<<<<<<< HEAD
-=======
-def get_abilites(request,cname,lvl):
-    qs = CharacterClassFeatures.objects.all().filter(character_class = cname).filter(feature_type = "Ability").filter(required_level__lte = lvl)
-    qs_json = serializers.serialize('json', qs)
-    return JsonResponse(qs_json,safe = False)
-
->>>>>>> 1b35f5320d1fad5cd50fb85b730ac5bd39618072
 def testing_post (request):
     print('*'*50)
     print(request.body)
