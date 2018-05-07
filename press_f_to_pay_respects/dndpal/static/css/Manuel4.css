@@ -1,0 +1,120 @@
+/*to properly center input feilds */
+
+
+.mod {
+margin-bottom: 5px;
+}
+
+.visible{
+border: 1px solid blue;
+
+}
+
+.formlist{
+  margin-left: 10px;
+}
+
+.cheakbox-nudge{
+
+}
+
+input {
+  text-align: center;
+}
+
+.bmd-form-group{
+  padding: 0px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li > div > label{
+  margin:8px;
+}
+
+li>div{
+  margin-top: 8px;
+  width: 95%;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.tab-pane{
+  overflow-y:scroll;
+  width:100%;
+}
+
+.one{
+  border-left: solid 5px blue;
+}
+
+.two{
+  border-left: solid 5px #17d817;
+}
+
+.three{
+  border-left: solid 5px black;
+}
+
+.four{
+  border-left: solid 5px orange;
+}
+
+.five{
+  border-left: solid 5px red;
+}
+
+.selected{
+  border-top:solid 3px cyan;
+  border-bottom:solid 3px cyan;
+  border-right:solid 3px cyan;
+
+}
+
+ul > p{
+  margin-top: 1em;
+}
+
+div > a {
+    margin-bottom: 8px;
+    border-top-width: 5px;
+    margin-top: 8px;
+}
