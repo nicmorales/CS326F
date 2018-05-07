@@ -1396,7 +1396,7 @@
                 </div>
             </div>
             <!--skills model-->
-            <div id="Skills-modal" class="modal">
+            <div id="Skills-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Stat-modalTitle" aria-hidden="true">
 
                 <!-- Modal content -->
                 <div class="modal-content col-3">
@@ -1538,7 +1538,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="row">
+                        <div class="text-center">
                             <button id="skill-kill" type="button" class="btn btn-raised btn-primary">Submit</button>
                         </div>
                     </div>
@@ -1547,75 +1547,81 @@
 
 
             <!--primary Stats-->
-            <div id="Stat-modal" class="modal">
-
+            <div id="Stat-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Stat-modalTitle" aria-hidden="true">
                 <!-- Modal content -->
                 <div class="modal-content col-3">
-                    <span class="Health-close">&times;</span>
-                    <div>
-                        <h6>Input your Ability Scores Below</h6>
+                    <span class="Health-close"></span>
+                    <div class="text-center mt-3">
+                        <h6 class="modal-title" id="Stat-modalTitle">Input your Ability Scores Below</h6>
                     </div>
                     <div>
                         <p id="main-ability"></p>
                     </div>
-                    <div>
+                    <div class="modal-body">
 
-                        <ul id="stat-body" class="row" >
+                        <ul id="stat-body" class="col" >
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-str" type="number"> Strength
-                                    </label>
+                                  <h6 class="text-center">Strength</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-str" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;" >
-                                        <input id="Temp-dex" type="number"> Dexterity
-                                    </label>
+                                  <h6 class="text-center">Dexterity</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-dex" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-con" type="number"> Constitution
-                                    </label>
+                                  <h6 class="text-center">Constitution</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-con" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-wis" type="number"> Wisdom
-                                    </label>
+                                  <h6 class="text-center">Wisdom</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-wis" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-int" type="number"> Intelligence
-                                    </label>
+                                  <h6 class="text-center">Intelligence</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-int" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-chr" type="number"> Charisma
-                                    </label>
+                                  <h6 class="text-center">Charisma</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-chr" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                         </ul>
 
-                        <div class="row">
-                            <button id="Stats-kill" type="button" class="btn btn-raised btn-primary">Submit</button>
-                        </div>
 
+
+                    </div>
+                    <div class="text-center">
+                        <button id="Stats-kill" type="button" class="btn btn-raised btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
