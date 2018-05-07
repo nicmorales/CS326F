@@ -1,7 +1,7 @@
 var chrID;
 var proflist = new Array(18);
+var pageProf = $('#Skills-body').find("input");
 function getProflist() {
-  var pageProf = $('#Skills-body').find("input");
     for(p=0 ; p<18 ; p++){
       proflist[p] = pageProf[p].checked;
     }
@@ -13,9 +13,9 @@ function getProflist() {
 function setProflist(profstr) {
   proflist = profstr.split(",");
   console.log(proflist);
-  var pageProf = $('#Skills-body').find("input");
-    for(p=0 ; p<18 ; p++){
-      pageProf[p].checked = proflist[p];
+
+    for(qwopa=0 ; qwopa<18 ; qwopa++){
+      pageProf[qwopa].checked = (proflist[qwopa] == 'true'); ;
     }
 }
 
