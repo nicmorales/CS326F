@@ -56,7 +56,7 @@
                                 <h3 id="level"><span class="badge mt-2">Level: </span></h3>
                             </div>
                             <div class="col mt-1" style="padding-left: 0px">
-                                <input id="level-field" type="text" class="form-control-plaintext"
+                                <input id="level-field" type="text" class="form-control-plaintext" readonly
                                        value="{{character.level}}"
                                        style="text-align: left;">
                             </div>
@@ -65,16 +65,21 @@
 
                     <!--Alignment + EXP-->
                     <div class="row pl-5 ml-5 pt-2">
-                        <div class="col-6">
+                        <div class="col-6 row">
                             <h4 id="alignment"><span class="badge">Alignment: </span>
-                                {{character.get_alignment_display}}</h4>
+                                </h4>
+                                <div class="col" style="padding-left: 0px">
+                                    <input id="align-field" type="text" class="form-control" style="width: 10rem;"
+                                           value="{{character.get_alignment_display}}"
+                                           style="text-align: left;">
+                                </div>
                         </div>
                         <div class="col-4 row">
                             <div class="col">
                                 <h4 id="exp"><span class="badge">Experience: </span></h4>
                             </div>
                             <div class="col" style="padding-left: 0px">
-                                <input id="exp-field" type="text" class="form-control-plaintext"
+                                <input id="exp-field" type="text" class="form-control"
                                        value="{{character.exp}}"
                                        style="text-align: left;">
                             </div>
@@ -119,7 +124,7 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="str" type="text" class="form-control-plaintext"
+                                    <input id="str" type="text" class="form-control" style="width: 3rem;"
                                            value="{{character.strength}}">
 
                                 </div>
@@ -158,7 +163,7 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="dex" type="text" class="form-control-plaintext"
+                                    <input id="dex" type="text" class="form-control" style="width: 3rem;"
                                            value="{{character.dexterity}}">
 
                                 </div>
@@ -197,7 +202,7 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="con" type="text" class="form-control-plaintext"
+                                    <input id="con" type="text" class="form-control" style="width: 3rem;"
                                            value="{{character.constitution}}">
 
                                 </div>
@@ -236,7 +241,7 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="int" type="text" class="form-control-plaintext"
+                                    <input id="int" type="text" class="form-control" style="width: 3rem;"
                                            value="{{character.intelligence}}">
 
                                 </div>
@@ -273,7 +278,7 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="wis" type="text" class="form-control-plaintext"
+                                    <input id="wis" type="text" class="form-control" style="width: 3rem;"
                                            value="{{character.wisdom}}">
 
                                 </div>
@@ -312,7 +317,7 @@
                             <div class="row justify-content-center">
                                 <div class="justify-content-center">
 
-                                    <input id="chr" type="text" class="form-control-plaintext"
+                                    <input id="chr" type="text" class="form-control" style="width: 3rem;"
                                            value="{{character.charisma}}">
 
                                 </div>
@@ -357,7 +362,7 @@
 
                         <div class="row justify-content-center">
                             <div>
-                                <input id="Currenthp" type="text" class="form-control-plaintext"
+                                <input id="Currenthp" type="text" class="form-control mb-2" style="width: 3rem;"
                                        value="{{character.cur_hp}}">
                             </div>
                         </div>
@@ -369,7 +374,7 @@
 
                         <div class="row justify-content-center">
                             <div>
-                                <input id="HitPoints" type="text" class="form-control-plaintext"
+                                <input id="HitPoints" type="text" class="form-control" style="width: 3rem;"
                                        value="{{character.max_hp}}">
                             </div>
                         </div>
@@ -381,7 +386,7 @@
 
                         <div class="row justify-content-center">
                             <div>
-                                <input id="TempHit" type="text" class="form-control-plaintext"
+                                <input id="TempHit" type="text" class="form-control" style="width: 3rem;"
                                        value="{{character.temp_hp}}">
                             </div>
                         </div>
@@ -398,7 +403,7 @@
 
                         <div class="row justify-content-center">
                             <div>
-                                <input id="AC" type="text" class="form-control-plaintext"
+                                <input id="AC" type="text" class="form-control mb-2" style="width: 3rem;"
                                        value="{{character.armor_class}}">
                             </div>
                         </div>
@@ -410,7 +415,7 @@
 
                         <div class="row justify-content-center">
                             <div>
-                                <input id="Init" type="text" class="form-control-plaintext" value="{{character.init}}">
+                                <input id="Init" type="text" class="form-control" style="width: 3rem;" value="{{character.init}}">
                             </div>
                         </div>
                     </div>
@@ -421,7 +426,7 @@
 
                         <div class="row justify-content-center">
                             <div>
-                                <input id="Speed" type="text" class="form-control-plaintext"
+                                <input id="Speed" type="text" class="form-control" style="width: 3rem;"
                                        value="{{character.race.speed}}">
                             </div>
                         </div>
@@ -442,7 +447,10 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p> +4 </p>
+                              <div>
+                                  <input id="St-sv" type="text" class="form-control mb-2" style="width: 3rem;"
+                                         value="+4">
+                              </div>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -451,7 +459,10 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p> +1 </p>
+                              <div>
+                                  <input id="De-sv" type="text" class="form-control" style="width: 3rem;"
+                                         value="+1">
+                              </div>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -460,7 +471,10 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p> +4 </p>
+                              <div>
+                                  <input id="Co-sv" type="text" class="form-control" style="width: 3rem;"
+                                         value="+4">
+                              </div>
                             </div>
                         </div>
 
@@ -472,7 +486,10 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p> 0 </p>
+                              <div>
+                                  <input id="In-sv" type="text" class="form-control mb-2" style="width: 3rem;"
+                                         value="+0">
+                              </div>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -481,7 +498,10 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p> -1 </p>
+                              <div>
+                                  <input id="Wi-sv" type="text" class="form-control" style="width: 3rem;"
+                                         value="-1">
+                              </div>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -490,7 +510,10 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <p> +7 </p>
+                              <div>
+                                  <input id="Ch-sv" type="text" class="form-control" style="width: 3rem;"
+                                         value="+7">
+                              </div>
                             </div>
                         </div>
 
@@ -1070,7 +1093,7 @@
                                     </div>
                                     <div class="row justify-content-center mr-2">
                                         <div>
-                                            <input id="Gold" type="text" class="form-control-plaintext" value="{{character.gold}}" style="width: 5rem;">
+                                            <input id="Gold" type="text" class="form-control" value="{{character.gold}}" style="width: 5rem;">
                                         </div>
                                     </div>
                                 </div>
@@ -1080,7 +1103,7 @@
                                     </div>
                                     <div class="row justify-content-center mr-2">
                                         <div>
-                                            <input id="Silver" type="text" class="form-control-plaintext" value="{{character.silver}}"  style="width: 5rem;">
+                                            <input id="Silver" type="text" class="form-control" value="{{character.silver}}"  style="width: 5rem;">
                                         </div>
                                     </div>
                                 </div>
@@ -1090,7 +1113,7 @@
                                     </div>
                                     <div class="row justify-content-center mr-2">
                                         <div>
-                                            <input id="Copper" type="text" class="form-control-plaintext" value="{{character.copper}}"  style="width: 5rem;">
+                                            <input id="Copper" type="text" class="form-control" value="{{character.copper}}"  style="width: 5rem;">
                                         </div>
                                     </div>
                                 </div>
@@ -1112,31 +1135,31 @@
 
                                         <div class="row justify-content-left">
                                             <div class="col-12">
-                                                <input id="type" type="text" class="form-control-plaintext text-left"
+                                                <input id="type" type="text" class="form-control text-left"
                                                        value="{{character.weapon.name}}">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm">
+                                    <div class="col-sm mt-1">
                                         <div class="row justify-content-center stat">
                                             <h6>Damage</h6>
                                         </div>
 
                                         <div class="row justify-content-center">
                                             <div>
-                                                <input id="Damage" type="text" class="form-control-plaintext"
+                                                <input id="Damage" type="text" class="form-control"
                                                        value="{{character.weapon.damage}}">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm">
+                                    <div class="col-sm ml-3 mt-1">
                                         <div class="row justify-content-center stat">
                                             <h6>Crit</h6>
                                         </div>
 
                                         <div class="row justify-content-center">
                                             <div>
-                                                <input id="Crit" type="text" class="form-control-plaintext" value="x2">
+                                                <input id="Crit" type="text" class="form-control" value="x2">
                                             </div>
                                         </div>
                                     </div>
@@ -1160,31 +1183,31 @@
 
                                         <div class="row justify-content-left">
                                             <div class="col-12">
-                                                <input id="armor-type" type="text" class="form-control-plaintext text-left"
+                                                <input id="armor-type" type="text" class="form-control text-left"
                                                        value="{{character.armor.name}}">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm">
+                                    <div class="col-sm mt-1">
                                         <div class="row justify-content-center stat">
                                             <h6>AC</h6>
                                         </div>
 
                                         <div class="row justify-content-center">
                                             <div>
-                                                <input id="armor-bonus" type="text" class="form-control-plaintext"
+                                                <input id="armor-bonus" type="text" class="form-control"
                                                        value="{{character.armor.armor_bonus}}">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm">
+                                    <div class="col-sm ml-3 mt-1">
                                         <div class="row justify-content-center stat">
                                             <h6>Max Dex</h6>
                                         </div>
 
                                         <div class="row justify-content-center">
                                             <div>
-                                                <input id="max-dex" type="text" class="form-control-plaintext"
+                                                <input id="max-dex" type="text" class="form-control"
                                                        value="{{character.armor.max_dexterity}}">
                                             </div>
                                         </div>
