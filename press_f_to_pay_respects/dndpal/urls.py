@@ -54,5 +54,5 @@ urlpatterns += [
 
 urlpatterns += [
     path('mycharacters/', views.CharacterListView.as_view(), name='my-characters'),
-    path('character/<int:pk>', views.CharacterDetailView.as_view(), name ='character-detail'),
+    path('character/<uuid:pk>', views.CharacterDetailView.as_view(), name ='character-detail'),
 ]

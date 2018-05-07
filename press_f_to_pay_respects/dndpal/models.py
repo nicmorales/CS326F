@@ -1,3 +1,4 @@
+
 """
 TO-DO:
 Things to ask Alan:
@@ -12,10 +13,11 @@ from django.urls import reverse #Used to generate URLs by reversing the URL patt
 from django.contrib.auth.models import User
 
 # Create your models here.
+import uuid
 
 
 class Character(models.Model):
-    char_id= models.PositiveIntegerField(unique=True, primary_key = True, help_text = "Enter Character ID")
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4)
     username = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
     char_name = models.CharField( default = '', max_length = 30, help_text = "Enter a name for your character")
     char_class = models.ForeignKey('CharacterClass', on_delete=models.SET_NULL, null = True)
