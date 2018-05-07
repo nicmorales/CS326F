@@ -1360,50 +1360,52 @@
 
                 <!-- Modal content -->
                 <div class="modal-content col-8">
-                    <span class="Health-close">&times;</span>
-                    <div>
-                        <h6>Select method for gaining health</h6>
+                    <span class="Health-close"></span>
+                    <div class="text-center mt-3">
+                        <h3 class="modal-title mb-4">Select method for gaining health</h3>
                     </div>
                     <div class="justify-content-center row">
-                        <div class="col card">
-                            <h3 id="Roll" class="card-header"> Roll a </h3>
-                            <div class="card-body">
+                        <div class="col card ml-4 mr-2">
+                            <h4 id="Roll" class="card-header text-center"> Roll a </h4>
+                            <div class="card-body text-center">
                                 <input id="Roll-value" type="number" class="form-control-plaintext" name="health"
                                        value="1">
-                                <button id="Roll-btn" type="button" name="button">Add Health</button>
+                                <button id="Roll-btn" type="button" name="button" class="btn btn-outline-success mt-3">Add Health</button>
                             </div>
 
                         </div>
 
-                        <div class="col card">
-                            <h3 id="Avarage" class="card-header"> Take average</h3>
-                            <div class="card-body">
+                        <div class="col card mx-2">
+                            <h4 id="Avarage" class="card-header text-center"> Take average</h4>
+                            <div class="card-body text-center">
                                 <input id="Average-value" type="number" class="form-control-plaintext" name="health"
                                        readonly>
-                                <button id="Average-btn" type="button" name="button">Add Health</button>
+                                <button id="Average-btn" type="button" name="button" class="btn btn-outline-success mt-3 ">Add Health</button>
                             </div>
                         </div>
 
-                        <div class="col card">
-                            <h3 id="Random" class="card-header"> Random</h3>
-                            <div class="card-body">
+                        <div class="col card ml-2 mr-4">
+                            <h4 id="Random" class="card-header text-center"> Random</h4>
+                            <div class="card-body text-center">
                                 <input id="Random-value" type="number" class="form-control-plaintext" name="health"
                                        readonly>
-                                <button id="Random-btn" type="button" name="button">Add Health</button>
+                                <button id="Random-btn" type="button" name="button" class="btn btn-outline-success mt-3">Add Health</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!--skills model-->
-            <div id="Skills-modal" class="modal">
+            <div id="Skills-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Skills-modalTitle" aria-hidden="true">
 
                 <!-- Modal content -->
                 <div class="modal-content col-3">
-                    <span class="Health-close">&times;</span>
+                    <span class="Health-close"></span>
                     <div>
-                        <h6>Select Your Skill proficency's</h6>
-                        <p id="Skill-num">You can select 4
+                      <div class="text-center mt-3">
+                        <h6 class="modal-title">Select Your Skill Proficencies</h6>
+                      </div>
+                        <p id="Skill-num" class="text-center mb-4">You can select {{character.char_class.skill_proficiency_limit}}
                         <p>
                     </div>
                     <div>
@@ -1455,7 +1457,7 @@
                                 <li>
                                     <div class="checkbox cheakbox-nudge">
                                         <label style="color:black;">
-                                            <input id="InsiP" type="checkbox"> Insigt
+                                            <input id="InsiP" type="checkbox"> Insight
                                         </label>
                                     </div>
                                 </li>
@@ -1538,7 +1540,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="row">
+                        <div class="text-center">
                             <button id="skill-kill" type="button" class="btn btn-raised btn-primary">Submit</button>
                         </div>
                     </div>
@@ -1547,75 +1549,81 @@
 
 
             <!--primary Stats-->
-            <div id="Stat-modal" class="modal">
-
+            <div id="Stat-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Stat-modalTitle" aria-hidden="true">
                 <!-- Modal content -->
                 <div class="modal-content col-3">
-                    <span class="Health-close">&times;</span>
-                    <div>
-                        <h6>Input your Ability Scores Below</h6>
+                    <span class="Health-close"></span>
+                    <div class="text-center mt-3">
+                        <h6 class="modal-title" id="Stat-modalTitle">Input your Ability Scores Below</h6>
                     </div>
                     <div>
                         <p id="main-ability"></p>
                     </div>
-                    <div>
+                    <div class="modal-body">
 
-                        <ul id="stat-body" class="row" >
+                        <ul id="stat-body" class="col" >
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-str" type="number"> Strength
-                                    </label>
+                                  <h6 class="text-center">Strength</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-str" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;" >
-                                        <input id="Temp-dex" type="number"> Dexterity
-                                    </label>
+                                  <h6 class="text-center">Dexterity</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-dex" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-con" type="number"> Constitution
-                                    </label>
+                                  <h6 class="text-center">Constitution</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-con" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-wis" type="number"> Wisdom
-                                    </label>
+                                  <h6 class="text-center">Wisdom</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-wis" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-int" type="number"> Intelligence
-                                    </label>
+                                  <h6 class="text-center">Intelligence</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-int" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                             <li>
                                 <div style="width: 100%;" >
-                                    <label style="color:black;">
-                                        <input id="Temp-chr" type="number"> Charisma
-                                    </label>
+                                  <h6 class="text-center">Charisma</h6>
+                                    <div class="text-center">
+                                        <input id="Temp-chr" type="number" value ="10">
+                                    </div>
                                 </div>
                             </li>
 
                         </ul>
 
-                        <div class="row">
-                            <button id="Stats-kill" type="button" class="btn btn-raised btn-primary">Submit</button>
-                        </div>
 
+
+                    </div>
+                    <div class="text-center">
+                        <button id="Stats-kill" type="button" class="btn btn-raised btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
@@ -1625,14 +1633,15 @@
 
                 <!-- Modal content -->
                 <div class="modal-content col-6">
-                    <span>&times;</span>
+                    <span></span>
                     <div>
-                        <h6>Select Your spells</h6>
+                        <h4 class="modal-title mb-2 ml-3">Select Your spells</h4>
                     </div>
                     <div class="justify-content-center">
                         <div>
-                            <div class=" active row" style="height: 60vh;">
-                                <div class="col-9 tab-pane">
+                          <div class="card p-3">
+                            <div class=" active row " style="height: 60vh;">
+                                <div class="col-9 active tab-pane">
                                     <ul id="Spell-modal-body">
                                         <p>Level 1 spells</p>
 
@@ -1656,7 +1665,7 @@
                                     </ul>
                                 </div>
                                 <div class="col">
-                                    <h6>Color guid to spells</h6>
+                                    <h6>Color guide to spells</h6>
 
                                     <p><font color="blue">Best</font></p>
                                     <p><font color="green">good</font></p>
@@ -1666,7 +1675,8 @@
 
                                 </div>
                             </div>
-                            <button id="Close-spells" type="button" class="btn btn-primary">Submit</button>
+                          </div>
+                            <button id="Close-spells" type="button" class="btn btn-outline-primary mt-4">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -1681,5 +1691,5 @@
 {% endblock %}
 
 {% block java %}
-<script src="{% static 'js/main12.js' %}"></script>
+<script src="{% static 'js/main14.js' %}"></script>
 {% endblock %}
