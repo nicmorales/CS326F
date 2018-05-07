@@ -26,16 +26,13 @@ urlpatterns = [
     path('armor/<str:pk>/update/', views.ArmorUpdate.as_view(), name='armor_update'),
     path('armor/<str:pk>/delete/', views.ArmorDelete.as_view(), name='armor_delete'),
 
-	#ajax all the fucking ajax
-    url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
-	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
-	url(r'^ajax/get_spells/(?P<cname>[-\w]+)$/(?P<lvl>[-\w]+)/(?P<thing>[-\w]+)/$', views.get_spells),
-	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),#ajax all the fucking ajax
+#ajax all the ajax
     url(r'^ajax/get_health/(?P<stub>[-\w]+)$', views.get_health, name='get_health'),
 	url(r'^ajax/get_skills/(?P<cname>[-\w]+)$', views.get_skills),
 	url(r'^ajax/get_spells/(?P<cname>[-\w]+)/(?P<lvl>[-\w]+)/$', views.get_spells),
     url(r'^ajax/get_cantrip/(?P<cname>[-\w]+)/$', views.get_cantrip),
 	url(r'^ajax/get_features/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_features),
+    url(r'^ajax/get_abilites/(?P<cname>\w+)/(?P<lvl>\w+)/$', views.get_abilites),
     url(r'^ajax/test_post/$', views.testing_post),
 ]
 
@@ -45,14 +42,19 @@ from django.conf.urls import url
 
 # Niko's pages:
 urlpatterns += [
-    url(r'^signup/$', views.signup, name='signup'),
+     url(r'^signup/$', views.signup, name='signup'),
     path('guided/', views.guided, name='guided'),
-    path('character/create/', views.CharacterCreateForm, name='character_create'),
-    
-]   
+    path('character/create/', views.CharacterCreate.as_view(), name='character_create'),
+
+]
 
 
 urlpatterns += [
     path('mycharacters/', views.CharacterListView.as_view(), name='my-characters'),
+<<<<<<< HEAD
     path('character/<uuid:pk>', views.CharacterDetailView.as_view(), name ='character-detail'),
 ]
+=======
+    path('character/<int:pk>', views.CharacterDetailView.as_view(), name ='character-detail'),
+]
+>>>>>>> 1b35f5320d1fad5cd50fb85b730ac5bd39618072
