@@ -2,10 +2,10 @@ var proflist = new Array(18);
 function getProflist() {
   var pageProf = $('#Skills-body').find("input");
     for(p=0 ; p<18 ; p++){
-      proflist[p] = pageProf[p].cheaked;
+      proflist[p] = pageProf[p].checked;
     }
-    console.log(proflist.tostring());
-    return proflist.tostring();
+    console.log(proflist.toString());
+    return proflist.toString();
 }
 
 
@@ -27,7 +27,7 @@ $('#save').click(function(){
       type: "POST",
       contentType: 'application/json',
       dataType:'json',
-      data: JSON.stringify({spells: knownSpellList , proficency: getProflist() , health: HitPoints.value, temphp : $('TempHit').value , spellsots: pageSlots.tostring()}),
+      data: JSON.stringify({spells: knownSpellList , proficency: getProflist() , health: HitPoints.value, temphp : $('TempHit').value , spellsots: pageSlots.toString()}),
       success: function (data) {
         console.log('done');
       }
@@ -602,7 +602,7 @@ var SurvDP = document.getElementById('SurvDP');
 
         //main controll function
         function leveling(){
-          if(parseInt(lvl.value) === 0 && control < 4)
+          if(parseInt(lvl.value) === 0 && control < 3)
           prestuff();
           else{
 
@@ -611,6 +611,7 @@ var SurvDP = document.getElementById('SurvDP');
               moreControl = 0;
               levelshit = getValues('/dndpal/ajax/get_features/'+ cname.value + '/'+ lvl.value);
               levelshit = JSON.parse(levelshit);
+              levelshit.push( JSON.parse('{"fields":{"feature_type":"Health"}}') );
               levelshit.push( JSON.parse('{"fields":{"feature_type":"end"}}') );
               leveling();
             }else{
@@ -655,8 +656,11 @@ var SurvDP = document.getElementById('SurvDP');
                           }
                         });
                       moreControl = moreControl + 1;
-                      leveling();
                       break;
+                      case 'Health':
+                        Healthmain();
+                        moreControl = moreControl + 1;
+                        break;
                     default:
 
                     moreControl = moreControl + 1;
@@ -672,12 +676,9 @@ var SurvDP = document.getElementById('SurvDP');
               statsMain();
               break;
             case 1:
-              Healthmain();
-              break;
-            case 2:
               Skillsmain();
               break;
-            case 3:
+            case 2:
               control = control + 1;
               leveling();
               break;
@@ -715,7 +716,7 @@ var SurvDP = document.getElementById('SurvDP');
     $.ajax({
         url: healthstr,
         success: function (data) {
-          if(lvl.value == 0){
+          if(lvl.value == 1){
             addHealth(data.Hitdie);
           }else{
           setHitdie(data.Hitdie);
@@ -863,6 +864,7 @@ $('#Close-spells').click(function(){
   });
   spellarray = [];
     $('#Spell-modal').hide();
+    leveling();
 });
 // cheak if spell is already on page
 function spellExists(splname) {
@@ -902,19 +904,19 @@ function Selectedthing(e){
         rank = "zero";
         break;
       case 1:
-        rank = "five";
+        rank = "one";
         break;
       case 2:
-        rank = "four";
+        rank = "two";
         break;
       case 3:
         rank = "three";
         break;
       case 4:
-        rank = "two";
+        rank = "four";
         break;
       case 5:
-        rank = "one";
+        rank = "five";
         break;
       default:
     }
